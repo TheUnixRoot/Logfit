@@ -41,6 +41,12 @@ typedef struct {
 /*****************************************************************************
 * Kernels
 * **************************************************************************/
+
+__kernel void sample(int i){
+
+	printf("Hola desde gpu");
+
+}
 											
 		__kernel void IterativeForce(__global OctTreeLeafNode *bodies,						
 				__global OctTreeInternalNode *tree,										

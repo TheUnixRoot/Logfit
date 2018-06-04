@@ -21,4 +21,17 @@ typedef struct {
     float ratioG;
 } Params;
 
+enum Type : int { GPU = 0, CPU = 1 };
+
+/*Bundle class: This class is used to store the information that items need while walking throught pipeline's stages.*/
+class Bundle {
+public:
+    int begin;
+    int end;
+    Type type;
+
+    Bundle() {
+    };
+};
+
 #endif //BARNESLOGFIT_DATASTRUCTURES_H

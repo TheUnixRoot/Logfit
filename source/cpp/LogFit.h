@@ -39,8 +39,6 @@ using namespace tbb;
 /*****************************************************************************
  * Defines
  * **************************************************************************/
-#define CPU 0
-#define GPU 1
 #define GPU_OFF -100
 #define SEP "\t"
 #define MAXPOINTS 1024
@@ -488,15 +486,15 @@ private:
 };
 
 /*Bundle class: This class is used to store the information that items need while walking throught pipeline's stages.*/
-class Bundle {
-public:
-	int begin;
-	int end;
-	int type; //GPU = 0, CPU=1
-
-	Bundle() {
-	};
-};
+//class Bundle {
+//public:
+//	int begin;
+//	int end;
+//	int type; //GPU = 0, CPU=1
+//
+//	Bundle() {
+//	};
+//};
 
 /*My serial filter class represents the partitioner of the engine. This class selects a device and a rubrange of iterations*/
 class MySerialFilter : public filter {
@@ -534,7 +532,7 @@ public:
                                     bundle->begin = begin;
                                     bundle->end = auxEnd;
                                     begin = auxEnd;
-                                    bundle->type = GPU;
+                                    bundle->type = Type::GPU;
                                     return bundle;
                             } else { // paramos la GPU si el trozo es <= 0, generamos token CPU
                                     // no incrementamos gpuStatus para dejar pillada la GPU
@@ -544,7 +542,7 @@ public:
                                     bundle->begin = begin;
                                     bundle->end = auxEnd;
                                     begin = auxEnd;
-                                    bundle->type = CPU;
+                                    bundle->type = Type::CPU;
                                     return bundle;
                             }
                     } else {
@@ -555,7 +553,7 @@ public:
                             bundle->begin = begin;
                             bundle->end = auxEnd;
                             begin = auxEnd;
-                            bundle->type = CPU;
+                            bundle->type = Type::CPU;
 #ifdef DEBUG
                             //cerr << "Serial Filter CPU: " << bundle->end-bundle->begin << " Begin = " << bundle->begin << ", End = " << bundle->end << endl;
 #endif
