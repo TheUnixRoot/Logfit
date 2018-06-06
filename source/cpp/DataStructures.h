@@ -33,5 +33,16 @@ public:
     Bundle() {
     };
 };
+using type_0 = cl_int;
+//using type_1 = cl_int;
+//using type_2 = cl_int;
+//using type_3 = cl_int;
+//using type_4 = cl_int;
+//using type_5 = cl_int;
+//using type_6 = cl_int;
+//using type_7 = cl_int;
+//using type_8 = cl_int;
+
+
 
 #endif //BARNESLOGFIT_DATASTRUCTURES_H

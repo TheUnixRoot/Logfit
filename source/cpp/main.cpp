@@ -41,9 +41,7 @@ int main(int argc, char** argv){
 //	sprintf(p.benchName, "BarnesHut");
 //	sprintf(p.kernelName, "IterativeForce");
 	cerr << "BarnesHut Simulation: "<< argv[1] << ", Number of CPU's cores: " << p.numcpus << ", Number of GPUs: " << p.numgpus << endl;
-	tbb::flow::graph g;
-    cout << "Alright baby" << endl;
-	GraphLogFit<nullptr_t > logFit(p, &g, nullptr);
+	GraphLogFit<nullptr_t > logFit(p, nullptr);
     logFit.heterogeneous_parallel_for();
 //
 ///*Initializing scheduler*/
