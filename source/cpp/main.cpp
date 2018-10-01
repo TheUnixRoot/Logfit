@@ -42,7 +42,7 @@ int main(int argc, char** argv){
 //	sprintf(p.kernelName, "IterativeForce");
 	cerr << "BarnesHut Simulation: "<< argv[1] << ", Number of CPU's cores: " << p.numcpus << ", Number of GPUs: " << p.numgpus << endl;
 	GraphLogFit<nullptr_t > logFit(p, nullptr);
-    logFit.heterogeneous_parallel_for();
+//    logFit.heterogeneous_parallel_for();
 //
 ///*Initializing scheduler*/
 //	LogFit * hs = LogFit::getInstance(&p);
