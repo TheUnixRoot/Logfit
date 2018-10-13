@@ -10,9 +10,6 @@
 #include <cstdlib> 
 #include <iostream>
 #include <fstream>
-#include "BarnesHut.h" 
-
-#include "LogFit.h"
 #include "Body.h"
 #include "ConsoleUtils.h"
 #include "GraphLogFit.h"

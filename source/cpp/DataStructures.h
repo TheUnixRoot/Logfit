@@ -35,8 +35,16 @@ public:
     Bundle(int b, int e, Type t): begin(b), end(e), type(t) {    };
 };
 
+struct Token {
+public:
+    Type type;
+
+    Token(Type t) : type(t) {    };
+};
+
+
 using buffer_f = tbb::flow::opencl_buffer<cl_float>;
-using t_index = struct {
+using t_index = struct _t_index {
     int begin, end;
 };
 using type_gpu = tbb::flow::tuple<t_index, buffer_f , buffer_f , buffer_f >;

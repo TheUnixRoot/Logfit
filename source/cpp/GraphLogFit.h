@@ -18,42 +18,51 @@ public:
     {
         flow::graph graph;
 
-        flow::function_node<flow::tuple<int, int>> cpuNode(graph, flow::unlimited, [&body](flow::tuple<int, int> data){
+        flow::function_node<flow::tuple<int, int>, Token*> cpuNode(graph, flow::unlimited, [&body](flow::tuple<int, int> data) -> Token *{
 
             tick_count start = tick_count::now();
             body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
             tick_count stop = tick_count::now();
+            return new Token(CPU);
         });
+
+        flow::function_node<t_index, Token*> gpuJoiner(graph, flow::unlimited, [&body](t_index indexes) -> Token *{
+            return new Token(GPU);
+        });
+
         flow::opencl_node<type_gpu> gpuNode(
                 graph, flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
-        flow::queue_node<Bundle> bufferNode(graph);
-        flow::function_node<Bundle> dispatcher(graph, flow::unlimited, [&cpuNode, &gpuNode, &body](Bundle data){
+
+        flow::queue_node<Token*> bufferNode(graph);
+
+        flow::function_node<Token*> dispatcher(graph, flow::unlimited, [&cpuNode, &gpuNode, &body](Token* data){
                     // TODO: size partition
 
-                    if (data.type == CPU) {
-                    cpuNode.try_put(make_tuple(data.begin, data.end / 2));
+                    if (data->type == CPU) {
+                        cpuNode.try_put(make_tuple(0, 5));
                     } else {
-                        t_index indexes = {data.end / 2, data.end};
+                        t_index indexes = {5, 10};
                         tick_count start = tick_count::now();
                         body->OperatorGPU(&gpuNode, indexes);
                         // TODO: Waiting stuff
 
                         tick_count stop = tick_count::now();
                     }
+                    delete data;
                 });
 
         std::array<unsigned int, 1> range{1};
         gpuNode.set_range(range);
 
         flow::make_edge(bufferNode, dispatcher);
+//        flow::make_edge(cpuNode, bufferNode);
+        flow::make_edge(flow::output_port<0>(gpuNode), gpuJoiner);
+//        flow::make_edge(gpuJoiner, bufferNode);
+
+        bufferNode.try_put(new Token(CPU));
+        bufferNode.try_put(new Token(GPU));
 
 
-
-        Bundle *bundle = new Bundle(0, 10, CPU);
-        bufferNode.try_put(*bundle);
-
-        bundle->type = GPU;
-        bufferNode.try_put(*bundle);
 
         graph.wait_for_all();
 
