@@ -11,60 +11,41 @@
 #include "tbb/parallel_for.h"
 #include "tbb/task.h"
 #include "tbb/tick_count.h"
+#include "DataStructures.h"
+
 using namespace tbb;
 
-
+const int NUM_RAND = 256;
+int RandomNumber () { return (std::rand()%NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
 class Body{
     // TODO: Fill this class with logic and methods
 private:
-    int dataToRun;
+    const int vsize = 10;
+public:
+    buffer_f Adevice;
+    buffer_f Bdevice;
+    buffer_f Cdevice;
+    float* Ahost;
+    float* Bhost;
+    float* Chost;
 public:
 
-	void OperatorGPU(int begin, int end, cl_event *event) {
+    Body() : Adevice(vsize), Bdevice(vsize), Cdevice(vsize), Ahost(Adevice.data()),
+            Bhost(Bdevice.data()), Chost(Cdevice.data()) {
 
-//		cout << "Inside Operator GPU: " << begin  << ", " << end << endl;
+        std::generate(Ahost, Ahost+vsize, RandomNumber);
+        std::generate(Bhost, Bhost+vsize, RandomNumber);
+    }
 
-		// Associate the input and output buffers with the // kernel
-		// using clSetKernelArg()
-		error  = clSetKernelArg(kernel, 0, sizeof(cl_mem), &d_bodies);
-		error |= clSetKernelArg(kernel, 1, sizeof(cl_mem), &d_tree);
-		error |= clSetKernelArg(kernel, 2, sizeof(cl_uint), &step);
-		error |= clSetKernelArg(kernel, 3, sizeof(cl_float), &epssq);
-		error |= clSetKernelArg(kernel, 4, sizeof(cl_float), &dthf);
-		error |= clSetKernelArg(kernel, 5, sizeof(cl_uint), &begin);
-		error |= clSetKernelArg(kernel, 6, sizeof(cl_uint), &end);
-
-		if (error != CL_SUCCESS) {
-			fprintf(stderr, "Failed setting kernel Args!\n");
-			exit(0);
-		}
-
-		// Define an index space (global work size) of work
-		// items for
-		// execution. A workgroup size (local work size) is not // required,
-		// but can be used.
-		size_t globalWorkSize[1];
-		size_t localWorkSize[1];
-
-		// There are �elements� work-items
-		globalWorkSize[0] = (end-begin);
-		//localWorkSize[0] = NULL;
-
-		////////////////////////////////////////////////////
-		// STEP 11: Enqueue the kernel for execution
-		////////////////////////////////////////////////////
-		// Execute the kernel by using
-		// clEnqueueNDRangeKernel().
-		// �globalWorkSize� is the 1D dimension of the // work-items
-		error = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, globalWorkSize, NULL, 0, NULL, event);
-		if (error != CL_SUCCESS) {
-			fprintf(stderr, "Failed launching kernel!\n");
-			fprintf(stderr, "Begin %d end %d\n", begin, end);
-			exit(0);
-		}
+	void OperatorGPU(tbb::flow::opencl_node<type_gpu> *gpuNode, t_index indexes) {
+        flow::interface10::input_port<0>(*gpuNode).try_put(indexes);
+		flow::interface10::input_port<1>(*gpuNode).try_put(Adevice);
+		flow::interface10::input_port<2>(*gpuNode).try_put(Bdevice);
+		flow::interface10::input_port<3>(*gpuNode).try_put(Cdevice);
+		cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end << "\033[0m" << endl;
 	}
 
 	void getBackObjectFromGPU(int begin, int end, cl_event *event) {
@@ -89,8 +70,9 @@ public:
 
 	void OperatorCPU(int begin, int end) {
 		for (int i = begin; i < end; i++) {
-			cout << i << endl;
-		}
+            Chost[i] = Ahost[i] + Bhost[i];
+        }
+        cout << "\033[0;33m" << "CPU computing from: " << begin << " to: " << end << "\033[0m" << endl;
 	}
 
 };

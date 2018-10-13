@@ -23,44 +23,22 @@ public:
             tick_count start = tick_count::now();
             body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
             tick_count stop = tick_count::now();
-
-            std::cout << flow::get<0>(data) << start.resolution() << " .. .. " << stop.resolution() << flow::get<1>(data) << std::endl;
         });
-        flow::opencl_node<flow::tuple<type_0>> gpuNode(
+        flow::opencl_node<type_gpu> gpuNode(
                 graph, flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
         flow::queue_node<Bundle> bufferNode(graph);
-        flow::function_node<Bundle> dispatcher(graph, flow::unlimited, [&cpuNode, &gpuNode](Bundle data){
+        flow::function_node<Bundle> dispatcher(graph, flow::unlimited, [&cpuNode, &gpuNode, &body](Bundle data){
                     // TODO: size partition
-                    if (data.type == CPU) {
-                    cpuNode.try_put(make_tuple(data.begin, data.end));
-                    } else {
-                        // Array 0--N con el size del buffer correspondiente
-//                    switch (0) {
-//                        case 8:
-//                            flow::interface10::input_port<8>(gpuNode).try_put(4);
-//                        case 7:
-//                            flow::interface10::input_port<7>(gpuNode).try_put(4);
-//                        case 6:
-//                            flow::interface10::input_port<6>(gpuNode).try_put(4);
-//                        case 5:
-//                            flow::interface10::input_port<5>(gpuNode).try_put(4);
-//                        case 4:
-//                            flow::interface10::input_port<4>(gpuNode).try_put(4);
-//                        case 3:
-//                            flow::interface10::input_port<3>(gpuNode).try_put(4);
-//                        case 2:
-//                            flow::interface10::input_port<2>(gpuNode).try_put(4);
-//                        case 1:
-//                            flow::interface10::input_port<1>(gpuNode).try_put(4);
-//                        case 0:
-//                            flow::interface10::input_port<0>(gpuNode).try_put(4);
-//                            break;
-//                        default:
-//                            std::cerr << "Number of arguments is greater than 10";
-//                            std::exit(1);
-//                    }
-                    flow::interface10::input_port<0>(gpuNode).try_put(4);//.try_put(std::make_tuple(data.begin, data.end));
 
+                    if (data.type == CPU) {
+                    cpuNode.try_put(make_tuple(data.begin, data.end / 2));
+                    } else {
+                        t_index indexes = {data.end / 2, data.end};
+                        tick_count start = tick_count::now();
+                        body->OperatorGPU(&gpuNode, indexes);
+                        // TODO: Waiting stuff
+
+                        tick_count stop = tick_count::now();
                     }
                 });
 
@@ -71,28 +49,19 @@ public:
 
 
 
-        Bundle *bundle = new Bundle(1, 10, CPU);
+        Bundle *bundle = new Bundle(0, 10, CPU);
         bufferNode.try_put(*bundle);
 
         bundle->type = GPU;
         bufferNode.try_put(*bundle);
 
         graph.wait_for_all();
+
+        for (int i = 0; i < 10; i++) {
+            cout << i << ": " << body->Ahost[i] << " + " << body->Bhost[i] << " = " << body->Chost[i] << endl;
+        }
+
     }
-
-    void heterogeneous_parallel_for() {
-        // TODO: Implementation of bundle creation logic
-    }
-
-
-
-private:
-
-    void sendChunk(Bundle *pBundle) {
-
-        // TODO: Some returning stuff and synchronisation
-    }
-
 };
 
 #endif //BARNESLOGFIT_GRAPHLOGFIT_H
