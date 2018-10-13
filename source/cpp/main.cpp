@@ -16,6 +16,7 @@
 #include "Body.h"
 #include "ConsoleUtils.h"
 #include "GraphLogFit.h"
+//#include "Functions.h"
 
 using namespace std;
 using namespace tbb;
@@ -31,19 +32,18 @@ int main(int argc, char** argv){
 	Params p = ConsoleUtils::parseArgs(argc, argv);
 	//end variables
 
-//	/*Checking command line parameters*/
-//	if (argc < 4) {
-//		cerr << "argumentos: fichero_entrada numcpus numgpus [ratio | gpuCHUNK] [cpuChunk]" << endl;
-//		exit(-1);
-//	}
-//	p.numcpus = atoi(argv[2]);
-//	p.numgpus = atoi(argv[3]);
-//	sprintf(p.benchName, "BarnesHut");
-//	sprintf(p.kernelName, "IterativeForce");
-	cerr << "BarnesHut Simulation: "<< argv[1] << ", Number of CPU's cores: " << p.numcpus << ", Number of GPUs: " << p.numgpus << endl;
+
+    cout << "\033[0;33m" << "BarnesHut Simulation: "<< argv[1] << ", Number of CPU's cores: " << p.numcpus << ", Number of GPUs: " << p.numgpus << "\033[0m" << endl;
+
+//    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
+
 	GraphLogFit<nullptr_t > logFit(p, nullptr);
-    logFit.heterogeneous_parallel_for();
-//
+//    logFit.heterogeneous_parallel_for();
+
+
+
+
+
 ///*Initializing scheduler*/
 //	LogFit * hs = LogFit::getInstance(&p);
 //	ReadInput(p.inputData);

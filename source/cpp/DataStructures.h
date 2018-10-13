@@ -43,6 +43,11 @@ using type_0 = cl_int;
 //using type_7 = cl_int;
 //using type_8 = cl_int;
 
+typedef struct Data {
+    tbb::flow::graph *graph;
+    tbb::flow::function_node<tbb::flow::tuple<int, int>> *cpuNode;
+    tbb::flow::opencl_node<tbb::flow::tuple<type_0>> *gpuNode;
+} dataStorage;
 
 
 #endif //BARNESLOGFIT_DATASTRUCTURES_H
