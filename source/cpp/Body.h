@@ -18,36 +18,14 @@ using namespace tbb;
  * class Body
  * **************************************************************************/
 class Body{
+    // TODO: Fill this class with logic and methods
+private:
+    int dataToRun;
 public:
-	bool firsttime;
-public:
-
-	void sendObjectToGPU( int begin, int end, cl_event *event) {
-
-		//tick_count t0 = tick_count::now();
-		//ojo en lugar de copiar nbodies elementos se pueden copiar solo aquellos usados
-		if(firsttime){
-			firsttime=false;
-
-			error = clEnqueueWriteBuffer(command_queue, d_tree, CL_BLOCKING /*blocking*/, 0, sizeof(OctTreeInternalNode) * nbodies, tree, 0, NULL, NULL);
-			if (error != CL_SUCCESS) {
-				fprintf(stderr, "Fail copying d_tree to device!\n");
-				exit(0);
-			}
-
-			error = clEnqueueWriteBuffer(command_queue, d_bodies, CL_BLOCKING/*blocking*/ /*No blocking*/, 0, sizeof(OctTreeLeafNode) * nbodies, bodies, 0, NULL, NULL);
-			if (error != CL_SUCCESS) {
-				fprintf(stderr, "Fail copying  d_bodies to device!\n");
-				exit(0);
-			}
-		}
-		//tick_count t1 = tick_count::now();
-		//memory_time += (t1 - t0).seconds() * 1000; // in order to use milliseconds
-	}
 
 	void OperatorGPU(int begin, int end, cl_event *event) {
 
-		//cerr << "Inside Operator GPU: " << begin  << ", " << end << endl;
+//		cout << "Inside Operator GPU: " << begin  << ", " << end << endl;
 
 		// Associate the input and output buffers with the // kernel
 		// using clSetKernelArg()
@@ -111,28 +89,9 @@ public:
 
 	void OperatorCPU(int begin, int end) {
 		for (int i = begin; i < end; i++) {
-			ComputeForce(groot, &bodies[i], gdiameter);
+			cout << i << endl;
 		}
 	}
-
-	void AllocateMemoryObjects() {
-	d_tree = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_ALLOC_HOST_PTR,
-			sizeof(OctTreeInternalNode) * nbodies, NULL, &error);
-	if (error != CL_SUCCESS) {
-		fprintf(stderr,
-				"Allocation of tree structure into device has failed!\n");
-		exit(0);
-	}
-
-	d_bodies = clCreateBuffer(context,
-			CL_MEM_READ_WRITE | CL_MEM_ALLOC_HOST_PTR,
-			sizeof(OctTreeLeafNode) * nbodies, NULL, &error);
-	if (error != CL_SUCCESS) {
-		fprintf(stderr,
-				"Allocation of bodies structure into device has failed!\n");
-		exit(0);
-	}
-}
 
 };
 //end class

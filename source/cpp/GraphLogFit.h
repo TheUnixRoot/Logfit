@@ -18,13 +18,13 @@ public:
     {
         flow::graph graph;
 
-        flow::function_node<flow::tuple<int, int>> cpuNode(graph, flow::unlimited, [body](flow::tuple<int, int> data){
+        flow::function_node<flow::tuple<int, int>> cpuNode(graph, flow::unlimited, [&body](flow::tuple<int, int> data){
 
             tick_count start = tick_count::now();
-//            body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
+            body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
             tick_count stop = tick_count::now();
 
-            std::cout << start.resolution() << " .. .. " << stop.resolution() << std::endl;
+            std::cout << flow::get<0>(data) << start.resolution() << " .. .. " << stop.resolution() << flow::get<1>(data) << std::endl;
         });
         flow::opencl_node<flow::tuple<type_0>> gpuNode(
                 graph, flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
@@ -71,8 +71,7 @@ public:
 
 
 
-        Bundle *bundle = new Bundle();
-        bundle->type = CPU;
+        Bundle *bundle = new Bundle(1, 10, CPU);
         bufferNode.try_put(*bundle);
 
         bundle->type = GPU;

@@ -28,7 +28,7 @@ using namespace tbb;
 int main(int argc, char** argv){
 	
 	//variables
-	Body body;
+	Body *body = new Body();
 	Params p = ConsoleUtils::parseArgs(argc, argv);
 	//end variables
 
@@ -37,7 +37,7 @@ int main(int argc, char** argv){
 
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
-	GraphLogFit<nullptr_t > logFit(p, nullptr);
+	GraphLogFit<Body> logFit(p, body);
 //    logFit.heterogeneous_parallel_for();
 
 

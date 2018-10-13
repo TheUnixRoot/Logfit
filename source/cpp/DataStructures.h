@@ -30,8 +30,9 @@ public:
     int end;
     Type type;
 
-    Bundle() {
-    };
+    Bundle() {    };
+    Bundle(int b, int e) : begin(b), end(e) {    };
+    Bundle(int b, int e, Type t): begin(b), end(e), type(t) {    };
 };
 using type_0 = cl_int;
 //using type_1 = cl_int;
@@ -42,12 +43,6 @@ using type_0 = cl_int;
 //using type_6 = cl_int;
 //using type_7 = cl_int;
 //using type_8 = cl_int;
-
-typedef struct Data {
-    tbb::flow::graph *graph;
-    tbb::flow::function_node<tbb::flow::tuple<int, int>> *cpuNode;
-    tbb::flow::opencl_node<tbb::flow::tuple<type_0>> *gpuNode;
-} dataStorage;
 
 
 #endif //BARNESLOGFIT_DATASTRUCTURES_H

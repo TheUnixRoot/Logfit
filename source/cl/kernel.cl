@@ -44,7 +44,7 @@ typedef struct {
 
 __kernel void sample(int i){
 
-	printf("Hola desde gpu");
+	printf("Hola desde gpu %d", i);
 
 }
 											
