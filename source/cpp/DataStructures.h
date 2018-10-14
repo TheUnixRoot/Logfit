@@ -22,19 +22,6 @@ typedef struct {
 } Params;
 
 enum Type : int { GPU = 0, CPU = 1 };
-
-/*Bundle class: This class is used to store the information that items need while walking throught pipeline's stages.*/
-class Bundle {
-public:
-    int begin;
-    int end;
-    Type type;
-
-    Bundle() {    };
-    Bundle(int b, int e) : begin(b), end(e) {    };
-    Bundle(int b, int e, Type t): begin(b), end(e), type(t) {    };
-};
-
 struct Token {
 public:
     Type type;

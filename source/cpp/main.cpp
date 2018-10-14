@@ -13,7 +13,6 @@
 #include "Body.h"
 #include "ConsoleUtils.h"
 #include "GraphLogFit.h"
-//#include "Functions.h"
 
 using namespace std;
 using namespace tbb;
@@ -35,7 +34,6 @@ int main(int argc, char** argv){
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
 	GraphLogFit<Body> logFit(p, body);
-//    logFit.heterogeneous_parallel_for();
 
 
 

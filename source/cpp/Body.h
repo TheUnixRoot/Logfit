@@ -54,6 +54,12 @@ public:
         std::cout << "\033[0;33m" << "CPU computing from: " << begin << " to: " << end << "\033[0m" << std::endl;
 	}
 
+    void ShowCallback() {
+        for (int i = 0; i < 10; i++) {
+            std::cout << i << ": " << Ahost[i] << " + " << Bhost[i] << " = " << Chost[i] << std::endl;
+        }
+    }
+
 };
 //end class
 
