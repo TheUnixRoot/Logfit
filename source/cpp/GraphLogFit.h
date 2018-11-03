@@ -14,16 +14,16 @@ template <typename T>
 class GraphLogFit {
 private:
     flow::graph graph;
-    flow::queue_node<Token*> bufferNode;
 public:
 
-    GraphLogFit(Params p, T *body) : bufferNode(graph)
+    GraphLogFit(Params p, T *body)
     {
         flow::function_node<flow::tuple<int, int>, Token*> cpuNode(graph, flow::unlimited, [&body](flow::tuple<int, int> data) -> Token *{
 
             tick_count start = tick_count::now();
             body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
             tick_count stop = tick_count::now();
+
             return new Token(CPU);
         });
 
@@ -34,10 +34,10 @@ public:
             return new Token(GPU);
         });
 
-        flow::function_node<Token*> dispatcher(graph, flow::unlimited, [&cpuNode, &gpuNode, &body](Token* data){
+        flow::function_node<Type > dispatcher(graph, flow::serial, [&cpuNode, &gpuNode, &body](Type token){
                     // TODO: size partition
 
-                    if (data->type == CPU) {
+                    if (token == CPU) {
                         cpuNode.try_put(make_tuple(0, 5));
                     } else {
                         t_index indexes = {5, 10};
@@ -47,18 +47,17 @@ public:
 
                         tick_count stop = tick_count::now();
                     }
-                    delete data;
                 });
 
         std::array<unsigned int, 1> range{1};
         gpuNode.set_range(range);
 
-        flow::make_edge(bufferNode, dispatcher);
+//        flow::make_edge(bufferNode, dispatcher);
 //        flow::make_edge(cpuNode, bufferNode);
         flow::make_edge(flow::output_port<0>(gpuNode), gpuJoiner);
 //        flow::make_edge(gpuJoiner, bufferNode);
-        bufferNode.try_put(new Token(CPU));
-        bufferNode.try_put(new Token(GPU));
+        dispatcher.try_put(CPU);
+        dispatcher.try_put(GPU);
 
         graph.wait_for_all();
         body->ShowCallback();
