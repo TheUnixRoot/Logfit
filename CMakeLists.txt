@@ -18,4 +18,3 @@ include_directories(${TBBROOT}/include ${CLROOT}/include ${BOOST_ROOT}/boost)
 
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_${MODE})
 target_link_libraries(Logfit tbb OpenCL)
-#_debug
