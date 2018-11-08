@@ -36,9 +36,6 @@ public:
             return new Token(GPU);
         });
 
-
-//        gpuNodeArgsManager argsManager(&gpuNode);
-
         flow::function_node<Type> dispatcher(graph, flow::serial, [&cpuNode, &gpuNode, &body](Type token){
                     // TODO: size partition
 
@@ -51,16 +48,8 @@ public:
 
 
                         flow::input_port<0>(gpuNode).try_put(indexes);
-//                        auto args = std::make_tuple(body->Adevice, body->Bdevice, body->Cdevice);
                         auto args = std::make_tuple(1, 2, 3);
                         try_put(args, &gpuNode);
-
-//                        for (int i = 1; i < 4; i++) {
-//                            flow::input_port<i>(gpuNode).try_put(*dst::dataPtrs[i-1]);
-//                        }
-//                        flow::input_port<1>(gpuNode).try_put(*dst::dataPtrs[0]);
-//                        flow::input_port<2>(gpuNode).try_put(*dst::dataPtrs[1]);
-//                        flow::input_port<3>(gpuNode).try_put(*dst::dataPtrs[2]);
 
                         std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end << "\033[0m" << std::endl;
                         // TODO: Waiting stuff - Token should work

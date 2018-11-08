@@ -38,10 +38,6 @@ public:
         std::generate(Bhost, Bhost+vsize, RandomNumber);
     }
 
-	void OperatorGPU(tbb::flow::opencl_node<type_gpu> *gpuNode, t_index indexes) {
-
-	}
-
 	void OperatorCPU(int begin, int end) {
 		for (int i = begin; i < end; i++) {
             Chost[i] = Ahost[i] + Bhost[i];
