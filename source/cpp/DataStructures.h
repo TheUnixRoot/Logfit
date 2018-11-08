@@ -21,28 +21,60 @@ typedef struct {
     float ratioG;
 } Params;
 
-enum Type : int { GPU = 0, CPU = 1 };
+using buffer_f = tbb::flow::opencl_buffer<cl_float>;
 
-/*Bundle class: This class is used to store the information that items need while walking throught pipeline's stages.*/
-class Bundle {
-public:
-    int begin;
-    int end;
-    Type type;
-
-    Bundle() {
-    };
+using t_index = struct _t_index {
+    int begin, end;
 };
-using type_0 = cl_int;
-//using type_1 = cl_int;
-//using type_2 = cl_int;
-//using type_3 = cl_int;
-//using type_4 = cl_int;
-//using type_5 = cl_int;
-//using type_6 = cl_int;
-//using type_7 = cl_int;
-//using type_8 = cl_int;
+using type_gpu = tbb::flow::tuple<t_index, buffer_f , buffer_f , buffer_f>;
 
 
+
+
+enum Type : int { GPU = 0, CPU = 1 };
+namespace dst {
+    namespace {
+        std::vector<tbb::flow::opencl_buffer<cl_float>*> dataPtrs;
+        std::mutex dataMutex;
+    }
+
+    float *malloc_f(int vsize) {
+        dataMutex.lock();
+        auto vector_float = new tbb::flow::opencl_buffer<cl_float> (vsize);
+        dataPtrs.push_back(vector_float);
+        dataMutex.unlock();
+        return vector_float->data();
+    }
+
+    void delete_f(float *vector) {
+        dataMutex.lock();
+        int i = 0;
+        while (vector != dataPtrs[i]->data() && i < dataPtrs.size()) {
+            i++;
+        }
+        if (i == dataPtrs.size()) {
+            throw "Cannot delete non managed float pointers.";
+        }
+        delete(dataPtrs[i]);
+        dataPtrs.erase(dataPtrs.begin() + i);
+        dataMutex.unlock();
+    }
+
+    template<std::size_t I = 1, typename... Tp>
+    inline typename std::enable_if<I == sizeof...(Tp), void>::type
+    try_put(std::tuple<Tp...>& t, tbb::flow::opencl_node<type_gpu> *node)
+    {
+        tbb::flow::interface10::input_port<I>(*node).try_put(*dataPtrs[I-1]);
+    }
+
+    template<std::size_t I = 1, typename... Tp>
+    inline typename std::enable_if<I < sizeof...(Tp), void>::type
+    try_put(std::tuple<Tp...>& t, tbb::flow::opencl_node<type_gpu> *node)
+    {
+        tbb::flow::interface10::input_port<I>(*node).try_put(*dataPtrs[I-1]);
+        try_put<I + 1, Tp...>(t, node);
+    }
+
+}
 
 #endif //BARNESLOGFIT_DATASTRUCTURES_H

@@ -109,9 +109,9 @@ static Params parseArgs(int argc, char *argv[]) {
         cerr << "Parameters with wrong values. Error: " << message << endl;
         exit(-1);
     }
-    clog << message << endl;
-    clog << "Console parameters read for BarnesHut Simulation: " << params.inputData << ", Number of CPU's cores: "
-         << params.numcpus << ", Number of GPUs: " << params.numgpus << ", Percent in GPU: " << params.ratioG << endl;
+    cout << "\033[0;33m" << message << "\033[0m" << endl << "Console parameters read for BarnesHut Simulation: "
+         << params.inputData << ", Number of CPU's cores: " << params.numcpus << ", Number of GPUs: "
+         << params.numgpus << ", Percent in GPU: " << params.ratioG << endl;
 
     return params;
 }
