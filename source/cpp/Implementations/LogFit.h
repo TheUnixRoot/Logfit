@@ -28,7 +28,7 @@
 #include "tbb/task.h"
 #include "tbb/atomic.h"
 #include "tbb/parallel_for.h"
-#include "DataStructures.h"
+#include "../DataStructures/ClientDataStructures.h"
 #include "Scheduler.h"
 #include <math.h>
 

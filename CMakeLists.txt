@@ -9,8 +9,8 @@ set(BOOST_ROOT bin/boost_1_66_0)
 set(TBBROOT $ENV{TBBROOT})
 set(CLROOT /opt/opencl-sdk)
 set(MAIN_FILE source/cpp/main.cpp)
-set(SOURCE_FILES source/cpp/main.cpp source/cpp/ConsoleUtils.h source/cpp/DataStructures.h
-            source/cpp/Body.h source/cpp/GraphLogFit.h)
+set(SOURCE_FILES source/cpp/main.cpp source/cpp/Utils/ConsoleUtils.h source/cpp/DataStructures/ClientDataStructures.h
+        source/cpp/Implementations/Body.h source/cpp/Implementations/GraphLogFit.h source/cpp/Interfaces/IBody.h source/cpp/DataStructures/ProvidedDataStructures.h)
 add_executable(Logfit ${SOURCE_FILES})
 
 

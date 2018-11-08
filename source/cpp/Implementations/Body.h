@@ -13,7 +13,8 @@
 #include "tbb/parallel_for.h"
 #include "tbb/task.h"
 #include "tbb/tick_count.h"
-#include "DataStructures.h"
+#include "../DataStructures/ClientDataStructures.h"
+#include "../Interfaces/IBody.h"
 
 using namespace tbb;
 
@@ -24,8 +25,7 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class Body {
-    // TODO: Fill this class with logic and methods
+class Body : IBody {
 public:
     const int vsize = 10;
 //    buffer_f Adevice;

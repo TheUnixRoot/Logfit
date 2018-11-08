@@ -5,19 +5,19 @@
 #ifndef BARNESLOGFIT_GRAPHLOGFIT_H
 #define BARNESLOGFIT_GRAPHLOGFIT_H
 
-#include "DataStructures.h"
+#include "../DataStructures/ProvidedDataStructures.h"
 #include "tbb/tick_count.h"
 
 using namespace tbb;
 
-template<typename T>
+template<typename TBody, typename Tgpu>
 class GraphLogFit {
 private:
     flow::graph graph;
     tick_count startCpu, stopCpu, startGpu, stopGpu;
 public:
 
-    GraphLogFit(Params p, T *body) {
+    GraphLogFit(Params p, TBody *body) {
         flow::function_node<t_index, Type> cpuNode(graph, flow::unlimited, [&body, this](t_index indexes) -> Type {
 
             startCpu = tick_count::now();
@@ -27,11 +27,10 @@ public:
             return CPU;
         });
 
-        flow::opencl_node<type_gpu> gpuNode(
-                graph,
+        flow::opencl_node<Tgpu> gpuNode(graph,
                 flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
 
-        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [&body, this](t_index indexes) -> Type {
+        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [&body, this](t_index) -> Type {
             stopGpu = tick_count::now();
             return GPU;
         });
@@ -49,7 +48,7 @@ public:
 
                 flow::input_port<0>(gpuNode).try_put(indexes);
                 auto args = std::make_tuple(1, 2, 3);
-                dataStructures::try_put(args, &gpuNode);
+                dataStructures::try_put<Tgpu>(args, &gpuNode);
 
                 std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end
                           << "\033[0m" << std::endl;
