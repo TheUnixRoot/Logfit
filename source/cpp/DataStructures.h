@@ -66,7 +66,9 @@ namespace dst {
 template<std::size_t I = 1, typename... Tp>
 inline typename std::enable_if<I == sizeof...(Tp), void>::type
 try_put(std::tuple<Tp...>& t, tbb::flow::opencl_node<type_gpu> *node)
-{ }
+{
+    tbb::flow::interface10::input_port<I>(*node).try_put(*dst::dataPtrs[I-1]);
+}
 
 template<std::size_t I = 1, typename... Tp>
 inline typename std::enable_if<I < sizeof...(Tp), void>::type

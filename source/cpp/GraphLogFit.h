@@ -32,7 +32,6 @@ public:
 
         flow::function_node<t_index, Token*> gpuJoiner(graph, flow::unlimited, [&body](t_index indexes) -> Token *{
             tick_count stop = tick_count::now();
-            sleep(3);
             cout << "#DONE" << endl;
             return new Token(GPU);
         });
