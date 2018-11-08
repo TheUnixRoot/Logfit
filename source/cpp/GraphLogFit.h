@@ -14,63 +14,64 @@ template <typename T>
 class GraphLogFit {
 private:
     flow::graph graph;
+    tick_count startCpu, stopCpu, startGpu, stopGpu;
 public:
 
     GraphLogFit(Params p, T *body)
     {
-        flow::function_node<flow::tuple<int, int>, Token*> cpuNode(graph, flow::unlimited, [&body](flow::tuple<int, int> data) -> Token *{
+        flow::function_node<flow::tuple<int, int>, Type> cpuNode(graph, flow::unlimited, [&body, this](flow::tuple<int, int> data) -> Type {
 
-            tick_count start = tick_count::now();
+            startCpu = tick_count::now();
             body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
-            tick_count stop = tick_count::now();
+            stopCpu = tick_count::now();
 
-            return new Token(CPU);
+            return CPU;
         });
 
         flow::opencl_node<type_gpu> gpuNode(
                 graph, flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
 
-        flow::function_node<t_index, Token*> gpuJoiner(graph, flow::unlimited, [&body](t_index indexes) -> Token *{
-            tick_count stop = tick_count::now();
+        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [&body, this](t_index indexes) -> Type {
+            stopGpu = tick_count::now();
             cout << "#DONE" << endl;
-            return new Token(GPU);
+            return GPU;
         });
 
-        flow::function_node<Type> dispatcher(graph, flow::serial, [&cpuNode, &gpuNode, &body](Type token){
+        flow::function_node<Type> dispatcher(graph, flow::serial, [&cpuNode, &gpuNode, &body, this](Type token){
                     // TODO: size partition
 
-                    if (token == CPU) {
-                        cpuNode.try_put(make_tuple(0, 5));
-                    } else {
-                        t_index indexes = {5, 10};
-                        tick_count start = tick_count::now();
+            if (token == CPU) {
+                cpuNode.try_put(make_tuple(0, 5));
+            } else {
+                t_index indexes = {5, 10};
+                startGpu = tick_count::now();
 
 
 
-                        flow::input_port<0>(gpuNode).try_put(indexes);
-                        auto args = std::make_tuple(1, 2, 3);
-                        try_put(args, &gpuNode);
+                flow::input_port<0>(gpuNode).try_put(indexes);
+                auto args = std::make_tuple(1, 2, 3);
+                dst::try_put(args, &gpuNode);
 
-                        std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end << "\033[0m" << std::endl;
-                        // TODO: Waiting stuff - Token should work
+                std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end << "\033[0m" << std::endl;
+                // TODO: Waiting stuff - Token should work
 
-                    }
-                });
+            }
+        });
 
         std::array<unsigned int, 1> range{1};
         gpuNode.set_range(range);
 
-//        flow::make_edge(bufferNode, dispatcher);
-//        flow::make_edge(cpuNode, bufferNode);
-        int k = 0;
-//        flow::join_node< tbb::flow::tuple<int,float> > j(graph);
+//        flow::make_edge(cpuNode, dispatcher);
+//        flow::make_edge(gpuJoiner, dispatcher);
         flow::make_edge(flow::output_port<0>(gpuNode), gpuJoiner);
-//        flow::make_edge(gpuJoiner, bufferNode);
         dispatcher.try_put(CPU);
         dispatcher.try_put(GPU);
 
         graph.wait_for_all();
+        std::cout << "CPU differential time: " << (stopCpu - startCpu).seconds() << std::endl;
+        std::cout << "GPU differential time: " << (stopGpu - startGpu).seconds() << std::endl;
         body->ShowCallback();
+        body->~Body();
     }
 };
 

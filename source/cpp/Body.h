@@ -51,6 +51,12 @@ public:
         }
     }
 
+    ~Body() {
+        dst::delete_f(Ahost);
+        dst::delete_f(Bhost);
+        dst::delete_f(Chost);
+    }
+
 };
 //end class
 
