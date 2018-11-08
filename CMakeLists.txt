@@ -10,7 +10,7 @@ set(TBBROOT $ENV{TBBROOT})
 set(CLROOT /opt/opencl-sdk)
 set(MAIN_FILE source/cpp/main.cpp)
 set(SOURCE_FILES source/cpp/main.cpp source/cpp/ConsoleUtils.h source/cpp/DataStructures.h
-            source/cpp/Body.h source/cpp/Scheduler.h source/cpp/GraphLogFit.h source/cpp/Functions.h)
+            source/cpp/Body.h source/cpp/GraphLogFit.h)
 add_executable(Logfit ${SOURCE_FILES})
 
 

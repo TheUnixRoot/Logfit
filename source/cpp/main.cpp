@@ -33,7 +33,7 @@ int main(int argc, char** argv){
 
 	GraphLogFit<Body> logFit(p, body);
 
-    
+
 ///*Initializing scheduler*/
 //	LogFit * hs = LogFit::getInstance(&p);
 //	ReadInput(p.inputData);

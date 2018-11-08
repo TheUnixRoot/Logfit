@@ -10,38 +10,38 @@
 
 using namespace tbb;
 
-template <typename T>
+template<typename T>
 class GraphLogFit {
 private:
     flow::graph graph;
     tick_count startCpu, stopCpu, startGpu, stopGpu;
 public:
 
-    GraphLogFit(Params p, T *body)
-    {
-        flow::function_node<flow::tuple<int, int>, Type> cpuNode(graph, flow::unlimited, [&body, this](flow::tuple<int, int> data) -> Type {
+    GraphLogFit(Params p, T *body) {
+        flow::function_node<t_index, Type> cpuNode(graph, flow::unlimited, [&body, this](t_index indexes) -> Type {
 
             startCpu = tick_count::now();
-            body->OperatorCPU(flow::get<0>(data), flow::get<1>(data));
+            body->OperatorCPU(indexes.begin, indexes.end);
             stopCpu = tick_count::now();
 
             return CPU;
         });
 
         flow::opencl_node<type_gpu> gpuNode(
-                graph, flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
+                graph,
+                flow::opencl_program<>(flow::opencl_program_type::SOURCE, p.openclFile).get_kernel(p.kernelName));
 
         flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [&body, this](t_index indexes) -> Type {
             stopGpu = tick_count::now();
-            cout << "#DONE" << endl;
             return GPU;
         });
 
-        flow::function_node<Type> dispatcher(graph, flow::serial, [&cpuNode, &gpuNode, &body, this](Type token){
-                    // TODO: size partition
+        flow::function_node<Type> dispatcher(graph, flow::serial, [&cpuNode, &gpuNode, &body, this](Type token) {
+            // TODO: size partition
 
             if (token == CPU) {
-                cpuNode.try_put(make_tuple(0, 5));
+                t_index indexes = {0, 5};
+                cpuNode.try_put(indexes);
             } else {
                 t_index indexes = {5, 10};
                 startGpu = tick_count::now();
@@ -49,9 +49,10 @@ public:
 
                 flow::input_port<0>(gpuNode).try_put(indexes);
                 auto args = std::make_tuple(1, 2, 3);
-                dst::try_put(args, &gpuNode);
+                dataStructures::try_put(args, &gpuNode);
 
-                std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end << "\033[0m" << std::endl;
+                std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end
+                          << "\033[0m" << std::endl;
                 // TODO: Waiting stuff - Token should work
 
             }
