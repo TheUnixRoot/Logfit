@@ -7,6 +7,7 @@
  * **************************************************************************/
 class IBody {
 public:
+    virtual int GetVsize() = 0;
     // TODO: Fill this class with logic and methods
     virtual void OperatorCPU(int begin, int end) = 0;
 

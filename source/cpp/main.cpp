@@ -11,8 +11,9 @@
 #include <iostream>
 #include <fstream>
 #include "Implementations/Body.h"
+#include "Implementations/GraphScheduler.h"
+#include "Implementations/LogFitEngine.h"
 #include "Utils/ConsoleUtils.h"
-#include "Implementations/GraphLogFit.h"
 
 using namespace std;
 using namespace tbb;
@@ -31,7 +32,8 @@ int main(int argc, char** argv){
 
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
-	GraphLogFit<Body, type_gpu> logFit(p, body);
+    LogFitEngine logFitEngine;
+	GraphScheduler<Body, type_gpu, LogFitEngine> logFit(p, body, logFitEngine);
 
 
 ///*Initializing scheduler*/

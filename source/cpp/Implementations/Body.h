@@ -26,7 +26,7 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
  * class Body
  * **************************************************************************/
 class Body : IBody {
-public:
+private:
     const int vsize = 10;
 //    buffer_f Adevice;
 //    buffer_f Bdevice;
@@ -54,6 +54,10 @@ public:
         for (int i = 0; i < 10; i++) {
             std::cout << i << ": " << Ahost[i] << " + " << Bhost[i] << " = " << Chost[i] << std::endl;
         }
+    }
+
+    int GetVsize() {
+        return vsize;
     }
 
     ~Body() {
