@@ -25,7 +25,7 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class Body : IBody {
+class ExecutionBody : IBody {
 private:
     const int vsize = 10;
 //    buffer_f Adevice;
@@ -36,7 +36,7 @@ private:
     float *Chost;
 public:
 
-    Body() : Ahost(dataStructures::malloc_f(vsize)), Bhost(dataStructures::malloc_f(vsize)),
+    ExecutionBody() : Ahost(dataStructures::malloc_f(vsize)), Bhost(dataStructures::malloc_f(vsize)),
              Chost(dataStructures::malloc_f(vsize)) {
 
         std::generate(Ahost, Ahost + vsize, RandomNumber);
@@ -60,7 +60,7 @@ public:
         return vsize;
     }
 
-    ~Body() {
+    ~ExecutionBody() {
         dataStructures::delete_f(Ahost);
         dataStructures::delete_f(Bhost);
         dataStructures::delete_f(Chost);

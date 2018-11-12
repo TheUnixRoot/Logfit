@@ -11,88 +11,101 @@
 
 using namespace tbb;
 
-template<typename TBody, typename Tgpu, typename TSchedulerEngine, typename std::enable_if<std::is_base_of<IEngine, TSchedulerEngine>::value>::type* = nullptr>
+template<typename TExectionBody, typename TGpuType, typename TSchedulerEngine,
+        typename std::enable_if<std::is_base_of<IEngine, TSchedulerEngine>::value>::type * = nullptr>
 class GraphScheduler {
 private:
-    std::mutex mtx;
-    flow::graph graph;
-    int begin, end, cpuCounter;
+    Params p;
+    TExectionBody *body;
+    TSchedulerEngine engine;
 public:
 
-    GraphScheduler(Params p, TBody *body, TSchedulerEngine engine) : mtx(), begin(0), end(body->GetVsize()), cpuCounter(0) {
-        flow::function_node<t_index, Type> cpuNode(graph, flow::unlimited, [&engine, &body, this](t_index indexes) -> Type {
+    GraphScheduler(Params p, TExectionBody *body, TSchedulerEngine engine) : p(p), body(body), engine(engine) {}
 
-            engine.SetStartCpu(tick_count::now());
-            body->OperatorCPU(indexes.begin, indexes.end);
-            engine.SetStopCpu(tick_count::now());
+    void StartParallelExecution() {
+        std::mutex mtx;
+        flow::graph graph;
+        int begin = 0, end = body->GetVsize(), cpuCounter = 0;
+        flow::function_node<t_index, Type> cpuNode(graph, flow::unlimited,
+                                                   [this, &cpuCounter](t_index indexes) -> Type {
 
+                                                       engine.SetStartCpu(tick_count::now());
+                                                       body->OperatorCPU(indexes.begin, indexes.end);
+                                                       engine.SetStopCpu(tick_count::now());
 
-            std::cout << "CPU differential time: " << (engine.GetStopCpu() - engine.GetStartCpu()).seconds()<< std::endl
 #ifdef NDEBUG
-                    << "Counter: " << cpuCounter << std::endl
+                                                       std::cout << "CPU differential time: " << (engine.GetStopCpu() -
+                                                                                                  engine.GetStartCpu()).seconds()
+                                                                 << std::endl;
+
+                                                       std::cout << "Counter: " << ++cpuCounter << std::endl;
 #endif
-                    ;
-            return CPU;
-        });
+                                                       return CPU;
+                                                   });
 
-        flow::opencl_node<Tgpu> gpuNode(graph,
-                                        flow::opencl_program<>(flow::opencl_program_type::SOURCE,
-                                                               p.openclFile).get_kernel(p.kernelName));
+        flow::opencl_node<TGpuType> gpuNode(graph,
+                                            flow::opencl_program<>(flow::opencl_program_type::SOURCE,
+                                                                   p.openclFile).get_kernel(p.kernelName));
 
-        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [&engine, &body, this](t_index) -> Type {
+        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [this](t_index) -> Type {
             engine.SetStopGpu(tick_count::now());
-            std::cout << "GPU differential time: " << (engine.GetStopGpu() - engine.GetStartGpu()).seconds() << std::endl;
+
+#ifdef NDEBUG
+            std::cout << "GPU differential time: " << (engine.GetStopGpu() - engine.GetStartGpu()).seconds()
+                      << std::endl;
+#endif
             return GPU;
         });
 
-        flow::function_node<Type> dispatcher(graph, flow::serial, [&engine, &cpuNode, &gpuNode, &body, this](Type token) {
-            // TODO: size partition
-            mtx.lock();
-            if (begin <= end) {
-                //Checking whether the GPU is idle or not.
+        flow::function_node<Type> dispatcher(graph, flow::serial,
+                                             [this, &cpuNode, &gpuNode, &mtx, &begin, &end](Type token) {
+                                                 // TODO: size partition
+                                                 mtx.lock();
+                                                 if (begin <= end) {
+                                                     if (token == GPU) {
+                                                         int ckgpu = engine.GetGPUChunk(begin, end);
+                                                         if (ckgpu >
+                                                             0) {    // si el trozo es > 0 se genera un token de GPU
+                                                             int auxEnd = begin + ckgpu;
+                                                             auxEnd = (auxEnd > end) ? end : auxEnd;
+                                                             t_index indexes = {begin, auxEnd};
+                                                             begin = auxEnd;
 
-                if (token == GPU) {
-                    int ckgpu = engine.GetGPUChunk(begin, end);
-                    if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
-                        int auxEnd = begin + ckgpu;
-                        auxEnd = (auxEnd > end) ? end : auxEnd;
-                        t_index indexes = {begin, auxEnd};
-                        begin = auxEnd;
-
-                        mtx.unlock();
+                                                             mtx.unlock();
 #ifdef NDEBUG
-                        std::cout << "\033[0;33m" << "GPU computing from: " << indexes.begin << " to: " << indexes.end
-                                  << "\033[0m" << std::endl;
+                                                             std::cout << "\033[0;33m" << "GPU computing from: "
+                                                                       << indexes.begin << " to: " << indexes.end
+                                                                       << "\033[0m" << std::endl;
 #endif
-                        flow::input_port<0>(gpuNode).try_put(indexes);
-                        auto args = std::make_tuple(1, 2, 3);
-                        engine.SetStartGpu(tick_count::now());
-                        dataStructures::try_put<Tgpu>(args, &gpuNode);
-                    } else {
-                        mtx.unlock();
-                    }
-                } else {
-                    int ckcpu = engine.GetGPUChunk(begin, end);
-                    if (ckcpu > 0) {    // si el trozo es > 0 se genera un token de GPU
-                        int auxEnd = begin + ckcpu;
-                        auxEnd = (auxEnd > end) ? end : auxEnd;
-                        t_index indexes = {begin, auxEnd};
-                        begin = auxEnd;
-                        cpuCounter++;
-
-                        mtx.unlock();
+                                                             flow::input_port<0>(gpuNode).try_put(indexes);
+                                                             auto args = std::make_tuple(1, 2, 3);
+                                                             engine.SetStartGpu(tick_count::now());
+                                                             dataStructures::try_put<TGpuType>(args, &gpuNode);
+                                                         } else {
+                                                             mtx.unlock();
+                                                         }
+                                                     } else {
+                                                         int ckcpu = engine.GetGPUChunk(begin, end);
+                                                         if (ckcpu >
+                                                             0) {    // si el trozo es > 0 se genera un token de GPU
+                                                             int auxEnd = begin + ckcpu;
+                                                             auxEnd = (auxEnd > end) ? end : auxEnd;
+                                                             t_index indexes = {begin, auxEnd};
+                                                             begin = auxEnd;
+                                                             mtx.unlock();
 #ifdef NDEBUG
-                        std::cout << "\033[0;33m" << "CPU computing from: " << indexes.begin << " to: " << indexes.end
-                                  << "\033[0m" << std::endl;
+                                                             std::cout << "\033[0;33m" << "CPU computing from: "
+                                                                       << indexes.begin << " to: " << indexes.end
+                                                                       << "\033[0m" << std::endl;
 #endif
-                        cpuNode.try_put(indexes);
-                    } else {
+                                                             cpuNode.try_put(indexes);
+                                                         } else {
 
-                        mtx.unlock();
-                    }
-                }
-            }
-        });
+                                                             mtx.unlock();
+                                                         }
+                                                     }
+                                                 }
+                                             });
 
         std::array<unsigned int, 1> range{1};
         gpuNode.set_range(range);
@@ -105,7 +118,6 @@ public:
 
         graph.wait_for_all();
         body->ShowCallback();
-        body->~Body();
     }
 };
 

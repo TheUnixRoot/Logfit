@@ -10,7 +10,7 @@ set(MAIN_FILE source/cpp/main.cpp)
 set(SOURCE_FILES    source/cpp/main.cpp
                     source/cpp/DataStructures/ProvidedDataStructures.h
                     source/cpp/DataStructures/ClientDataStructures.h
-                    source/cpp/Implementations/Body.h
+        source/cpp/Implementations/ExecutionBody.h
         source/cpp/Implementations/GraphScheduler.h
         source/cpp/Implementations/LogFitEngine.h
                     source/cpp/Interfaces/IBody.h

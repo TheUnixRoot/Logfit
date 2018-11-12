@@ -10,7 +10,7 @@
 #include <cstdlib> 
 #include <iostream>
 #include <fstream>
-#include "Implementations/Body.h"
+#include "Implementations/ExecutionBody.h"
 #include "Implementations/GraphScheduler.h"
 #include "Implementations/LogFitEngine.h"
 #include "Utils/ConsoleUtils.h"
@@ -25,7 +25,7 @@ using namespace tbb;
 int main(int argc, char** argv){
 	
 	//variables
-	Body *body = new Body();
+	ExecutionBody *body = new ExecutionBody();
 	Params p = ConsoleUtils::parseArgs(argc, argv);
 	//end variables
     cout << "\033[0;33m" << "BarnesHut Simulation: "<< argv[1] << ", Number of CPU's cores: " << p.numcpus << ", Number of GPUs: " << p.numgpus << "\033[0m" << endl;
@@ -33,8 +33,9 @@ int main(int argc, char** argv){
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
     LogFitEngine logFitEngine;
-	GraphScheduler<Body, type_gpu, LogFitEngine> logFit(p, body, logFitEngine);
-
+	GraphScheduler<ExecutionBody, type_gpu, LogFitEngine> logFit(p, body, logFitEngine);
+    logFit.StartParallelExecution();
+    body->~ExecutionBody();
 
 ///*Initializing scheduler*/
 //	LogFit * hs = LogFit::getInstance(&p);
