@@ -12,8 +12,9 @@
 #include <fstream>
 #include "Implementations/ExecutionBody.h"
 #include "Implementations/GraphScheduler.h"
-#include "Implementations/LogFitEngine.h"
+#include "Implementations/LogFit.h"
 #include "Utils/ConsoleUtils.h"
+#include "DataStructures/ProvidedDataStructures.h"
 
 using namespace std;
 using namespace tbb;
@@ -32,7 +33,7 @@ int main(int argc, char** argv){
 
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
-    LogFitEngine logFitEngine;
+    LogFitEngine logFitEngine(p.numcpus, p.numgpus, 1, 1);
 	GraphScheduler<ExecutionBody, type_gpu, LogFitEngine> logFit(p, body, logFitEngine);
     logFit.StartParallelExecution();
     body->~ExecutionBody();

@@ -12,7 +12,7 @@ set(SOURCE_FILES    source/cpp/main.cpp
                     source/cpp/DataStructures/ClientDataStructures.h
         source/cpp/Implementations/ExecutionBody.h
         source/cpp/Implementations/GraphScheduler.h
-        source/cpp/Implementations/LogFitEngine.h
+        source/cpp/Implementations/LogFit.h
                     source/cpp/Interfaces/IBody.h
         source/cpp/Interfaces/IEngine.h
                     source/cpp/Utils/ConsoleUtils.h

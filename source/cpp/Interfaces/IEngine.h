@@ -6,27 +6,14 @@
 #define BARNESLOGFIT_ISCHEDULER_H
 class IEngine {
 public:
-    virtual ~IEngine() = default;
 
-    virtual int GetGPUChunk(int startFrom, int to) = 0;
+    virtual unsigned int getGPUChunk(unsigned int begin, unsigned int end) = 0;
 
-    virtual int GetCPUChunk(int startFrom, int to) = 0;
+    virtual unsigned int getCPUChunk(unsigned int begin, unsigned int end) = 0;
 
-    virtual void SetStartCpu(tick_count t) = 0;
+    virtual void recordGPUTh(unsigned int chunk, float time) = 0;
 
-    virtual void SetStartGpu(tick_count t) = 0;
-
-    virtual tick_count GetStartCpu() = 0;
-
-    virtual tick_count GetStartGpu() = 0;
-
-    virtual void SetStopCpu(tick_count t) = 0;
-
-    virtual void SetStopGpu(tick_count t) = 0;
-
-    virtual tick_count GetStopCpu() = 0;
-
-    virtual tick_count GetStopGpu() = 0;
+    virtual void recordCPUTh(unsigned int chunk, float time) = 0;
 };
 
 #endif //BARNESLOGFIT_ISCHEDULER_H

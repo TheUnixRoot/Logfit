@@ -18,6 +18,8 @@ private:
     Params p;
     TExectionBody *body;
     TSchedulerEngine engine;
+
+    tick_count startCpu, stopCpu, startGpu, stopGpu;
 public:
 
     GraphScheduler(Params p, TExectionBody *body, TSchedulerEngine engine) : p(p), body(body), engine(engine) {}
@@ -29,13 +31,16 @@ public:
         flow::function_node<t_index, Type> cpuNode(graph, flow::unlimited,
                                                    [this, &cpuCounter](t_index indexes) -> Type {
 
-                                                       engine.SetStartCpu(tick_count::now());
+                                                       startCpu = tick_count::now();
                                                        body->OperatorCPU(indexes.begin, indexes.end);
-                                                       engine.SetStopCpu(tick_count::now());
+                                                       stopCpu = tick_count::now();
 
+
+                                                       engine.recordCPUTh(indexes.end - indexes.begin, (stopCpu -
+                                                                                                        startCpu).seconds());
 #ifdef NDEBUG
-                                                       std::cout << "CPU differential time: " << (engine.GetStopCpu() -
-                                                                                                  engine.GetStartCpu()).seconds()
+                                                       std::cout << "CPU differential time: " << (stopCpu -
+                                                                                                  startCpu).seconds()
                                                                  << std::endl;
 
                                                        std::cout << "Counter: " << ++cpuCounter << std::endl;
@@ -47,11 +52,13 @@ public:
                                             flow::opencl_program<>(flow::opencl_program_type::SOURCE,
                                                                    p.openclFile).get_kernel(p.kernelName));
 
-        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [this](t_index) -> Type {
-            engine.SetStopGpu(tick_count::now());
+        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [this](t_index indexes) -> Type {
+            stopGpu = tick_count::now();
+
+            engine.recordGPUTh(indexes.end - indexes.begin, (stopGpu - startGpu).seconds());
 
 #ifdef NDEBUG
-            std::cout << "GPU differential time: " << (engine.GetStopGpu() - engine.GetStartGpu()).seconds()
+            std::cout << "GPU differential time: " << (stopGpu - startGpu).seconds()
                       << std::endl;
 #endif
             return GPU;
@@ -63,7 +70,7 @@ public:
                                                  mtx.lock();
                                                  if (begin <= end) {
                                                      if (token == GPU) {
-                                                         int ckgpu = engine.GetGPUChunk(begin, end);
+                                                         int ckgpu = engine.getGPUChunk(begin, end);
                                                          if (ckgpu >
                                                              0) {    // si el trozo es > 0 se genera un token de GPU
                                                              int auxEnd = begin + ckgpu;
@@ -79,13 +86,13 @@ public:
 #endif
                                                              flow::input_port<0>(gpuNode).try_put(indexes);
                                                              auto args = std::make_tuple(1, 2, 3);
-                                                             engine.SetStartGpu(tick_count::now());
+                                                             startGpu = tick_count::now();
                                                              dataStructures::try_put<TGpuType>(args, &gpuNode);
                                                          } else {
                                                              mtx.unlock();
                                                          }
                                                      } else {
-                                                         int ckcpu = engine.GetGPUChunk(begin, end);
+                                                         int ckcpu = engine.getGPUChunk(begin, end);
                                                          if (ckcpu >
                                                              0) {    // si el trozo es > 0 se genera un token de GPU
                                                              int auxEnd = begin + ckcpu;
