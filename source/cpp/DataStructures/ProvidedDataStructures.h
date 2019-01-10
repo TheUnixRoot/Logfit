@@ -29,44 +29,22 @@ enum Type : int {
     GPU = 0, CPU = 1
 };
 namespace dataStructures {
-    namespace {
-        std::vector<tbb::flow::opencl_buffer<cl_float> *> dataPtrs;
-        std::mutex dataMutex;
+
+    template<std::size_t I = 0, typename ...Tg>
+    inline typename std::enable_if<I == sizeof...(Tg), void>::type
+    try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args) {
+
     }
 
-    float *malloc_f(int vsize) {
-        dataMutex.lock();
-        auto vector_float = new tbb::flow::opencl_buffer<cl_float>(vsize);
-        dataPtrs.push_back(vector_float);
-        dataMutex.unlock();
-        return vector_float->data();
-    }
-
-    void delete_f(float *vector) {
-        dataMutex.lock();
-        int i = 0;
-        while (vector != dataPtrs[i]->data() && i < dataPtrs.size()) {
-            i++;
-        }
-        if (i == dataPtrs.size()) {
-            throw "Cannot delete non managed float pointers.";
-        }
-        delete (dataPtrs[i]);
-        dataPtrs.erase(dataPtrs.begin() + i);
-        dataMutex.unlock();
-    }
-
-    template<typename Tgpu,std::size_t I = 1, typename... Tp>
-    inline typename std::enable_if<I == sizeof...(Tp), void>::type
-    try_put(std::tuple<Tp...> &t, tbb::flow::opencl_node<Tgpu> *node) {
-        tbb::flow::interface10::input_port<I>(*node).try_put(*dataPtrs[I - 1]);
-    }
-
-    template<typename Tgpu, std::size_t I = 1, typename... Tp>
-    inline typename std::enable_if<I < sizeof...(Tp), void>::type
-    try_put(std::tuple<Tp...> &t, tbb::flow::opencl_node<Tgpu> *node) {
-        tbb::flow::interface10::input_port<I>(*node).try_put(*dataPtrs[I - 1]);
-        try_put<Tgpu, I + 1, Tp...>(t, node);
+    template<std::size_t I = 0, typename ...Tg>
+    inline typename std::enable_if<I < sizeof...(Tg), void>::type
+    try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args) {
+        size_t i = I;
+        auto t = tbb::flow::get<I>(args);
+        tbb::flow::interface10::input_port<I>(*node).try_put(
+                t
+        );
+        try_put<I + 1, Tg...>(node, args);
     }
 
 }

@@ -34,7 +34,7 @@ int main(int argc, char** argv){
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
     LogFitEngine logFitEngine(p.numcpus, p.numgpus, 1, 1);
-	GraphScheduler<ExecutionBody, type_gpu, LogFitEngine> logFit(p, body, logFitEngine);
+	GraphScheduler<ExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logFit(p, body, logFitEngine);
     logFit.StartParallelExecution();
     body->~ExecutionBody();
 

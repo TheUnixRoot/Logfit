@@ -11,8 +11,8 @@
 
 using namespace tbb;
 
-template<typename TExectionBody, typename TGpuType, typename TSchedulerEngine,
-        typename std::enable_if<std::is_base_of<IEngine, TSchedulerEngine>::value>::type * = nullptr>
+template<typename TExectionBody, typename TSchedulerEngine,
+        typename ...TArgs>
 class GraphScheduler {
 private:
     Params p;
@@ -48,7 +48,7 @@ public:
                                                        return CPU;
                                                    });
 
-        flow::opencl_node<TGpuType> gpuNode(graph,
+        flow::opencl_node<tbb::flow::tuple<TArgs ...>> gpuNode(graph,
                                             flow::opencl_program<>(flow::opencl_program_type::SOURCE,
                                                                    p.openclFile).get_kernel(p.kernelName));
 
@@ -84,10 +84,11 @@ public:
                                                                        << indexes.begin << " to: " << indexes.end
                                                                        << "\033[0m" << std::endl;
 #endif
-                                                             flow::input_port<0>(gpuNode).try_put(indexes);
-                                                             auto args = std::make_tuple(1, 2, 3);
+
+                                                             // MOCK
+                                                             auto args = std::make_tuple(indexes, body->Adevice, body->Bdevice, body->Cdevice);
                                                              startGpu = tick_count::now();
-                                                             dataStructures::try_put<TGpuType>(args, &gpuNode);
+                                                             dataStructures::try_put<0, TArgs...>(&gpuNode, args);
                                                          } else {
                                                              mtx.unlock();
                                                          }

@@ -26,21 +26,22 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
  * class Body
  * **************************************************************************/
 class ExecutionBody : IBody {
-private:
+public:
     const int vsize = 10;
-//    buffer_f Adevice;
-//    buffer_f Bdevice;
-//    buffer_f Cdevice;
+    buffer_f Adevice;
+    buffer_f Bdevice;
+    buffer_f Cdevice;
     float *Ahost;
     float *Bhost;
     float *Chost;
 public:
 
-    ExecutionBody() : Ahost(dataStructures::malloc_f(vsize)), Bhost(dataStructures::malloc_f(vsize)),
-             Chost(dataStructures::malloc_f(vsize)) {
+    ExecutionBody() : Adevice(vsize), Bdevice(vsize), Cdevice(vsize), Ahost((float*) malloc(sizeof(float)*vsize)), Bhost((float*) malloc(sizeof(float)*vsize)),
+             Chost((float*) malloc(sizeof(float)*vsize)) {
 
         std::generate(Ahost, Ahost + vsize, RandomNumber);
         std::generate(Bhost, Bhost + vsize, RandomNumber);
+        std::generate(Chost, Chost + vsize, []{return -1;});
     }
 
     void OperatorCPU(int begin, int end) {
@@ -61,9 +62,12 @@ public:
     }
 
     ~ExecutionBody() {
-        dataStructures::delete_f(Ahost);
-        dataStructures::delete_f(Bhost);
-        dataStructures::delete_f(Chost);
+//        dataStructures::delete_f(Ahost);
+//        dataStructures::delete_f(Bhost);
+//        dataStructures::delete_f(Chost);
+        delete(Ahost);
+        delete(Bhost);
+        delete(Chost);
     }
 
 };
