@@ -86,7 +86,7 @@ public:
 #endif
 
                                                              // MOCK
-                                                             auto args = std::make_tuple(indexes, body->Adevice, body->Bdevice, body->Cdevice);
+                                                             auto args = body->GetGPUArgs(indexes);
                                                              startGpu = tick_count::now();
                                                              dataStructures::try_put<0, TArgs...>(&gpuNode, args);
                                                          } else {

@@ -25,7 +25,7 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class ExecutionBody : IBody {
+class ExecutionBody : IBody<t_index, buffer_f, buffer_f, buffer_f> {
 public:
     const int vsize = 10;
     buffer_f Adevice;
@@ -56,6 +56,10 @@ public:
             std::cout << i << ": " << Ahost[i] << " + " << Bhost[i] << " = " << Chost[i] << std::endl;
         }
     }
+
+    std::tuple<t_index, buffer_f, buffer_f, buffer_f> GetGPUArgs(t_index indexes) {
+        return std::make_tuple(indexes, Adevice, Bdevice, Cdevice);
+    };
 
     int GetVsize() {
         return vsize;

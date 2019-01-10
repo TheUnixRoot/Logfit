@@ -5,6 +5,7 @@
  * Interface IBody
  *
  * **************************************************************************/
+template <typename Tindex, typename ...Args>
 class IBody {
 public:
     virtual int GetVsize() = 0;
@@ -14,6 +15,8 @@ public:
     virtual void ShowCallback() = 0;
 
     virtual ~IBody() = default;
+
+    virtual std::tuple<Tindex, Args ...> GetGPUArgs(Tindex indexes) = 0;
 
 };
 
