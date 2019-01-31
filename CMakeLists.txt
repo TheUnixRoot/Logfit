@@ -1,31 +1,18 @@
 cmake_minimum_required(VERSION 3.2)
-set(CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 11)
 
 project(BarnesLogfit)
 
-set(BOOST_ROOT bin/boost_1_66_0)
+set(MODE debug)
+
 set(TBBROOT $ENV{TBBROOT})
-set(CLROOT /opt/opencl-sdk)
+set(CLROOT /opt/AMDAPPSDK-3.0-0-Beta)
 set(MAIN_FILE source/cpp/main.cpp)
-set(SOURCE_FILES    source/cpp/main.cpp
-                    source/cpp/DataStructures/ProvidedDataStructures.h
-                    source/cpp/DataStructures/ClientDataStructures.h
-        source/cpp/Implementations/ExecutionBody.h
-        source/cpp/Implementations/GraphScheduler.h
-        source/cpp/Implementations/LogFit.h
-                    source/cpp/Interfaces/IBody.h
-        source/cpp/Interfaces/IEngine.h
-                    source/cpp/Utils/ConsoleUtils.h
-        )
+set(SOURCE_FILES source/cpp/main.cpp)
 add_executable(Logfit ${SOURCE_FILES})
+add_definitions( "-Wno-ignored-attributes -Wno-format-security -O3 -DNDEBUG" )
 
-if (CMAKE_BUILD_TYPE MATCHES Debug)
-    target_compile_definitions(Logfit PUBLIC NDEBUG=1)
-elseif (CMAKE_BUILD_TYPE MATCHES Release)
-    target_compile_definitions(Logfit PUBLIC NDEBUG=0)
-endif ()
+include_directories(${TBBROOT}/include ${CLROOT}/include)
 
-include_directories(${TBBROOT}/include ${CLROOT}/include ${BOOST_ROOT}/boost)
-
-link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release)
+link_directories(${CLROOT}/lib/x86_64)
 target_link_libraries(Logfit tbb OpenCL)
