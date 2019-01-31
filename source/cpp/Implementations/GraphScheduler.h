@@ -67,8 +67,8 @@ public:
         flow::function_node<Type> dispatcher(graph, flow::serial,
                                              [this, &cpuNode, &gpuNode, &mtx, &begin, &end](Type token) {
                                                  // TODO: size partition
-                                                 mtx.lock();
-                                                 if (begin <= end) {
+                                                 //mtx.lock();
+                                                 if (begin < end) {
                                                      if (token == GPU) {
                                                          int ckgpu = engine.getGPUChunk(begin, end);
                                                          if (ckgpu >
@@ -78,7 +78,7 @@ public:
                                                              t_index indexes = {begin, auxEnd};
                                                              begin = auxEnd;
 
-                                                             mtx.unlock();
+                                                             //mtx.unlock();
 #ifdef NDEBUG
                                                              std::cout << "\033[0;33m" << "GPU computing from: "
                                                                        << indexes.begin << " to: " << indexes.end
@@ -90,7 +90,7 @@ public:
                                                              startGpu = tick_count::now();
                                                              dataStructures::try_put<0, TArgs...>(&gpuNode, args);
                                                          } else {
-                                                             mtx.unlock();
+                                                             //mtx.unlock();
                                                          }
                                                      } else {
                                                          int ckcpu = engine.getGPUChunk(begin, end);
@@ -100,7 +100,7 @@ public:
                                                              auxEnd = (auxEnd > end) ? end : auxEnd;
                                                              t_index indexes = {begin, auxEnd};
                                                              begin = auxEnd;
-                                                             mtx.unlock();
+                                                             //mtx.unlock();
 #ifdef NDEBUG
                                                              std::cout << "\033[0;33m" << "CPU computing from: "
                                                                        << indexes.begin << " to: " << indexes.end
@@ -109,7 +109,7 @@ public:
                                                              cpuNode.try_put(indexes);
                                                          } else {
 
-                                                             mtx.unlock();
+                                                             //mtx.unlock();
                                                          }
                                                      }
                                                  }

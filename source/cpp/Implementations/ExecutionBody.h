@@ -36,8 +36,8 @@ public:
     float *Chost;
 public:
 
-    ExecutionBody() : Adevice(vsize), Bdevice(vsize), Cdevice(vsize), Ahost((float*) malloc(sizeof(float)*vsize)), Bhost((float*) malloc(sizeof(float)*vsize)),
-             Chost((float*) malloc(sizeof(float)*vsize)) {
+    ExecutionBody() : Adevice(vsize), Bdevice(vsize), Cdevice(vsize), Ahost(Adevice.data()), Bhost(Bdevice.data()),
+             Chost(Cdevice.data()) {
 
         std::generate(Ahost, Ahost + vsize, RandomNumber);
         std::generate(Bhost, Bhost + vsize, RandomNumber);
@@ -48,7 +48,7 @@ public:
         for (int i = begin; i < end; i++) {
             Chost[i] = Ahost[i] + Bhost[i];
         }
-        std::cout << "\033[0;33m" << "CPU computing from: " << begin << " to: " << end << "\033[0m" << std::endl;
+        //std::cout << "\033[0;33m" << "CPU computing from: " << begin << " to: " << end << "\033[0m" << std::endl;
     }
 
     void ShowCallback() {
@@ -69,9 +69,9 @@ public:
 //        dataStructures::delete_f(Ahost);
 //        dataStructures::delete_f(Bhost);
 //        dataStructures::delete_f(Chost);
-        delete(Ahost);
-        delete(Bhost);
-        delete(Chost);
+//        delete(Ahost);
+//        delete(Bhost);
+//        delete(Chost);
     }
 
 };

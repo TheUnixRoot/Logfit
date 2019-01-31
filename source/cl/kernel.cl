@@ -46,7 +46,7 @@ __kernel void sample(t_index indexes
 
     for (int i = indexes.begin; i < indexes.end; ++i) {
         Cdevice[i] = Adevice[i] + Bdevice[i];
-		printf("Hola desde gpu %d, %d, %d", Cdevice[i], Adevice, Bdevice[i]);
+	//printf("Hola desde gpu %d, %d, %d", Cdevice[i], Adevice[i], Bdevice[i]);
     }
 //
 
