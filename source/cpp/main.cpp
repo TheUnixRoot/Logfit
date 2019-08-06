@@ -26,7 +26,7 @@ using namespace tbb;
 int main(int argc, char** argv){
 	
 	//variables
-	ExecutionBody *body = new ExecutionBody();
+	ExecutionBody body;
 	Params p = ConsoleUtils::parseArgs(argc, argv);
 	//end variables
     cout << "\033[0;33m" << "BarnesHut Simulation: "<< argv[1] << ", Number of CPU's cores: " << p.numcpus << ", Number of GPUs: " << p.numgpus << "\033[0m" << endl;
@@ -34,9 +34,8 @@ int main(int argc, char** argv){
 //    Functions::initialize<nullptr_t >(new dataStorage(), p, nullptr);
 
     LogFitEngine logFitEngine(p.numcpus, p.numgpus, 1, 1);
-	GraphScheduler<ExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logFit(p, body, logFitEngine);
+	GraphScheduler<ExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logFit(p, &body, logFitEngine);
     logFit.StartParallelExecution();
-    body->~ExecutionBody();
 
 ///*Initializing scheduler*/
 //	LogFit * hs = LogFit::getInstance(&p);
