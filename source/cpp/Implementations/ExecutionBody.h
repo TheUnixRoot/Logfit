@@ -65,15 +65,6 @@ public:
         return vsize;
     }
 
-    ~ExecutionBody() {
-//        dataStructures::delete_f(Ahost);
-//        dataStructures::delete_f(Bhost);
-//        dataStructures::delete_f(Chost);
-//        delete(Ahost);
-//        delete(Bhost);
-//        delete(Chost);
-    }
-
 };
 //end class
 

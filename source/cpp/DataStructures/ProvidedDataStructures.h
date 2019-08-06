@@ -10,11 +10,10 @@
 #define TBB_PREVIEW_FLOW_GRAPH_NODES 1
 #define TBB_PREVIEW_FLOW_GRAPH_FEATURES 1
 
-#include <tbb/flow_graph.h>
 #include <tbb/flow_graph_opencl_node.h>
 
 
-typedef struct {
+using Params = struct _params{
     int numcpus;
     int numgpus;
     char benchName[256];
@@ -22,7 +21,7 @@ typedef struct {
     char openclFile[256];
     char inputData[256];
     float ratioG;
-} Params;
+};
 
 
 enum Type : int {
