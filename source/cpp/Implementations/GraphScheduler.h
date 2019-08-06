@@ -7,7 +7,7 @@
 
 #include "../DataStructures/ProvidedDataStructures.h"
 #include "tbb/tick_count.h"
-#include "../Interfaces/IEngine.h"
+#include "../Interfaces/Engines/IEngine.h"
 
 using namespace tbb;
 
@@ -25,7 +25,6 @@ public:
     GraphScheduler(Params p, TExectionBody *body, TSchedulerEngine engine) : p(p), body(body), engine(engine) {}
 
     void StartParallelExecution() {
-        std::mutex mtx;
         flow::graph graph;
         int begin = 0, end = body->GetVsize(), cpuCounter = 0;
         flow::function_node<t_index, Type> cpuNode(graph, flow::unlimited,
@@ -54,7 +53,7 @@ public:
                                                                    p.openclFile).get_kernel(p.kernelName)
         ,gpuSelector);
 
-        flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [this](t_index indexes) -> Type {
+        flow::function_node<t_index, Type> gpuCallbackReceiver(graph, flow::unlimited, [this](t_index indexes) -> Type {
             stopGpu = tick_count::now();
 
             engine.recordGPUTh(indexes.end - indexes.begin, (stopGpu - startGpu).seconds());
@@ -66,52 +65,37 @@ public:
             return GPU;
         });
 
-        flow::function_node<Type> dispatcher(graph, flow::serial,
-                                             [this, &cpuNode, &gpuNode, &mtx, &begin, &end](Type token) {
-                                                 // TODO: size partition
-                                                 //mtx.lock();
+        flow::function_node<Type> processorSelectorNode(graph, flow::serial,
+                                             [this, &cpuNode, &gpuNode, &begin, &end](Type token) {
                                                  if (begin < end) {
                                                      if (token == GPU) {
                                                          int ckgpu = engine.getGPUChunk(begin, end);
-                                                         if (ckgpu >
-                                                             0) {    // si el trozo es > 0 se genera un token de GPU
+                                                         if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
                                                              int auxEnd = begin + ckgpu;
-                                                             auxEnd = (auxEnd > end) ? end : auxEnd;
                                                              t_index indexes = {begin, auxEnd};
                                                              begin = auxEnd;
-
-                                                             //mtx.unlock();
 #ifdef NDEBUG
                                                              std::cout << "\033[0;33m" << "GPU computing from: "
                                                                        << indexes.begin << " to: " << indexes.end
                                                                        << "\033[0m" << std::endl;
 #endif
-
-                                                             // MOCK
                                                              auto args = body->GetGPUArgs(indexes);
                                                              startGpu = tick_count::now();
                                                              dataStructures::try_put<0, TArgs...>(&gpuNode, args);
-                                                         } else {
-                                                             //mtx.unlock();
                                                          }
                                                      } else {
                                                          int ckcpu = engine.getGPUChunk(begin, end);
-                                                         if (ckcpu >
-                                                             0) {    // si el trozo es > 0 se genera un token de GPU
+                                                         if (ckcpu > 0) {    // si el trozo es > 0 se genera un token de GPU
                                                              int auxEnd = begin + ckcpu;
                                                              auxEnd = (auxEnd > end) ? end : auxEnd;
                                                              t_index indexes = {begin, auxEnd};
                                                              begin = auxEnd;
-                                                             //mtx.unlock();
 #ifdef NDEBUG
                                                              std::cout << "\033[0;33m" << "CPU computing from: "
                                                                        << indexes.begin << " to: " << indexes.end
                                                                        << "\033[0m" << std::endl;
 #endif
                                                              cpuNode.try_put(indexes);
-                                                         } else {
-
-                                                             //mtx.unlock();
                                                          }
                                                      }
                                                  }
@@ -120,14 +104,18 @@ public:
         std::array<unsigned int, 1> range{1};
         gpuNode.set_range(body->GetNDRange());
 
-        flow::make_edge(cpuNode, dispatcher);
-        flow::make_edge(gpuJoiner, dispatcher);
-        flow::make_edge(flow::output_port<0>(gpuNode), gpuJoiner);
-        dispatcher.try_put(CPU);
-        dispatcher.try_put(GPU);
+        flow::make_edge(cpuNode, processorSelectorNode);
+        flow::make_edge(gpuCallbackReceiver, processorSelectorNode);
+        flow::make_edge(flow::output_port<0>(gpuNode), gpuCallbackReceiver);
+
+        for (int i = 0; i < p.numcpus; ++i) {
+            processorSelectorNode.try_put(CPU);
+        }
+        for (int j = 0; j < p.numgpus; ++j) {
+            processorSelectorNode.try_put(GPU);
+        }
 
         graph.wait_for_all();
-        body->ShowCallback();
     }
 };
 

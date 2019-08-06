@@ -49,11 +49,10 @@ public:
         for (int i = begin; i < end; i++) {
             Chost[i] = Ahost[i] + Bhost[i];
         }
-        //std::cout << "\033[0;33m" << "CPU computing from: " << begin << " to: " << end << "\033[0m" << std::endl;
     }
 
     void ShowCallback() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < vsize; i++) {
             std::cout << i << ": " << Ahost[i] << " + " << Bhost[i] << " = " << Chost[i] << std::endl;
         }
     }
