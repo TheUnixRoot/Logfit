@@ -48,9 +48,11 @@ public:
                                                        return CPU;
                                                    });
 
+        dataStructures::GpuDeviceSelector gpuSelector;
         flow::opencl_node<tbb::flow::tuple<TArgs ...>> gpuNode(graph,
                                             flow::opencl_program<>(flow::opencl_program_type::SOURCE,
-                                                                   p.openclFile).get_kernel(p.kernelName));
+                                                                   p.openclFile).get_kernel(p.kernelName)
+        ,gpuSelector);
 
         flow::function_node<t_index, Type> gpuJoiner(graph, flow::unlimited, [this](t_index indexes) -> Type {
             stopGpu = tick_count::now();
