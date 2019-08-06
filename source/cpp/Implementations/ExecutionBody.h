@@ -25,9 +25,10 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class ExecutionBody : IBody<t_index, buffer_f, buffer_f, buffer_f> {
+class ExecutionBody : IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
-    const int vsize = 10;
+    const size_t vsize = 10;
+    dim_range ndRange;
     buffer_f Adevice;
     buffer_f Bdevice;
     buffer_f Cdevice;
@@ -36,8 +37,8 @@ public:
     float *Chost;
 public:
 
-    ExecutionBody() : Adevice(vsize), Bdevice(vsize), Cdevice(vsize), Ahost(Adevice.data()), Bhost(Bdevice.data()),
-             Chost(Cdevice.data()) {
+    ExecutionBody() : ndRange{1}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize}, Ahost{Adevice.data()}, Bhost{Bdevice.data()},
+             Chost{Cdevice.data()} {
 
         std::generate(Ahost, Ahost + vsize, RandomNumber);
         std::generate(Bhost, Bhost + vsize, RandomNumber);
@@ -57,12 +58,16 @@ public:
         }
     }
 
-    std::tuple<t_index, buffer_f, buffer_f, buffer_f> GetGPUArgs(t_index indexes) {
+    type_gpu_node GetGPUArgs(t_index indexes) {
         return std::make_tuple(indexes, Adevice, Bdevice, Cdevice);
     };
 
     int GetVsize() {
         return vsize;
+    }
+
+    dim_range GetNDRange() {
+        return ndRange;
     }
 
 };

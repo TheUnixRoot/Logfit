@@ -13,7 +13,7 @@ using dim_range = std::array<unsigned int, 1>;
 using t_index = struct _t_index{
     int begin, end;
 };
-using type_gpu = tbb::flow::tuple<t_index, buffer_f, buffer_f, buffer_f>;
+using type_gpu_node = tbb::flow::tuple<t_index, buffer_f, buffer_f, buffer_f>;
 
 
 

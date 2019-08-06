@@ -118,7 +118,7 @@ public:
                                              });
 
         std::array<unsigned int, 1> range{1};
-        gpuNode.set_range(range);
+        gpuNode.set_range(body->GetNDRange());
 
         flow::make_edge(cpuNode, dispatcher);
         flow::make_edge(gpuJoiner, dispatcher);
