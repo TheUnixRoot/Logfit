@@ -14,6 +14,8 @@ public:
     virtual void recordGPUTh(unsigned int chunk, float time) = 0;
 
     virtual void recordCPUTh(unsigned int chunk, float time) = 0;
+
+    virtual void reStart() = 0;
 };
 
 #endif //BARNESLOGFIT_ISCHEDULER_H

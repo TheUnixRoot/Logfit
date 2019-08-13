@@ -13,8 +13,8 @@
 #include "tbb/parallel_for.h"
 #include "tbb/task.h"
 #include "tbb/tick_count.h"
-#include "../DataStructures/ClientDataStructures.h"
-#include "../Interfaces/IBody.h"
+#include "../../DataStructures/ClientDataStructures.h"
+#include "../../Interfaces/Bodies/IBody.h"
 
 using namespace tbb;
 
@@ -25,9 +25,9 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class ExecutionBody : IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
+class TestExecutionBody : IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
-    const size_t vsize = 10;
+    const size_t vsize = 100;
     dim_range ndRange;
     buffer_f Adevice;
     buffer_f Bdevice;
@@ -37,8 +37,8 @@ public:
     float *Chost;
 public:
 
-    ExecutionBody() : ndRange{1}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize}, Ahost{Adevice.data()}, Bhost{Bdevice.data()},
-             Chost{Cdevice.data()} {
+    TestExecutionBody() : ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
+                          Ahost{Adevice.data()}, Bhost{Bdevice.data()}, Chost{Cdevice.data()} {
 
         std::generate(Ahost, Ahost + vsize, RandomNumber);
         std::generate(Bhost, Bhost + vsize, RandomNumber);

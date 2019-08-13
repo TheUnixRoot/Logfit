@@ -14,8 +14,8 @@
 
 
 using Params = struct _params{
-    int numcpus;
-    int numgpus;
+    unsigned int numcpus;
+    unsigned int numgpus;
     char benchName[256];
     char kernelName[50];
     char openclFile[256];
