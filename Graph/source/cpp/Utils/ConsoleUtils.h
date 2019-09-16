@@ -116,5 +116,10 @@ namespace ConsoleUtils {
 
         return params;
     }
+    static void saveResultsForBench(Params p, double runtime) {
+        int sep{30};
+        std::cout << "\033[0;33m" << "*************************" << "\033[0m" << std::endl;
+        std::cout << "\033[0;33m" << p.numcpus << setw(sep) << p.numgpus << setw(sep) << runtime << "\033[0m" << std::endl;
+    }
 }
 #endif //BARNESORACLE_CONSOLEUTILS_H

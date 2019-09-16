@@ -5,12 +5,13 @@
 #ifndef BARNESLOGFIT_PROVIDEDDATASTRUCTURES_H
 #define BARNESLOGFIT_PROVIDEDDATASTRUCTURES_H
 
-#define MAX_NUMBER_GPU_SUPPORTED tbb::flow::interface10::opencl_info::available_devices().size()
+#define MAX_NUMBER_GPU_SUPPORTED 1
 #define MAX_NUMBER_CPU_SUPPORTED thread::hardware_concurrency()
 #define TBB_PREVIEW_FLOW_GRAPH_NODES 1
 #define TBB_PREVIEW_FLOW_GRAPH_FEATURES 1
 
 #include <tbb/flow_graph_opencl_node.h>
+#include <tbb/task_scheduler_init.h>
 
 
 using Params = struct _params{
