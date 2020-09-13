@@ -5,7 +5,7 @@
 #ifndef BARNESLOGFIT_GRAPHLOGFIT_H
 #define BARNESLOGFIT_GRAPHLOGFIT_H
 
-#include "../DataStructures/ProvidedDataStructures.h"
+#include "../Utils/ConsoleUtils.h"
 #include "tbb/tick_count.h"
 #include "../Interfaces/Engines/IEngine.h"
 
@@ -19,7 +19,8 @@ private:
     TExectionBody *body;
     TSchedulerEngine engine;
 
-    tick_count startCpu, stopCpu, startGpu, stopGpu;
+    tick_count startBench, stopBench, startCpu, stopCpu, startGpu, stopGpu;
+    double runtime;
     flow::graph graph;
     int begin, end, cpuCounter;
     flow::function_node<t_index, Type> cpuNode;
@@ -122,6 +123,28 @@ std::cout << "Counter: " << ++cpuCounter << std::endl;
         }
 
         graph.wait_for_all();
+    }
+
+    /*Sets the start mark of energy and time*/
+    void startTimeAndEnergy(){
+#ifdef ENERGYCOUNTERS
+        pcm->getAllCounterStates(sstate1, sktstate1, cstates1);
+#endif
+        startBench = tick_count::now();
+    }
+
+    /*Sets the end mark of energy and time*/
+    void endTimeAndEnergy(){
+        stopBench = tick_count::now();
+#ifdef ENERGYCOUNTERS
+        pcm->getAllCounterStates(sstate2, sktstate2, cstates2);
+#endif
+        runtime = (stopBench-startBench).seconds()*1000;
+    }
+    /*this function print info to a Log file*/
+
+    void saveResultsForBench() {
+        ConsoleUtils::saveResultsForBench(p, runtime);
     }
 };
 

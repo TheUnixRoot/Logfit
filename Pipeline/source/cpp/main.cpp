@@ -187,15 +187,15 @@ int main(int argc, char** argv){
 	} // end of time step
 	hs->endTimeAndEnergy();
 	hs->saveResultsForBench();
-
-	for (int i = 0; i < nbodies; i++) { // print result
-		Printfloat(bodies[i].posx);
-		printf(" ");
-		Printfloat(bodies[i].posy);
-		printf(" ");
-		Printfloat(bodies[i].posz);
-		printf("\n");
-	}
+//
+//	for (int i = 0; i < nbodies; i++) { // print result
+//		Printfloat(bodies[i].posx);
+//		printf(" ");
+//		Printfloat(bodies[i].posy);
+//		printf(" ");
+//		Printfloat(bodies[i].posz);
+//		printf("\n");
+//	}
 
 	return EXIT_SUCCESS;
 }
