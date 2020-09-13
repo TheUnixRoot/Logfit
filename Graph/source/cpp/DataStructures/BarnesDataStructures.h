@@ -174,7 +174,7 @@ inline void ReadInput(char *filename) {
     itolsq = 1.0 / (tol * tol);
 
     if (access_bodies == NULL) {
-        fprintf(stderr, "configuration: %d bodies, %d time steps, %d threads\n",
+        fprintf(stdout, "configuration: %d bodies, %d time steps, %d threads\n",
                 nbodies, timesteps, nthreads);
         bodies = buffer_OctTreeLeafNode(nbodies);
         access_bodies = bodies.data();

@@ -4,6 +4,9 @@
 
 #ifndef BARNESORACLE_CONSOLEUTILS_H
 #define BARNESORACLE_CONSOLEUTILS_H
+#define CONSOLE_YELLOW "\033[0;33m"
+#define CONSOLE_WHITE "\033[0m"
+#define CONSOLE_RED ""
 
 #include <cstdlib>
 #include <iostream>
@@ -110,7 +113,7 @@ namespace ConsoleUtils {
             cerr << "Parameters with wrong values. Error: " << message << endl;
             exit(-1);
         }
-        cout << "\033[0;33m" << message << "\033[0m" << endl << "Console parameters read for BarnesHut Simulation: "
+        cout << CONSOLE_YELLOW << message << CONSOLE_WHITE << endl << "Console parameters read for BarnesHut Simulation: "
              << params.inputData << ", Number of CPU's cores: " << params.numcpus << ", Number of GPUs: "
              << params.numgpus << ", Percent in GPU: " << params.ratioG << endl;
 
@@ -118,8 +121,8 @@ namespace ConsoleUtils {
     }
     static void saveResultsForBench(Params p, double runtime) {
         int sep{30};
-        std::cout << "\033[0;33m" << "*************************" << "\033[0m" << std::endl;
-        std::cout << "\033[0;33m" << p.numcpus << setw(sep) << p.numgpus << setw(sep) << runtime << "\033[0m" << std::endl;
+        std::cout << CONSOLE_YELLOW << "*************************" << CONSOLE_WHITE << std::endl;
+        std::cout << CONSOLE_YELLOW << p.numcpus << setw(sep) << p.numgpus << setw(sep) << runtime << CONSOLE_WHITE << std::endl;
     }
 }
 #endif //BARNESORACLE_CONSOLEUTILS_H

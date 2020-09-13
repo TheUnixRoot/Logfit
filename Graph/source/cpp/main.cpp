@@ -24,8 +24,8 @@ using namespace tbb;
 int main(int argc, char** argv){
 
 	Params p = ConsoleUtils::parseArgs(argc, argv);
-    cout << "\033[0;33m" << "BarnesHut Simulation: "<< p.inputData << ", Number of CPU's cores: " << p.numcpus <<
-               ", Number of GPUs: " << p.numgpus << "\033[0m" << endl;
+    cout << CONSOLE_YELLOW << "BarnesHut Simulation: "<< p.inputData << ", Number of CPU's cores: " << p.numcpus <<
+               ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
 
     LogFitEngine logFitEngine{p.numcpus, p.numgpus, 1, 1};
 
