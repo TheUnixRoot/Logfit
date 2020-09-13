@@ -37,7 +37,7 @@ namespace ConsoleUtils {
             switch (ConsoleUtils::str2int(argv[i])) {
                 case ConsoleUtils::str2int("-f"):
                 case ConsoleUtils::str2int("--file"):
-                    sprintf(params.inputData, argv[++i]);
+                    sprintf(params.inputData, "%s", argv[++i]);
                     fflag = true;
                     break;
                 case ConsoleUtils::str2int("-c"):
@@ -57,16 +57,16 @@ namespace ConsoleUtils {
                     break;
                 case ConsoleUtils::str2int("-b"):
                 case ConsoleUtils::str2int("--benchmark-name"):
-                    sprintf(params.benchName, argv[++i]);
+                    sprintf(params.benchName, "%s", argv[++i]);
                     bflag = true;
                     break;
                 case ConsoleUtils::str2int("-k"):
                 case ConsoleUtils::str2int("--kernel-name"):
-                    sprintf(params.kernelName, argv[++i]);
+                    sprintf(params.kernelName, "%s", argv[++i]);
                     kflag = true;
                     break;
                 case ConsoleUtils::str2int("-o"):
-                    sprintf(params.openclFile, argv[++i]);
+                    sprintf(params.openclFile, "%s", argv[++i]);
                     oflag = true;
                     break;
                 case ConsoleUtils::str2int("-h"):

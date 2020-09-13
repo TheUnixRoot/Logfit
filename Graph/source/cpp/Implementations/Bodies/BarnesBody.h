@@ -11,9 +11,6 @@
 #include <CL/cl.h>
 #endif
 
-#include "tbb/parallel_for.h"
-#include "tbb/task.h"
-#include "tbb/tick_count.h"
 #include "../../Interfaces/Bodies/IBody.h"
 #include "../../DataStructures/BarnesDataStructures.h"
 

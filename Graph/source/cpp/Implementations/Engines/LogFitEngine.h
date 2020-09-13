@@ -25,8 +25,6 @@
 #include <list>
 #include "tbb/pipeline.h"
 #include "tbb/tick_count.h"
-#include "tbb/task.h"
-#include "tbb/atomic.h"
 #include "tbb/parallel_for.h"
 #include "../../DataStructures/ProvidedDataStructures.h"
 #include <math.h>
@@ -50,7 +48,6 @@ using namespace tbb;
 ofstream deep_gpu_report;
 #endif
 
-atomic<int> gpuStatus;
 
 int timeStep;
 

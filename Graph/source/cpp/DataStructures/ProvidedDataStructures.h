@@ -5,9 +5,12 @@
 #ifndef BARNESLOGFIT_PROVIDEDDATASTRUCTURES_H
 #define BARNESLOGFIT_PROVIDEDDATASTRUCTURES_H
 
-#define MAX_NUMBER_GPU_SUPPORTED tbb::flow::interface10::opencl_info::available_devices().size()
+#define MAX_NUMBER_GPU_SUPPORTED tbb::flow::interface11::opencl_info::available_devices().size()
+
 #define MAX_NUMBER_CPU_SUPPORTED thread::hardware_concurrency()
+
 #define TBB_PREVIEW_FLOW_GRAPH_NODES 1
+
 #define TBB_PREVIEW_FLOW_GRAPH_FEATURES 1
 
 #include <tbb/flow_graph_opencl_node.h>
@@ -32,7 +35,7 @@ namespace dataStructures {
     struct GpuDeviceSelector {
     private:
         bool firstTime = true;
-        tbb::flow::opencl_device device;
+        tbb::flow::interface11::opencl_device device;
     public:
         template<typename DeviceFilter>
         tbb::flow::opencl_device operator()(tbb::flow::opencl_factory<DeviceFilter>& f) {
@@ -61,7 +64,7 @@ namespace dataStructures {
     try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args) {
         size_t i = I;
         auto t = tbb::flow::get<I>(args);
-        tbb::flow::interface10::input_port<I>(*node).try_put(
+        tbb::flow::interface11::input_port<I>(*node).try_put(
                 t
         );
         try_put<I + 1, Tg...>(node, args);
