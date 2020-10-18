@@ -5,22 +5,18 @@
 #ifndef BARNESLOGFIT_GRAPHLOGFIT_H
 #define BARNESLOGFIT_GRAPHLOGFIT_H
 
-#include "../Utils/ConsoleUtils.h"
-#include "tbb/tick_count.h"
-#include "../Interfaces/Engines/IEngine.h"
+#include "../../Interfaces/Engines/IEngine.h"
+#include "../../Interfaces/Scheduler/IScheduler.h"
 
 using namespace tbb;
 
 template<typename TExectionBody, typename TSchedulerEngine,
         typename ...TArgs>
-class GraphScheduler {
+class GraphScheduler : public IScheduler {
 private:
-    Params p;
     TExectionBody *body;
     TSchedulerEngine engine;
 
-    tick_count startBench, stopBench, startCpu, stopCpu, startGpu, stopGpu;
-    double runtime;
     flow::graph graph;
     int begin, end, cpuCounter;
     flow::function_node<t_index, Type> cpuNode;
@@ -32,7 +28,8 @@ private:
 public:
 
     GraphScheduler(Params p, TExectionBody *body, TSchedulerEngine engine) :
-        p(p), body(body), engine(engine),
+        IScheduler(p), body{body}, engine{engine},
+        begin{0}, end{body->GetVsize()}, cpuCounter{0},
         cpuNode{graph, flow::unlimited,
                 [this, body, &engine](t_index indexes) -> Type {
 
@@ -52,10 +49,9 @@ std::cout << "Counter: " << ++cpuCounter << std::endl;
 #endif
                                                 return CPU;
                                                     }},
-        begin{0}, end{body->GetVsize()}, cpuCounter{0},
         gpuNode{graph,
                 flow::opencl_program<>(flow::opencl_program_type::SOURCE,
-                p.openclFile).get_kernel(p.kernelName)
+                parameters.openclFile).get_kernel(parameters.kernelName)
                 ,gpuSelector},
         gpuCallbackReceiver{graph, flow::unlimited,
                 [this, &engine](t_index indexes) -> Type {
@@ -72,9 +68,9 @@ std::cout << "Counter: " << ++cpuCounter << std::endl;
                 [this, body, &engine](Type token) {
                     if (begin < end) {
                         if (token == GPU) {
-                            int ckgpu = engine.getGPUChunk(begin, end);
-                            if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
-                                int auxEnd = begin + ckgpu;
+                            int gpuChunk = engine.getGPUChunk(begin, end);
+                            if (gpuChunk > 0) {    // si el trozo es > 0 se genera un token de GPU
+                                int auxEnd = begin + gpuChunk;
                                 t_index indexes = {begin, auxEnd};
                                 begin = auxEnd;
 #ifndef NDEBUG
@@ -88,9 +84,9 @@ std::cout << "Counter: " << ++cpuCounter << std::endl;
                                 dataStructures::try_put<0, TArgs...>(&gpuNode, args);
                             }
                         } else {
-                            int ckcpu = engine.getGPUChunk(begin, end);
-                            if (ckcpu > 0) {    // si el trozo es > 0 se genera un token de GPU
-                                int auxEnd = begin + ckcpu;
+                            int cpuChunk = engine.getCPUChunk(begin, end);
+                            if (cpuChunk > 0) {    // si el trozo es > 0 se genera un token de GPU
+                                int auxEnd = begin + cpuChunk;
                                 auxEnd = (auxEnd > end) ? end : auxEnd;
                                 t_index indexes = {begin, auxEnd};
                                 begin = auxEnd;
@@ -115,36 +111,14 @@ std::cout << "Counter: " << ++cpuCounter << std::endl;
         end = body->GetVsize();
         cpuCounter = 0;
         engine.reStart();
-        for (int i = 0; i < p.numcpus; ++i) {
+        for (int i = 0; i < parameters.numcpus; ++i) {
             processorSelectorNode.try_put(CPU);
         }
-        for (int j = 0; j < p.numgpus; ++j) {
+        for (int j = 0; j < parameters.numgpus; ++j) {
             processorSelectorNode.try_put(GPU);
         }
 
         graph.wait_for_all();
-    }
-
-    /*Sets the start mark of energy and time*/
-    void startTimeAndEnergy(){
-#ifdef ENERGYCOUNTERS
-        pcm->getAllCounterStates(sstate1, sktstate1, cstates1);
-#endif
-        startBench = tick_count::now();
-    }
-
-    /*Sets the end mark of energy and time*/
-    void endTimeAndEnergy(){
-        stopBench = tick_count::now();
-#ifdef ENERGYCOUNTERS
-        pcm->getAllCounterStates(sstate2, sktstate2, cstates2);
-#endif
-        runtime = (stopBench-startBench).seconds()*1000;
-    }
-    /*this function print info to a Log file*/
-
-    void saveResultsForBench() {
-        ConsoleUtils::saveResultsForBench(p, runtime);
     }
 };
 

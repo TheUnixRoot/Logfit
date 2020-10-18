@@ -40,8 +40,8 @@ public:
     TestExecutionBody() : ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
                           Ahost{Adevice.data()}, Bhost{Bdevice.data()}, Chost{Cdevice.data()} {
 
-        std::generate(Ahost, Ahost + vsize, RandomNumber);
-        std::generate(Bhost, Bhost + vsize, RandomNumber);
+        std::generate(Ahost, Ahost + vsize, []{return 1;});
+        std::generate(Bhost, Bhost + vsize, []{return 1;});
         std::generate(Chost, Chost + vsize, []{return -1;});
     }
 

@@ -2,8 +2,8 @@
 // Created by juanp on 11/12/18.
 //
 
-#ifndef BARNESLOGFIT_ISCHEDULER_H
-#define BARNESLOGFIT_ISCHEDULER_H
+#ifndef BARNESLOGFIT_IENGINE_H
+#define BARNESLOGFIT_IENGINE_H
 class IEngine {
 public:
 
@@ -18,4 +18,4 @@ public:
     virtual void reStart() = 0;
 };
 
-#endif //BARNESLOGFIT_ISCHEDULER_H
+#endif //BARNESLOGFIT_IENGINE_H

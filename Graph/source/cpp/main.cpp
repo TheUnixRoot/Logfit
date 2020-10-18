@@ -9,10 +9,11 @@
 
 #include <cstdlib> 
 #include <iostream>
+#include <tbb/task_scheduler_init.h>
 #include "Implementations/Bodies/BarnesBody.h"
 //#include "Implementations/Bodies/TestExecutionBody.h"
-#include "Implementations/GraphScheduler.h"
 #include "Implementations/Engines/LogFitEngine.h"
+#include "Implementations/Scheduler/GraphScheduler.h"
 
 using namespace std;
 using namespace tbb;
@@ -29,17 +30,17 @@ int main(int argc, char** argv){
 
     LogFitEngine logFitEngine{p.numcpus, p.numgpus, 1, 1};
 
-    unsigned threadNum{p.numcpus + p.numgpus};
-    tbb::task_scheduler_init init{1};
+    size_t threadNum{p.numcpus + p.numgpus};
 
+    task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
     ReadInput(p.inputData);
     initialize_tree();
     BarnesBody body(BarnesHutDataStructures::nbodies);
 
     GraphScheduler<BarnesBody, LogFitEngine, t_index, buffer_OctTreeLeafNode,
-            buffer_OctTreeInternalNode, int, float, float> logFit(p, &body, logFitEngine);
+            buffer_OctTreeInternalNode, int, float, float> logFitGraphScheduler(p, &body, logFitEngine);
 
-    logFit.startTimeAndEnergy();
+    logFitGraphScheduler.startTimeAndEnergy();
     for (step = 0; step < timesteps; step++) {
         cout << "Step " << step << endl;
         register float diameter, centerx, centery, centerz;
@@ -67,7 +68,7 @@ int main(int argc, char** argv){
         node.used = USED;
         ComputeNextMorePointers(tree[root], node);
 
-        logFit.StartParallelExecution();
+        logFitGraphScheduler.StartParallelExecution();
 
         RecycleTree(); // recycle the tree
 
@@ -77,8 +78,8 @@ int main(int argc, char** argv){
 
     } // end of time step
 
-    logFit.endTimeAndEnergy();
-    logFit.saveResultsForBench();
+    logFitGraphScheduler.endTimeAndEnergy();
+    logFitGraphScheduler.saveResultsForBench();
 
 //    for (int i = 0; i < nbodies; i++) { // print result
 //        Printfloat(bodies[i].posx);
@@ -91,16 +92,16 @@ int main(int argc, char** argv){
 
 //    {
 //        BarnesBody body;
-//        LogFitEngine logFitEngine{p.numcpus, p.numgpus, 1, 1};
-//        GraphScheduler<BarnesBody, LogFitEngine, t_index, OctTreeLeafNode, OctTreeInternalNode, int, float, float> logFit(p, &body,
+//        LogFitEngine logFitEngine{parameters.numcpus, parameters.numgpus, 1, 1};
+//        GraphScheduler<BarnesBody, LogFitEngine, t_index, OctTreeLeafNode, OctTreeInternalNode, int, float, float> logFitGraphScheduler(parameters, &body,
 //                                                                                                  logFitEngine);
-//        logFit.StartParallelExecution();
+//        logFitGraphScheduler.StartParallelExecution();
 //        body.ShowCallback();
 //    }
 //    {
 //        TestExecutionBody body;
-//        LogFitEngine logFitEngine{p.numcpus, p.numgpus, 1, 1};
-//        GraphScheduler<TestExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logfit(p, &body,
+//        LogFitEngine logFitEngine{parameters.numcpus, parameters.numgpus, 1, 1};
+//        GraphScheduler<TestExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logfit(parameters, &body,
 //                                                                                                       logFitEngine);
 //        logfit.StartParallelExecution();
 //        body.ShowCallback();

@@ -20,15 +20,15 @@ set(SOURCE_FILES    source/cpp/main.cpp
         source/cpp/DataStructures/ProvidedDataStructures.h
         #        source/cpp/DataStructures/ClientDataStructures.h
         #        source/cpp/Implementations/Bodies/TestExecutionBody.h
-        source/cpp/Implementations/GraphScheduler.h
+        source/cpp/Implementations/Scheduler/GraphScheduler.h
         source/cpp/Implementations/Engines/LogFitEngine.h
         source/cpp/Interfaces/Bodies/IBody.h
         source/cpp/Interfaces/Engines/IEngine.h
+        source/cpp/Interfaces/Scheduler/IScheduler.h
         source/cpp/Utils/ConsoleUtils.h
         #        source/cpp/Implementations/Engines/DynamicEngine.h
         source/cpp/Implementations/Bodies/BarnesBody.h
-        source/cpp/DataStructures/BarnesDataStructures.h
-        )
+        source/cpp/DataStructures/BarnesDataStructures.h)
 add_executable(Logfit ${SOURCE_FILES})
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)

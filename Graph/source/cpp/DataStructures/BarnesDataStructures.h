@@ -13,7 +13,6 @@
 #include <math.h>
 #include "ProvidedDataStructures.h"
 
-
 /*****************************************************************************
  * Data Structure
  * **************************************************************************/
@@ -157,7 +156,6 @@ inline void copy_body(OctTreeLeafNode &a, const OctTreeLeafNode &ch) {
 inline void ReadInput(char *filename) {
     register FILE *f;
     register int i;
-
     if ((f = fopen(filename, "r+t")) == NULL) {
         fprintf(stderr, "file not found: %s\n", filename);
         exit(-1);
