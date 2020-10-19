@@ -27,6 +27,7 @@
 #include "tbb/tick_count.h"
 #include "tbb/parallel_for.h"
 #include "../../DataStructures/ProvidedDataStructures.h"
+#include "../../Interfaces/Engines/IEngine.h"
 #include <math.h>
 
 using namespace std;

@@ -9,10 +9,6 @@
 #include <CL/cl.h>
 
 #endif
-
-#include "tbb/parallel_for.h"
-#include "tbb/task.h"
-#include "tbb/tick_count.h"
 #include "../../DataStructures/ClientDataStructures.h"
 #include "../../Interfaces/Bodies/IBody.h"
 
@@ -27,7 +23,7 @@ int RandomNumber() { return (std::rand() % NUM_RAND); }
  * **************************************************************************/
 class TestExecutionBody : IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
-    const size_t vsize = 100;
+    const size_t vsize = 10000000;
     dim_range ndRange;
     buffer_f Adevice;
     buffer_f Bdevice;
@@ -40,8 +36,8 @@ public:
     TestExecutionBody() : ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
                           Ahost{Adevice.data()}, Bhost{Bdevice.data()}, Chost{Cdevice.data()} {
 
-        std::generate(Ahost, Ahost + vsize, []{return 1;});
-        std::generate(Bhost, Bhost + vsize, []{return 1;});
+        std::generate(Ahost, Ahost + vsize, []{return 1.0;});
+        std::generate(Bhost, Bhost + vsize, []{return 1.0;});
         std::generate(Chost, Chost + vsize, []{return -1;});
     }
 

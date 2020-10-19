@@ -11,7 +11,6 @@
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
 #include "Implementations/Bodies/BarnesBody.h"
-//#include "Implementations/Bodies/TestExecutionBody.h"
 #include "Implementations/Engines/LogFitEngine.h"
 #include "Implementations/Scheduler/GraphScheduler.h"
 
@@ -42,7 +41,7 @@ int main(int argc, char** argv){
 
     logFitGraphScheduler.startTimeAndEnergy();
     for (step = 0; step < timesteps; step++) {
-        cout << "Step " << step << endl;
+//        cout << "Step " << step << endl;
         register float diameter, centerx, centery, centerz;
         ComputeCenterAndDiameter(nbodies, diameter, centerx, centery, centerz);
 
@@ -81,31 +80,5 @@ int main(int argc, char** argv){
     logFitGraphScheduler.endTimeAndEnergy();
     logFitGraphScheduler.saveResultsForBench();
 
-//    for (int i = 0; i < nbodies; i++) { // print result
-//        Printfloat(bodies[i].posx);
-//        printf(" ");
-//        Printfloat(bodies[i].posy);
-//        printf(" ");
-//        Printfloat(bodies[i].posz);
-//        printf("\n");
-//    }
-
-//    {
-//        BarnesBody body;
-//        LogFitEngine logFitEngine{parameters.numcpus, parameters.numgpus, 1, 1};
-//        GraphScheduler<BarnesBody, LogFitEngine, t_index, OctTreeLeafNode, OctTreeInternalNode, int, float, float> logFitGraphScheduler(parameters, &body,
-//                                                                                                  logFitEngine);
-//        logFitGraphScheduler.StartParallelExecution();
-//        body.ShowCallback();
-//    }
-//    {
-//        TestExecutionBody body;
-//        LogFitEngine logFitEngine{parameters.numcpus, parameters.numgpus, 1, 1};
-//        GraphScheduler<TestExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logfit(parameters, &body,
-//                                                                                                       logFitEngine);
-//        logfit.StartParallelExecution();
-//        body.ShowCallback();
-//
-//    }
 	return EXIT_SUCCESS;
 }
