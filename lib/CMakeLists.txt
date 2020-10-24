@@ -1,0 +1,53 @@
+cmake_minimum_required(VERSION 3.17)
+
+project(heterogeneous_parallel_for)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_STANDARD 11)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(TBB_PREVIEW_FLOW_GRAPH_FEATURES 1)
+set(TBB_PREVIEW_FLOW_GRAPH_NODES 1)
+
+set(TBBROOT $ENV{TBBROOT})
+set(CLROOT /opt/opencl-sdk)
+
+
+set(SOURCE_FILES
+        DataStructures/ProvidedDataStructures.h
+        Implementations/Scheduler/GraphScheduler.h
+        Implementations/Engines/LogFitEngine.h
+        Interfaces/Bodies/IBody.h
+        Interfaces/Engines/IEngine.h
+        Interfaces/Scheduler/IScheduler.h
+        Helpers/ConsoleUtils.h
+        Helpers/EngineFactory.h
+        Helpers/SchedulerFactory.h
+        Helpers/Pipeline/ParallelFilter.h
+        Helpers/Pipeline/SerialFilter.h
+        Helpers/Pipeline/Bundle.h
+        )
+
+add_library(heterogeneous_parallel_for ${SOURCE_FILES})
+
+
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    target_compile_definitions(heterogeneous_parallel_for PUBLIC NDEBUG=1)
+elseif (CMAKE_BUILD_TYPE MATCHES Release)
+    target_compile_definitions(heterogeneous_parallel_for PUBLIC NDEBUG=0)
+endif ()
+
+include_directories(${TBBROOT}/include ${CLROOT}/include)
+set_target_properties(heterogeneous_parallel_for PROPERTIES LINKER_LANGUAGE CXX)
+link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release)
+target_link_libraries(heterogeneous_parallel_for tbb OpenCL tbbmalloc_proxy)
+
+add_custom_command(
+        TARGET heterogeneous_parallel_for POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_SOURCE_DIR}/cmake-build-debug/libheterogeneous_parallel_for.a
+        ${CMAKE_SOURCE_DIR}/libheterogeneous_parallel_for.a)

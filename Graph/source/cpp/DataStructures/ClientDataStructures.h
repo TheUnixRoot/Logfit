@@ -5,7 +5,7 @@
 #ifndef BARNESLOGFIT_DATASTRUCTURES_H
 #define BARNESLOGFIT_DATASTRUCTURES_H
 
-#include "ProvidedDataStructures.h"
+#include <DataStructures/ProvidedDataStructures.h>
 
 using t_index = struct _t_index{
     int begin, end;

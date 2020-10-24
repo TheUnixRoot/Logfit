@@ -11,7 +11,7 @@
 #include <CL/cl.h>
 #endif
 #include <math.h>
-#include "ProvidedDataStructures.h"
+#include <DataStructures/ProvidedDataStructures.h>
 
 /*****************************************************************************
  * Data Structure

@@ -9,8 +9,8 @@
 #include <CL/cl.h>
 
 #endif
+#include <Interfaces/Bodies/IBody.h>
 #include "../../DataStructures/ClientDataStructures.h"
-#include "../../Interfaces/Bodies/IBody.h"
 
 using namespace tbb;
 

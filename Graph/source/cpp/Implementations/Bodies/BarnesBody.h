@@ -11,7 +11,7 @@
 #include <CL/cl.h>
 #endif
 
-#include "../../Interfaces/Bodies/IBody.h"
+#include <Interfaces/Bodies/IBody.h>
 #include "../../DataStructures/BarnesDataStructures.h"
 
 using namespace tbb;

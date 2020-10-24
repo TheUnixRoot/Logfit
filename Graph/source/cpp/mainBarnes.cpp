@@ -10,9 +10,10 @@
 #include <cstdlib> 
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
+#include <Implementations/Engines/LogFitEngine.h>
+#include <Implementations/Scheduler/GraphScheduler.h>
+
 #include "Implementations/Bodies/BarnesBody.h"
-#include "Implementations/Engines/LogFitEngine.h"
-#include "Implementations/Scheduler/GraphScheduler.h"
 
 using namespace std;
 using namespace tbb;
