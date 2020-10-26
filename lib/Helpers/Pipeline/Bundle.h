@@ -5,6 +5,8 @@
 #ifndef BARNESLOGFIT_BUNDLE_H
 #define BARNESLOGFIT_BUNDLE_H
 #include "tbb/atomic.h"
+#include "../../DataStructures/ProvidedDataStructures.h"
+
 namespace PipelineDatastructures {
     tbb::atomic<int> gpuStatus;
 
@@ -12,13 +14,11 @@ namespace PipelineDatastructures {
     public:
         int begin;
         int end;
-        int type; //GPU = 0, CPU=1
+        ProcessorUnit type; //GPU = 0, CPU=1
 
         Bundle() {
         };
     };
 
-    const int GPU = 1;
-    const int CPU = 0;
 }
 #endif //BARNESLOGFIT_BUNDLE_H

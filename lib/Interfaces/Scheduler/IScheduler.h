@@ -42,5 +42,11 @@ public:
     void saveResultsForBench() {
         ConsoleUtils::saveResultsForBench(parameters, runtime);
     }
+
+    virtual void* getEngine() = 0;
+
+    virtual void* getBody() = 0;
+
+    virtual ~IScheduler() {}
 };
 #endif //BARNESLOGFIT_ISCHEDULER_H

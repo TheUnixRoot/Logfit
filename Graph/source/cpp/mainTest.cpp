@@ -10,8 +10,8 @@
 #include <cstdlib> 
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
-#include <Implementations/Engines/LogFitEngine.h>
-#include <Implementations/Scheduler/GraphScheduler.h>
+#include <Helpers/SchedulerFactory.h>
+#include <Helpers/ConsoleUtils.h>
 
 #include "Implementations/Bodies/TestExecutionBody.h"
 
@@ -28,22 +28,27 @@ int main(int argc, char** argv){
     cout << CONSOLE_YELLOW << "Test Simulation: "<< p.inputData << ", Number of CPU's cores: " << p.numcpus <<
                ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
 
-    LogFitEngine logFitEngine{p.numcpus, p.numgpus, 1, 1};
-
     size_t threadNum{p.numcpus + p.numgpus};
 
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
-    TestExecutionBody body;
 
-    GraphScheduler<TestExecutionBody, LogFitEngine, t_index, buffer_f, buffer_f, buffer_f> logFitGraphScheduler(p, &body, logFitEngine);
+    auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance<
+            GraphScheduler<LogFitEngine, TestExecutionBody, t_index,
+                    buffer_f, buffer_f, buffer_f>,
+            LogFitEngine,
+            TestExecutionBody, t_index,
+            buffer_f, buffer_f, buffer_f>
+          (p, new TestExecutionBody())};
 
-    logFitGraphScheduler.startTimeAndEnergy();
-    logFitGraphScheduler.StartParallelExecution();
+    logFitGraphScheduler->startTimeAndEnergy();
 
-    logFitGraphScheduler.endTimeAndEnergy();
-    logFitGraphScheduler.saveResultsForBench();
+    logFitGraphScheduler->StartParallelExecution();
 
-    body.ShowCallback();
+    logFitGraphScheduler->endTimeAndEnergy();
+
+    logFitGraphScheduler->saveResultsForBench();
+
+    HelperFactories::SchedulerFactory::deleteInstance(logFitGraphScheduler);
 
 	return EXIT_SUCCESS;
 }

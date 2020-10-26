@@ -20,7 +20,7 @@ using namespace BarnesHutDataStructures;
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class BarnesBody : IBody<dim_range, t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>{
+class BarnesBody : public IBody<dim_range, t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>{
 public:
     bool firsttime;
     dim_range globalWorkSize;

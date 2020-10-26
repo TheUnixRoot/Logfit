@@ -32,11 +32,10 @@ using namespace tbb;
 
 
 /*Oracle Class: This scheduler version let us to split the workload in two subranges, one for GPU and one for CPUs*/
-class DynamicEngine : IEngine {
+class DynamicEngine : public IEngine {
     unsigned int numCPUs, numGPUs, fG, chunkGPU, chunkCPU;
     float cpuThroughput, gpuThroughput;
 public:
-    /*This constructor just call his parent's contructor*/
     DynamicEngine(unsigned int cpus, unsigned int gpus, unsigned int gpuchunk) :
             numCPUs{cpus}, numGPUs{gpus}, fG{5}, chunkGPU{gpuchunk},
             chunkCPU{chunkGPU/fG}, cpuThroughput{0}, gpuThroughput{0} { }
@@ -67,5 +66,16 @@ public:
         }
     }
 
+    // inicializacion para un TS nuevo
+    void reStart() {
+        fG = 5;
+        chunkCPU = chunkGPU/fG;
+        cpuThroughput = 0;
+        gpuThroughput = 0;
+    }
+
+    ~DynamicEngine() {
+
+    }
 };
 #endif //BARNESLOGFIT_DYNAMIC_H

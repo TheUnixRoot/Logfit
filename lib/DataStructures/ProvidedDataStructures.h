@@ -26,7 +26,7 @@ using Params = struct _params{
 };
 
 
-enum Type : int {
+enum ProcessorUnit : int {
     GPU = 0, CPU = 1
 };
 namespace dataStructures {

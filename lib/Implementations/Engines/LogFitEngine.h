@@ -34,7 +34,7 @@ using namespace tbb;
 #define MINPOINTS 4         // numero minimo de puntos para hacer logfit
 #define GPUSLOPE 0.005      // pendiente del th para encontrar el codo
 #define LogFitTHProfit 0.9  // tanto por ciento que se permite empeorar el th de la gpu antes de dar segunda oportunidad
-class LogFitEngine : IEngine {
+class LogFitEngine : public IEngine {
     unsigned int limits[MAXSEG];    // array con los limites de los segmentos del logfit
     unsigned int actual;            // indice al limite actual para hacer una busqueda mas rapida
     unsigned int lastLimit;         // indice al ultimo limite inicializado en el codigo actual

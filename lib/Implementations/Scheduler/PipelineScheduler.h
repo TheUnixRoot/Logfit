@@ -7,7 +7,6 @@
 
 #include "tbb/pipeline.h"
 #include "tbb/parallel_for.h"
-#include "../../Interfaces/Engines/IEngine.h"
 #include "../../Interfaces/Scheduler/IScheduler.h"
 
 #include "../../Helpers/Pipeline/SerialFilter.h"
@@ -22,21 +21,21 @@ cl_uint num_devices;
 cl_platform_id platforms_id;
 cl_device_id device_id;
 cl_context context;
-cl_command_queue command_queue;
 cl_program program;
 cl_kernel kernel;
 int computeUnits;
 size_t vectorization;
 
-template<typename TExectionBody, typename TSchedulerEngine,
+template<typename TSchedulerEngine, typename TExectionBody,
         typename ...TArgs>
 class PipelineScheduler : public IScheduler {
 private:
-    TSchedulerEngine engine;
-    TExectionBody *body;
+    TSchedulerEngine &engine;
+    TExectionBody &body;
+    cl_command_queue command_queue;
 
 public:
-    PipelineScheduler(Params p, TExectionBody *body, TSchedulerEngine engine) :
+    PipelineScheduler(Params p, TExectionBody &body, TSchedulerEngine &engine) :
     IScheduler(p), body{body}, engine{engine} {
         initializeOPENCL(p.kernelName);
         initializeHOSTPRI();
@@ -44,22 +43,22 @@ public:
     }
     void StartParallelExecution() {
         int begin = 0;
-        int end = body->GetVsize();
+        int end = body.GetVsize();
         engine.reStart();
-        body->firsttime = true;
+        body.firsttime = true;
 
         if (parameters.numgpus < 1) {  // solo CPUs
             tbb::parallel_for(tbb::blocked_range<int>(begin, end ),
-                [this](const tbb::blocked_range<int> &range){
+                [&](const tbb::blocked_range<int> &range){
                     startCpu = tbb::tick_count::now();
-                    body->OperatorCPU(range.begin(), range.end());
+                    body.OperatorCPU(range.begin(), range.end());
                     stopCpu = tbb::tick_count::now();
                 },
                 tbb::auto_partitioner() );
         } else {  // ejecucion con GPU
             tbb::pipeline pipe;
-            SerialFilter serial_filter(begin, end);
-            ParallelFilter parallel_filter(begin, end);
+            SerialFilter<PipelineScheduler> serial_filter(begin, end, this);
+            ParallelFilter<PipelineScheduler> parallel_filter(begin, end, this);
             pipe.add_filter(serial_filter);
             pipe.add_filter(parallel_filter);
 
@@ -67,8 +66,20 @@ public:
             pipe.clear();
         }
     }
-    friend class SerialFilter<TExectionBody, TSchedulerEngine>;
-    friend class ParallelFilter<TExectionBody, TSchedulerEngine>;
+
+    void* getEngine() {
+        return &engine;
+    }
+
+    void* getBody() {
+        return &body;
+    }
+
+
+    ~PipelineScheduler() {}
+
+    friend class SerialFilter<PipelineScheduler>;
+    friend class ParallelFilter<PipelineScheduler>;
 private:
 
     void initializeOPENCL(char * kernelName){

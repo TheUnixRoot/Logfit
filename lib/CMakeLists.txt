@@ -21,6 +21,8 @@ set(SOURCE_FILES
         DataStructures/ProvidedDataStructures.h
         Implementations/Scheduler/GraphScheduler.h
         Implementations/Engines/LogFitEngine.h
+        Implementations/Scheduler/PipelineScheduler.h
+        Implementations/Engines/DynamicEngine.h
         Interfaces/Bodies/IBody.h
         Interfaces/Engines/IEngine.h
         Interfaces/Scheduler/IScheduler.h
@@ -32,7 +34,7 @@ set(SOURCE_FILES
         Helpers/Pipeline/Bundle.h
         )
 
-add_library(heterogeneous_parallel_for ${SOURCE_FILES})
+add_library(heterogeneous_parallel_for SHARED ${SOURCE_FILES})
 
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
@@ -49,5 +51,8 @@ target_link_libraries(heterogeneous_parallel_for tbb OpenCL tbbmalloc_proxy)
 add_custom_command(
         TARGET heterogeneous_parallel_for POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_SOURCE_DIR}/cmake-build-debug/libheterogeneous_parallel_for.a
-        ${CMAKE_SOURCE_DIR}/libheterogeneous_parallel_for.a)
+        ${CMAKE_SOURCE_DIR}/cmake-build-debug/libheterogeneous_parallel_for.so
+        ${CMAKE_SOURCE_DIR}/libheterogeneous_parallel_for.so)
+add_custom_command(
+        TARGET heterogeneous_parallel_for PRE_BUILD
+        COMMAND rm -f ${CMAKE_SOURCE_DIR}/cmake-build-debug/libheterogeneous_parallel_for.so || true)

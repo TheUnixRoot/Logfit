@@ -16,6 +16,8 @@ public:
     virtual void recordCPUTh(unsigned int chunk, float time) = 0;
 
     virtual void reStart() = 0;
+
+    virtual ~IEngine() {}
 };
 
 #endif //BARNESLOGFIT_IENGINE_H

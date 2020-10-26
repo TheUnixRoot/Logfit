@@ -17,6 +17,13 @@ public:
     virtual std::tuple<Tindex, Args ...> GetGPUArgs(Tindex indexes) = 0;
 
     virtual NDRange GetNDRange() = 0;
+
+    virtual void sendObjectToGPU(int begin, int end, void * null_ptr) {}
+
+    virtual void OperatorGPU(int begin, int end, void * null_ptr) {}
+
+    virtual void getBackObjectFromGPU(int begin, int end, void * null_ptr){}
+
 };
 
 #endif //BARNESLOGFIT_IBODY_H

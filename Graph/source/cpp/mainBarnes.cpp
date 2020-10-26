@@ -7,11 +7,11 @@
 // Description	: Main file of BarnesHut simulation
 //============================================================================
 
-#include <cstdlib> 
+#include <cstdlib>
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
-#include <Implementations/Engines/LogFitEngine.h>
-#include <Implementations/Scheduler/GraphScheduler.h>
+#include <Helpers/SchedulerFactory.h>
+#include <Helpers/ConsoleUtils.h>
 
 #include "Implementations/Bodies/BarnesBody.h"
 
@@ -22,27 +22,29 @@ using namespace tbb;
  * Main Function
  * **************************************************************************/
 
-int main(int argc, char** argv){
+int main(int argc, char **argv) {
 
-	Params p = ConsoleUtils::parseArgs(argc, argv);
-    cout << CONSOLE_YELLOW << "BarnesHut Simulation: "<< p.inputData << ", Number of CPU's cores: " << p.numcpus <<
-               ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
-
-    LogFitEngine logFitEngine{p.numcpus, p.numgpus, 1, 1};
-
+    Params p = ConsoleUtils::parseArgs(argc, argv);
+    cout << CONSOLE_YELLOW << "BarnesHut Simulation: " << p.inputData << ", Number of CPU's cores: " << p.numcpus <<
+         ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
     size_t threadNum{p.numcpus + p.numgpus};
-
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
+
     ReadInput(p.inputData);
     initialize_tree();
-    BarnesBody body(BarnesHutDataStructures::nbodies);
+    BarnesBody *body{new BarnesBody(BarnesHutDataStructures::nbodies)};
 
-    GraphScheduler<BarnesBody, LogFitEngine, t_index, buffer_OctTreeLeafNode,
-            buffer_OctTreeInternalNode, int, float, float> logFitGraphScheduler(p, &body, logFitEngine);
+    auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance<
+            GraphScheduler<LogFitEngine, BarnesBody, t_index,
+                buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>,
+            LogFitEngine,
+            BarnesBody, t_index,
+            buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>
+        (p, body)};
 
-    logFitGraphScheduler.startTimeAndEnergy();
+    logFitGraphScheduler->startTimeAndEnergy();
     for (step = 0; step < timesteps; step++) {
-//        cout << "Step " << step << endl;
+        cout << "Step " << step << endl;
         register float diameter, centerx, centery, centerz;
         ComputeCenterAndDiameter(nbodies, diameter, centerx, centery, centerz);
 
@@ -68,18 +70,22 @@ int main(int argc, char** argv){
         node.used = USED;
         ComputeNextMorePointers(tree[root], node);
 
-        logFitGraphScheduler.StartParallelExecution();
+        logFitGraphScheduler->StartParallelExecution();
 
         RecycleTree(); // recycle the tree
 
-        for (int i = 0; i < nbodies; i++) { // the iterations are independent: they can be executed in any order and in parallel
+        for (int i = 0;
+             i < nbodies; i++) { // the iterations are independent: they can be executed in any order and in parallel
             Advance(bodies[i]); // advance the position and velocity of each body
         }
 
     } // end of time step
 
-    logFitGraphScheduler.endTimeAndEnergy();
-    logFitGraphScheduler.saveResultsForBench();
+    logFitGraphScheduler->endTimeAndEnergy();
+    logFitGraphScheduler->saveResultsForBench();
 
-	return EXIT_SUCCESS;
+    delete(body);
+    HelperFactories::SchedulerFactory::deleteInstance(logFitGraphScheduler);
+
+    return EXIT_SUCCESS;
 }

@@ -16,14 +16,14 @@ using namespace tbb;
 
 const int NUM_RAND = 256;
 
-int RandomNumber() { return (std::rand() % NUM_RAND); }
+inline int RandomNumber() { return (std::rand() % NUM_RAND); }
 
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class TestExecutionBody : IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
+class TestExecutionBody : public IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
-    const size_t vsize = 10000000;
+    size_t vsize;
     dim_range ndRange;
     buffer_f Adevice;
     buffer_f Bdevice;
@@ -33,7 +33,7 @@ public:
     float *Chost;
 public:
 
-    TestExecutionBody() : ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
+    TestExecutionBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
                           Ahost{Adevice.data()}, Bhost{Bdevice.data()}, Chost{Cdevice.data()} {
 
         std::generate(Ahost, Ahost + vsize, []{return 1.0;});
