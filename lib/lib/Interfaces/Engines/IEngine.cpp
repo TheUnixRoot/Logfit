@@ -4,6 +4,7 @@
 
 #ifndef BARNESLOGFIT_IENGINE_H
 #define BARNESLOGFIT_IENGINE_H
+
 class IEngine {
 public:
 

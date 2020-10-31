@@ -7,7 +7,7 @@
  * Interface IBody
  *
  * **************************************************************************/
-template <typename NDRange, typename Tindex, typename ...Args>
+template<typename NDRange, typename Tindex, typename ...Args>
 class IBody {
 public:
     virtual int GetVsize() = 0;
@@ -18,11 +18,11 @@ public:
 
     virtual NDRange GetNDRange() = 0;
 
-    virtual void sendObjectToGPU(int begin, int end, void * null_ptr) {}
+    virtual void sendObjectToGPU(int begin, int end, void *null_ptr) {}
 
-    virtual void OperatorGPU(int begin, int end, void * null_ptr) {}
+    virtual void OperatorGPU(int begin, int end, void *null_ptr) {}
 
-    virtual void getBackObjectFromGPU(int begin, int end, void * null_ptr){}
+    virtual void getBackObjectFromGPU(int begin, int end, void *null_ptr) {}
 
 };
 

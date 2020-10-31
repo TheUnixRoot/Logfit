@@ -13,17 +13,23 @@
 
 #include <tbb/flow_graph_opencl_node.h>
 #include <tbb/task_scheduler_init.h>
+#include "../../include/utils/Utils.h"
+#include "tbb/atomic.h"
 
+namespace PipelineDatastructures {
+    tbb::atomic<int> gpuStatus;
 
-using Params = struct _params{
-    unsigned int numcpus;
-    unsigned int numgpus;
-    char benchName[256];
-    char kernelName[50];
-    char openclFile[256];
-    char inputData[256];
-    float ratioG;
-};
+    class Bundle {
+    public:
+        int begin;
+        int end;
+        ProcessorUnit type; //GPU = 0, CPU=1
+
+        Bundle() {
+        };
+    };
+
+}
 
 
 enum ProcessorUnit : int {
@@ -37,15 +43,15 @@ namespace dataStructures {
         tbb::flow::interface11::opencl_device device;
     public:
         template<typename DeviceFilter>
-        tbb::flow::opencl_device operator()(tbb::flow::opencl_factory<DeviceFilter>& f) {
-            if(this->firstTime){
+        tbb::flow::opencl_device operator()(tbb::flow::opencl_factory<DeviceFilter> &f) {
+            if (this->firstTime) {
                 this->firstTime = false;
                 auto deviceIterator = std::find_if(f.devices().cbegin(), f.devices().cend(),
-                                                   [](const tbb::flow::opencl_device& d) {
+                                                   [](const tbb::flow::opencl_device &d) {
                                                        return d.type() == CL_DEVICE_TYPE_GPU;
                                                    }
                 );
-                this->device = deviceIterator == f.devices().cend()? *f.devices().cbegin() : *deviceIterator;
+                this->device = deviceIterator == f.devices().cend() ? *f.devices().cbegin() : *deviceIterator;
             }
             return this->device;
         }

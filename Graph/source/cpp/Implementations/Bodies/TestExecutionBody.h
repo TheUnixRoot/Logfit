@@ -9,6 +9,7 @@
 #include <CL/cl.h>
 
 #endif
+
 #include <Interfaces/Bodies/IBody.h>
 #include "../../DataStructures/ClientDataStructures.h"
 
@@ -33,12 +34,14 @@ public:
     float *Chost;
 public:
 
-    TestExecutionBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
-                          Ahost{Adevice.data()}, Bhost{Bdevice.data()}, Chost{Cdevice.data()} {
+    TestExecutionBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize},
+                                                      Cdevice{vsize},
+                                                      Ahost{Adevice.data()}, Bhost{Bdevice.data()},
+                                                      Chost{Cdevice.data()} {
 
-        std::generate(Ahost, Ahost + vsize, []{return 1.0;});
-        std::generate(Bhost, Bhost + vsize, []{return 1.0;});
-        std::generate(Chost, Chost + vsize, []{return -1;});
+        std::generate(Ahost, Ahost + vsize, [] { return 1.0; });
+        std::generate(Bhost, Bhost + vsize, [] { return 1.0; });
+        std::generate(Chost, Chost + vsize, [] { return -1; });
     }
 
     void OperatorCPU(int begin, int end) {

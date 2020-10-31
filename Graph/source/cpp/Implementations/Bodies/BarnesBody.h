@@ -8,10 +8,12 @@
 #if defined(__APPLE__)
 #include <OpenCL/cl.h>
 #else
+
 #include <CL/cl.h>
+
 #endif
 
-#include <Interfaces/Bodies/IBody.h>
+#include <body/IBody.h>
 #include "../../DataStructures/BarnesDataStructures.h"
 
 using namespace tbb;
@@ -20,12 +22,13 @@ using namespace BarnesHutDataStructures;
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class BarnesBody : public IBody<dim_range, t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>{
+class BarnesBody
+        : public IBody<dim_range, t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float> {
 public:
     bool firsttime;
     dim_range globalWorkSize;
 public:
-    BarnesBody(size_t nbodies) : globalWorkSize{nbodies}, firsttime{true} { }
+    BarnesBody(size_t nbodies) : globalWorkSize{nbodies}, firsttime{true} {}
 
     void OperatorCPU(int begin, int end) {
         for (int i = begin; i < end; i++) {
@@ -42,7 +45,7 @@ public:
     }
 
     type_gpu_node GetGPUArgs(t_index indexes) {
-        globalWorkSize[0] = (indexes.end-indexes.begin);
+        globalWorkSize[0] = (indexes.end - indexes.begin);
         return std::make_tuple(indexes, bodies, d_tree, step, epssq, dthf);
     }
 };

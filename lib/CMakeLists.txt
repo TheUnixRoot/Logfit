@@ -18,20 +18,17 @@ set(CLROOT /opt/opencl-sdk)
 
 
 set(SOURCE_FILES
-        DataStructures/ProvidedDataStructures.h
-        Implementations/Scheduler/GraphScheduler.h
-        Implementations/Engines/LogFitEngine.h
-        Implementations/Scheduler/PipelineScheduler.h
-        Implementations/Engines/DynamicEngine.h
-        Interfaces/Bodies/IBody.h
-        Interfaces/Engines/IEngine.h
-        Interfaces/Scheduler/IScheduler.h
-        Helpers/ConsoleUtils.h
-        Helpers/EngineFactory.h
-        Helpers/SchedulerFactory.h
-        Helpers/Pipeline/ParallelFilter.h
-        Helpers/Pipeline/SerialFilter.h
-        Helpers/Pipeline/Bundle.h
+        lib/DataStructures/ProvidedDataStructures.h
+        include/scheduler/GraphScheduler.h
+        lib/Implementations/Engines/LogFitEngine.cpp
+        include/scheduler/PipelineScheduler.h
+        lib/Implementations/Engines/DynamicEngine.cpp
+        lib/Interfaces/Engines/IEngine.cpp
+        lib/Interfaces/Scheduler/IScheduler.cpp
+        lib/Helpers/ConsoleUtils.h
+        include/engine/EngineFactory.h
+        include/body/IBody.h
+        include/utils/Utils.h
         )
 
 add_library(heterogeneous_parallel_for SHARED ${SOURCE_FILES})

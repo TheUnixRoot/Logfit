@@ -10,14 +10,17 @@
 #include <cstdlib>
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
-#include <Helpers/SchedulerFactory.h>
-#include <Helpers/ConsoleUtils.h>
+#include <scheduler/SchedulerFactory.h>
+#include <utils/Utils.h>
+#include <engine/LogFitEngine.h>
 
 #include "Implementations/Bodies/BarnesBody.h"
+#include "DataStructures/BarnesDataStructures.h"
 
 using namespace std;
 using namespace tbb;
-
+using MySchedulerTypename = GraphScheduler<LogFitEngine, BarnesBody, t_index,
+        buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/
@@ -35,12 +38,11 @@ int main(int argc, char **argv) {
     BarnesBody *body{new BarnesBody(BarnesHutDataStructures::nbodies)};
 
     auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance<
-            GraphScheduler<LogFitEngine, BarnesBody, t_index,
-                buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>,
+            MySchedulerTypename,
             LogFitEngine,
             BarnesBody, t_index,
             buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>
-        (p, body)};
+                                      (p, body)};
 
     logFitGraphScheduler->startTimeAndEnergy();
     for (step = 0; step < timesteps; step++) {
@@ -84,8 +86,8 @@ int main(int argc, char **argv) {
     logFitGraphScheduler->endTimeAndEnergy();
     logFitGraphScheduler->saveResultsForBench();
 
-    delete(body);
-    HelperFactories::SchedulerFactory::deleteInstance(logFitGraphScheduler);
+    delete (body);
+    HelperFactories::SchedulerFactory::deleteInstance<MySchedulerTypename, LogFitEngine, BarnesBody>(logFitGraphScheduler);
 
     return EXIT_SUCCESS;
 }

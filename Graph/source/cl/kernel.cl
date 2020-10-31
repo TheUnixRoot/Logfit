@@ -52,93 +52,109 @@ typedef struct {
 * Kernels
 * **************************************************************************/
 
-__kernel void sample(t_index indexes
-					 ,__global float* Adevice
-					 ,__global float* Bdevice
-					 ,__global float* Cdevice
-){
+__kernel void sample(t_index indexes, __global float *Adevice, __global float *Bdevice, __global float *Cdevice
+) {
     int idx = get_global_id(0) + indexes.begin;
     if (idx >= indexes.end) return;
 //    printf("\nidx: %d\n", idx);
     Cdevice[idx] = Adevice[idx] + Bdevice[idx];
 }
 
-__kernel void ComputeForce(t_index indexes
-				,__global OctTreeLeafNode *bodies,
-				__global OctTreeInternalNode *tree,
-				int step,
-				float epssq,
-				float dthf
-				)
+__kernel void ComputeForce(t_index indexes, __global OctTreeLeafNode
+
+*bodies,
+__global OctTreeInternalNode
+*tree,
+int step,
+float epssq,
+float dthf
+)
 {
-    int begin = indexes.begin;
-    int end = indexes.end;
+int begin = indexes.begin;
+int end = indexes.end;
 
-    double drx, dry, drz, drsq, nphi, scale, idr;
-    float ax, ay, az;
-    int idx = get_global_id(0) + begin;
+double drx, dry, drz, drsq, nphi, scale, idr;
+float ax, ay, az;
+int idx = get_global_id(0) + begin;
 
-    if (idx >= end) return;
-    ax = bodies[idx].accx;
-    ay = bodies[idx].accy;
-    az = bodies[idx].accz;
+if (idx >= end) return;
+ax = bodies[idx].accx;
+ay = bodies[idx].accy;
+az = bodies[idx].accz;
 
-    bodies[idx].accx = 0.0;
-    bodies[idx].accy = 0.0;
-    bodies[idx].accz = 0.0;
+bodies[idx].
+accx = 0.0;
+bodies[idx].
+accy = 0.0;
+bodies[idx].
+accz = 0.0;
 
-    OctTreeNode current;
-    current.index = 0;
-    current.type = 0;
-    current.used = 1;
+OctTreeNode current;
+current.
+index = 0;
+current.
+type = 0;
+current.
+used = 1;
 
-    while (current.index != -1) {
-        if (current.type == 0) {
-            OctTreeInternalNode n = tree[current.index];
-            drx = n.posx - bodies[idx].posx;
-            dry = n.posy - bodies[idx].posy;
-            drz = n.posz - bodies[idx].posz;
-        } else {
-            OctTreeLeafNode l = bodies[current.index];
-            drx = l.posx - bodies[idx].posx;
-            dry = l.posy - bodies[idx].posy;
-            drz = l.posz - bodies[idx].posz;
-        }
-        drsq = drx * drx + dry * dry + drz * drz;
-        if (current.type == 0) { //The current node is a CELL
-            OctTreeInternalNode n2 = tree[current.index];
-            if (drsq < n2.dsq) { //We go deep using more pointers
-                current = n2.more;
-            } else { //we dont have to go deeper, so next pointer
-                drsq += epssq;
-                idr = 1 / sqrt(drsq);
-                nphi = n2.mass * idr;
-                scale = nphi * idr * idr;
-                bodies[idx].accx += drx * scale;
-                bodies[idx].accy += dry * scale;
-                bodies[idx].accz += drz * scale;
+while (current.index != -1) {
+if (current.type == 0) {
+OctTreeInternalNode n = tree[current.index];
+drx = n.posx - bodies[idx].posx;
+dry = n.posy - bodies[idx].posy;
+drz = n.posz - bodies[idx].posz;
+} else {
+OctTreeLeafNode l = bodies[current.index];
+drx = l.posx - bodies[idx].posx;
+dry = l.posy - bodies[idx].posy;
+drz = l.posz - bodies[idx].posz;
+}
+drsq = drx * drx + dry * dry + drz * drz;
+if (current.type == 0) { //The current node is a CELL
+OctTreeInternalNode n2 = tree[current.index];
+if (drsq<n2.dsq) { //We go deep using more pointers
+current = n2.more;
+} else { //we dont have to go deeper, so next pointer
+drsq +=
+epssq;
+idr = 1 / sqrt(drsq);
+nphi = n2.mass * idr;
+scale = nphi * idr * idr;
+bodies[idx].accx +=
+drx *scale;
+bodies[idx].accy +=
+dry *scale;
+bodies[idx].accz +=
+drz *scale;
 
-                current = n2.next;
-            }
-        } else { //the current node is a leaf
-            OctTreeLeafNode l2 = bodies[current.index];
-            if (/*l2*/current.index != idx/*bodies[idx]*/) {
-                drsq += epssq;
-                idr = 1 / sqrt(drsq);
-                nphi = l2.mass * idr;
-                scale = nphi * idr * idr;
-                bodies[idx].accx += drx * scale;
-                bodies[idx].accy += dry * scale;
-                bodies[idx].accz += drz * scale;
-            }
-            current = l2.next;
-        }
-    }
-    if (step > 0) {
-        bodies[idx].velx += (bodies[idx].accx - ax) * dthf;
-        bodies[idx].vely += (bodies[idx].accy - ay) * dthf;
-        bodies[idx].velz += (bodies[idx].accz - az) * dthf;
-    }
+current = n2.next;
+}
+} else { //the current node is a leaf
+OctTreeLeafNode l2 = bodies[current.index];
+if (/*l2*/current.index != idx/*bodies[idx]*/) {
+drsq +=
+epssq;
+idr = 1 / sqrt(drsq);
+nphi = l2.mass * idr;
+scale = nphi * idr * idr;
+bodies[idx].accx +=
+drx *scale;
+bodies[idx].accy +=
+dry *scale;
+bodies[idx].accz +=
+drz *scale;
+}
+current = l2.next;
+}
+}
+if (step > 0) {
+bodies[idx].velx += (bodies[idx].accx - ax) *
+dthf;
+bodies[idx].vely += (bodies[idx].accy - ay) *
+dthf;
+bodies[idx].velz += (bodies[idx].accz - az) *
+dthf;
+}
 
 }
 

@@ -4,9 +4,6 @@
 
 #ifndef BARNESORACLE_CONSOLEUTILS_H
 #define BARNESORACLE_CONSOLEUTILS_H
-#define CONSOLE_YELLOW "\033[0;33m"
-#define CONSOLE_WHITE "\033[0m"
-#define CONSOLE_RED ""
 
 #include <cstdlib>
 #include <iostream>
@@ -18,9 +15,6 @@
 
 using namespace std;
 namespace ConsoleUtils {
-    static constexpr unsigned int str2int(const char *str, int h = 0) {
-        return !str[h] ? 5381 : (str2int(str, h + 1) + 33) ^ str[h];
-    }
 
     static std::string validateArgs(Params p) {
         string res{""};
@@ -113,16 +107,19 @@ namespace ConsoleUtils {
             cerr << "Parameters with wrong values. Error: " << message << endl;
             exit(-1);
         }
-        cout << CONSOLE_YELLOW << message << CONSOLE_WHITE << endl << "Console parameters read for BarnesHut Simulation: "
+        cout << CONSOLE_YELLOW << message << CONSOLE_WHITE << endl
+             << "Console parameters read for BarnesHut Simulation: "
              << params.inputData << ", Number of CPU's cores: " << params.numcpus << ", Number of GPUs: "
              << params.numgpus << ", Percent in GPU: " << params.ratioG << endl;
 
         return params;
     }
+
     static void saveResultsForBench(Params p, double runtime) {
         int sep{30};
         std::cout << CONSOLE_YELLOW << "*************************" << CONSOLE_WHITE << std::endl;
-        std::cout << CONSOLE_YELLOW << p.numcpus << setw(sep) << p.numgpus << setw(sep) << runtime << CONSOLE_WHITE << std::endl;
+        std::cout << CONSOLE_YELLOW << p.numcpus << setw(sep) << p.numgpus << setw(sep) << runtime << CONSOLE_WHITE
+                  << std::endl;
     }
 }
 #endif //BARNESORACLE_CONSOLEUTILS_H

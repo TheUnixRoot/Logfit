@@ -38,7 +38,7 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(Logfit PUBLIC NDEBUG=0)
 endif ()
 
-include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib)
+include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include)
 
 find_library(HPFLIB heterogeneous_parallel_for)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)

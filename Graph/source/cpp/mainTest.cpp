@@ -7,11 +7,11 @@
 // Description	: Main file of BarnesHut simulation
 //============================================================================
 
-#include <cstdlib> 
+#include <cstdlib>
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
-#include <Helpers/SchedulerFactory.h>
-#include <Helpers/ConsoleUtils.h>
+#include <Scheduler.h>
+#include <Utils.h>
 
 #include "Implementations/Bodies/TestExecutionBody.h"
 
@@ -22,23 +22,23 @@ using namespace tbb;
  * Main Function
  * **************************************************************************/
 
-int main(int argc, char** argv){
+int main(int argc, char **argv) {
 
-	Params p = ConsoleUtils::parseArgs(argc, argv);
-    cout << CONSOLE_YELLOW << "Test Simulation: "<< p.inputData << ", Number of CPU's cores: " << p.numcpus <<
-               ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
+    Params p = ConsoleUtils::parseArgs(argc, argv);
+    cout << CONSOLE_YELLOW << "Test Simulation: " << p.inputData << ", Number of CPU's cores: " << p.numcpus <<
+         ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
 
     size_t threadNum{p.numcpus + p.numgpus};
 
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
 
-    auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance<
-            GraphScheduler<LogFitEngine, TestExecutionBody, t_index,
-                    buffer_f, buffer_f, buffer_f>,
-            LogFitEngine,
-            TestExecutionBody, t_index,
-            buffer_f, buffer_f, buffer_f>
-          (p, new TestExecutionBody())};
+    auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance <
+                              GraphScheduler < LogFitEngine, TestExecutionBody, t_index,
+                              buffer_f, buffer_f, buffer_f > ,
+                              LogFitEngine,
+                              TestExecutionBody, t_index,
+                              buffer_f, buffer_f, buffer_f >
+                                                  (p, new TestExecutionBody())};
 
     logFitGraphScheduler->startTimeAndEnergy();
 
@@ -50,5 +50,5 @@ int main(int argc, char** argv){
 
     HelperFactories::SchedulerFactory::deleteInstance(logFitGraphScheduler);
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
