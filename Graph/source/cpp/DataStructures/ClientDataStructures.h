@@ -5,9 +5,9 @@
 #ifndef BARNESLOGFIT_DATASTRUCTURES_H
 #define BARNESLOGFIT_DATASTRUCTURES_H
 
-#include "ProvidedDataStructures.h"
+#include <DataStructures/ProvidedDataStructures.h>
 
-using t_index = struct _t_index{
+using t_index = struct _t_index {
     int begin, end;
 };
 using buffer_f = tbb::flow::opencl_buffer<cl_float>;

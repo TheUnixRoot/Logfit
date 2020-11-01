@@ -10,24 +10,21 @@
 
 #endif
 
-#include "tbb/parallel_for.h"
-#include "tbb/task.h"
-#include "tbb/tick_count.h"
+#include <Interfaces/Bodies/IBody.h>
 #include "../../DataStructures/ClientDataStructures.h"
-#include "../../Interfaces/Bodies/IBody.h"
 
 using namespace tbb;
 
 const int NUM_RAND = 256;
 
-int RandomNumber() { return (std::rand() % NUM_RAND); }
+inline int RandomNumber() { return (std::rand() % NUM_RAND); }
 
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class TestExecutionBody : IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
+class TestExecutionBody : public IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
-    const size_t vsize = 100;
+    size_t vsize;
     dim_range ndRange;
     buffer_f Adevice;
     buffer_f Bdevice;
@@ -37,12 +34,14 @@ public:
     float *Chost;
 public:
 
-    TestExecutionBody() : ndRange{vsize}, Adevice{vsize}, Bdevice{vsize}, Cdevice{vsize},
-                          Ahost{Adevice.data()}, Bhost{Bdevice.data()}, Chost{Cdevice.data()} {
+    TestExecutionBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize},
+                                                      Cdevice{vsize},
+                                                      Ahost{Adevice.data()}, Bhost{Bdevice.data()},
+                                                      Chost{Cdevice.data()} {
 
-        std::generate(Ahost, Ahost + vsize, RandomNumber);
-        std::generate(Bhost, Bhost + vsize, RandomNumber);
-        std::generate(Chost, Chost + vsize, []{return -1;});
+        std::generate(Ahost, Ahost + vsize, [] { return 1.0; });
+        std::generate(Bhost, Bhost + vsize, [] { return 1.0; });
+        std::generate(Chost, Chost + vsize, [] { return -1; });
     }
 
     void OperatorCPU(int begin, int end) {

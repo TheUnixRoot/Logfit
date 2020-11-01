@@ -1,4 +1,6 @@
 .idea/
 cmake-build-debug/
 logfit
+**/*.a
+**/*.so
 logfitDebug
