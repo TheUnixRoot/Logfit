@@ -7,7 +7,7 @@
 
 #include "tbb/pipeline.h"
 #include "tbb/parallel_for.h"
-#include "../../lib/Interfaces/Scheduler/IScheduler.cpp"
+#include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../../lib/Helpers/Pipeline/Filter.cpp"
 
 
@@ -42,10 +42,6 @@ public:
     void *getBody() ;
 
     ~PipelineScheduler() {}
-
-    friend class SerialFilter<PipelineScheduler>;
-
-    friend class ParallelFilter<PipelineScheduler>;
 
 private:
 

@@ -10,7 +10,7 @@
 
 #endif
 
-#include <Interfaces/Bodies/IBody.h>
+#include <body/IGraphBody.h>
 #include "../../DataStructures/ClientDataStructures.h"
 
 using namespace tbb;
@@ -22,7 +22,7 @@ inline int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class TestExecutionBody : public IBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
+class TestExecutionBody : public IGraphBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
     size_t vsize;
     dim_range ndRange;

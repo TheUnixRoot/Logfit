@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
+
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 #include <engine/LogFitEngine.h>
@@ -47,20 +48,20 @@ int main(int argc, char **argv) {
     logFitGraphScheduler->startTimeAndEnergy();
     for (step = 0; step < timesteps; step++) {
         cout << "Step " << step << endl;
-        register float diameter, centerx, centery, centerz;
+        float diameter, centerx, centery, centerz;
         ComputeCenterAndDiameter(nbodies, diameter, centerx, centery, centerz);
 
         // create the tree's root
         int root = NewNode(centerx, centery, centerz);
         OctTreeInternalNode &p_r = tree[root];
 
-        register float radius = diameter * 0.5;
+        float radius = diameter * 0.5;
         for (int i = 0; i < nbodies; i++) {
             Insert(p_r, i, radius); // grow the tree by inserting each body
         }
         gdiameter = diameter;
         groot = root;
-        register int curr = 0;
+        int curr = 0;
         curr = ComputeCenterOfMass(p_r, curr);
         copy_to_bodies();
 

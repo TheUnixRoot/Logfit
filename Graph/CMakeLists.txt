@@ -1,24 +1,30 @@
 cmake_minimum_required(VERSION 3.2)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_COMPILER "dpcpp")
+
+set(USER ${USER} juanp)
 
 project(BarnesLogfit)
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_STANDARD 17)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-
+set(CL_TARGET_OPENCL_VERSION 220)
 list(APPEND CMAKE_PREFIX_PATH "/home/juanp/Desktop/TFG/Logfit/lib/cmake-build-debug/")
 
 set(TBB_PREVIEW_FLOW_GRAPH_FEATURES 1)
 set(TBB_PREVIEW_FLOW_GRAPH_NODES 1)
 
-set(BOOST_ROOT bin/boost_1_66_0)
 set(TBBROOT $ENV{TBBROOT})
 set(HPFROOT ../)
-set(CLROOT /opt/opencl-sdk)
+set(CLROOT /opt/intel/opencl/SDK)
+set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
+
 set(MAIN_FILE source/cpp/mainBarnes.cpp)
 
 set(SOURCE_FILES
@@ -38,8 +44,8 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(Logfit PUBLIC NDEBUG=0)
 endif ()
 
-include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include)
+include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
 
 find_library(HPFLIB heterogeneous_parallel_for)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)
-target_link_libraries(Logfit tbb OpenCL tbbmalloc_proxy ${HPFLIB})
+target_link_libraries(Logfit tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
