@@ -5,7 +5,7 @@
 #ifndef HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
 #define HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
 
-#include "../../Interfaces/Scheduler/IScheduler.cpp"
+#include "../../Interfaces/Schedulers/IScheduler.cpp"
 #include "tbb/pipeline.h"
 #include "tbb/tick_count.h"
 
@@ -40,9 +40,9 @@ public:
         static bool firstmeasurement = true;
         scheduler->startGpu = tbb::tick_count::now();
 
-        scheduler->body.sendObjectToGPU(bundle->begin, bundle->end, NULL);
-        scheduler->body.OperatorGPU(bundle->begin, bundle->end, NULL);
-        scheduler->body.getBackObjectFromGPU(bundle->begin, bundle->end, NULL);
+        scheduler->getBody()->sendObjectToGPU(bundle->begin, bundle->end, NULL);
+        scheduler->getBody()->OperatorGPU(bundle->begin, bundle->end, NULL);
+        scheduler->getBody()->getBackObjectFromGPU(bundle->begin, bundle->end, NULL);
         clFinish(scheduler->command_queue);
 
         scheduler->stopGpu = tbb::tick_count::now();
@@ -54,11 +54,11 @@ public:
 
     void executeOnCPU(Bundle *bundle) {
         scheduler->startGpu = tbb::tick_count::now();
-        scheduler->body.OperatorCPU(bundle->begin, bundle->end);
+        scheduler->getBody()->OperatorCPU(bundle->begin, bundle->end);
         scheduler->stopGpu = tbb::tick_count::now();
         float time = (scheduler->stopGpu - scheduler->startGpu).seconds() * 1000;
 
-        scheduler->engine.recordCPUTh((bundle->end - bundle->begin), time);
+        scheduler->getEngine()->recordCPUTh((bundle->end - bundle->begin), time);
     }
 };
 
@@ -77,7 +77,7 @@ public:
             //Checking whether the GPU is idle or not.
             if (--gpuStatus >= 0) {
                 // pedimos un trozo para la GPU entre begin y end
-                int ckgpu = scheduler->engine.getGPUChunk(begin, end);
+                int ckgpu = scheduler->getEngine()->getGPUChunk(begin, end);
                 if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
                     int auxEnd = begin + ckgpu;
                     auxEnd = (auxEnd > end) ? end : auxEnd;
@@ -88,7 +88,7 @@ public:
                     return bundle;
                 } else { // paramos la GPU si el trozo es <= 0, generamos token CPU
                     // no incrementamos gpuStatus para dejar pillada la GPU
-                    int auxEnd = begin + scheduler->engine.getCPUChunk(begin, end);
+                    int auxEnd = begin + scheduler->getEngine()->getCPUChunk(begin, end);
                     auxEnd = (auxEnd > end) ? end : auxEnd;
                     bundle->begin = begin;
                     bundle->end = auxEnd;
@@ -99,7 +99,7 @@ public:
             } else {
                 //CPU WORK
                 gpuStatus++;
-                int auxEnd = begin + scheduler->engine.getCPUChunk(begin, end);
+                int auxEnd = begin + scheduler->getEngine()->getCPUChunk(begin, end);
                 auxEnd = (auxEnd > end) ? end : auxEnd;
                 bundle->begin = begin;
                 bundle->end = auxEnd;

@@ -13,7 +13,7 @@
 
 #endif
 
-#include <body/IBody.h>
+#include <body/IGraphBody.h>
 #include "../../DataStructures/BarnesDataStructures.h"
 
 using namespace tbb;
@@ -23,7 +23,7 @@ using namespace BarnesHutDataStructures;
  * class Body
  * **************************************************************************/
 class BarnesBody
-        : public IBody<dim_range, t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float> {
+        : public IGraphBody<dim_range, t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float> {
 public:
     bool firsttime;
     dim_range globalWorkSize;

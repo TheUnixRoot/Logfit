@@ -5,7 +5,7 @@
 #ifndef BARNESLOGFIT_GRAPHLOGFIT_H
 #define BARNESLOGFIT_GRAPHLOGFIT_H
 
-#include "../../lib/Interfaces/Scheduler/IScheduler.cpp"
+#include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../engine/EngineFactory.h"
 
 using namespace tbb;

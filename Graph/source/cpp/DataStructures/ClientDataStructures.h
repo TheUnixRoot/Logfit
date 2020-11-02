@@ -5,7 +5,9 @@
 #ifndef BARNESLOGFIT_DATASTRUCTURES_H
 #define BARNESLOGFIT_DATASTRUCTURES_H
 
-#include <DataStructures/ProvidedDataStructures.h>
+#include <utils/Utils.h>
+#include <vector>
+#include <tbb/flow_graph_opencl_node.h>
 
 using t_index = struct _t_index {
     int begin, end;
