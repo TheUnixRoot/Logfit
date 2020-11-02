@@ -2,8 +2,8 @@
 // Created by juanp on 4/12/18.
 //
 
-#ifndef BARNESORACLE_CONSOLEUTILS_H
-#define BARNESORACLE_CONSOLEUTILS_H
+#ifndef BARNESORACLE_CONSOLEUTILS_CPP
+#define BARNESORACLE_CONSOLEUTILS_CPP
 
 #include <cstdlib>
 #include <iostream>
@@ -11,7 +11,7 @@
 #include <thread>
 #include <string>
 #include <iomanip>
-#include "../DataStructures/ProvidedDataStructures.h"
+#include "../../include/utils/Utils.h"
 
 using namespace std;
 namespace ConsoleUtils {
@@ -122,4 +122,4 @@ namespace ConsoleUtils {
                   << std::endl;
     }
 }
-#endif //BARNESORACLE_CONSOLEUTILS_H
+#endif //BARNESORACLE_CONSOLEUTILS_CPP

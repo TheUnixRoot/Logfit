@@ -5,10 +5,9 @@
 #ifndef BARNESLOGFIT_PIPELINESCHEDULER_H
 #define BARNESLOGFIT_PIPELINESCHEDULER_H
 
-#include "tbb/pipeline.h"
-#include "tbb/parallel_for.h"
-#include "../../lib/Interfaces/Scheduler/IScheduler.cpp"
-#include "../../lib/Helpers/Pipeline/Filter.cpp"
+#include <tbb/pipeline.h>
+#include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
+#include "../../lib/DataStructures/ProvidedDataStructures.h"
 
 
 cl_int error;
@@ -43,10 +42,6 @@ public:
 
     ~PipelineScheduler() {}
 
-    friend class SerialFilter<PipelineScheduler>;
-
-    friend class ParallelFilter<PipelineScheduler>;
-
 private:
 
     void initializeOPENCL(char *kernelName) ;
@@ -60,5 +55,5 @@ private:
     void initializeHOSTPRI() ;
 };
 
-#include "../../lib/Implementations/Schedulers/PipelineScheduler.cpp"
+//#include "../../lib/Implementations/Schedulers/PipelineScheduler.cpp"
 #endif //BARNESLOGFIT_PIPELINESCHEDULER_H

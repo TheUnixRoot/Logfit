@@ -6,7 +6,7 @@
 #define BARNESLOGFIT_ISCHEDULER_H
 
 #include "tbb/tick_count.h"
-#include "../../Helpers/ConsoleUtils.h"
+#include "../../Helpers/ConsoleUtils.cpp"
 
 using namespace tbb;
 

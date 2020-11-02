@@ -4,8 +4,16 @@
 
 #ifndef BARNESLOGFIT_DATASTRUCTURES_H
 #define BARNESLOGFIT_DATASTRUCTURES_H
+#if defined(__APPLE__)
+#include <OpenCL/cl.h>
+#else
 
-#include <DataStructures/ProvidedDataStructures.h>
+#include <CL/cl.h>
+
+#endif
+#include <vector>
+#include <tbb/flow_graph_opencl_node.h>
+#include <utils/Utils.h>
 
 using t_index = struct _t_index {
     int begin, end;

@@ -23,14 +23,11 @@
 #ifndef HETEROGENEOUS_PARALLEL_FOR_LOGFITENGINE_CPP
 #define HETEROGENEOUS_PARALLEL_FOR_LOGFITENGINE_CPP
 
-#include <cstdlib>
 #include <list>
 #include <math.h>
-#include "tbb/tick_count.h"
 #include "../../../include/engine/LogFitEngine.h"
 
 using namespace std;
-using namespace tbb;
 
 LogFitEngine::LogFitEngine(unsigned int _nCPUs, unsigned int _nGPUs, unsigned int _initGChunk, unsigned int _initCChunk)
         :

@@ -9,6 +9,9 @@
 #define CONSOLE_WHITE "\033[0m"
 #define CONSOLE_RED ""
 
+#define MAX_NUMBER_GPU_SUPPORTED 1
+#define MAX_NUMBER_CPU_SUPPORTED thread::hardware_concurrency()
+
 
 using Params = struct _params {
     unsigned int numcpus;
@@ -20,21 +23,6 @@ using Params = struct _params {
     float ratioG;
 };
 
-
-enum ProcessorUnit : int;
-namespace dataStructures {
-
-    struct GpuDeviceSelector;
-
-    template<std::size_t I = 0, typename ...Tg>
-    inline typename std::enable_if<I == sizeof...(Tg), void>::type
-    try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args);
-
-    template<std::size_t I = 0, typename ...Tg>
-    inline typename std::enable_if<I < sizeof...(Tg), void>::type
-    try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args);
-
-}
 
 namespace ConsoleUtils {
     static constexpr unsigned int str2int(const char *str, int h = 0) {

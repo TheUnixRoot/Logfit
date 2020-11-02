@@ -92,7 +92,6 @@ namespace BarnesHutDataStructures {
  * **************************************************************************/
 
     void RecycleTree() { //could be more efficient, just walking throught real used nodes
-        //register int i, j;
 
         for (int i = 0; i < num_cells; i++) {
             for (int j = 0; j < 8; j++) {
@@ -157,8 +156,8 @@ namespace BarnesHutDataStructures {
     }
 
     inline void ReadInput(char *filename) {
-        register FILE *f;
-        register int i;
+        FILE *f;
+        int i;
         if ((f = fopen(filename, "r+t")) == NULL) {
             fprintf(stderr, "file not found: %s\n", filename);
             exit(-1);
@@ -201,7 +200,7 @@ namespace BarnesHutDataStructures {
     }
 
     inline void Printfloat(float d) {
-        register int i;
+        int i;
         char str[16];
 
         sprintf(str, "%.4lE", (double) d);
@@ -220,10 +219,10 @@ namespace BarnesHutDataStructures {
     }
 
     void ComputeCenterAndDiameter(const int n, float &diameter, float &centerx, float &centery, float &centerz) {
-        register float minx, miny, minz;
-        register float maxx, maxy, maxz;
-        register float posx, posy, posz;
-        register int i;
+        float minx, miny, minz;
+        float maxx, maxy, maxz;
+        float posx, posy, posz;
+        int i;
         minx = (float) 1.0E32;
         miny = (float) 1.0E32;
         minz = (float) 1.0E32;
@@ -282,9 +281,9 @@ namespace BarnesHutDataStructures {
     }
 
     void Insert(OctTreeInternalNode &n, int index, const float radius) {
-        register int i = 0, ind;
-        register float x = 0.0, y = 0.0, z = 0.0;
-        register float rh;
+        int i = 0, ind;
+        float x = 0.0, y = 0.0, z = 0.0;
+        float rh;
 
         OctTreeLeafNode &leaf = bodies[index];
         if (n.posx < leaf.posx) {
@@ -318,9 +317,9 @@ namespace BarnesHutDataStructures {
 
 // cargamos en los nodos internos la informacion de los subarboles => solucionar
     int ComputeCenterOfMass(OctTreeInternalNode &n, int curr) {
-        register float m, px = 0.0, py = 0.0, pz = 0.0;
-        register int ch;
-        register int i, j = 0;
+        float m, px = 0.0, py = 0.0, pz = 0.0;
+        int ch;
+        int i, j = 0;
 
         n.mass = 0.0;
         for (i = 0; i < 8; i++) {
@@ -444,8 +443,8 @@ namespace BarnesHutDataStructures {
 
 // actualizamos la velocidad y posicion de un cuerpo de un cuerpo en un paso
     void Advance(OctTreeLeafNode &b) {
-        register float dvelx, dvely, dvelz;
-        register float velhx, velhy, velhz;
+        float dvelx, dvely, dvelz;
+        float velhx, velhy, velhz;
 
         dvelx = b.accx * dthf;
         dvely = b.accy * dthf;

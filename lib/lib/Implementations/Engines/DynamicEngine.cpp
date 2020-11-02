@@ -9,10 +9,6 @@
 #define GPU_LAST  //ultimo trozo entero para GPU, si no, ultimo trozo para CPUs guided
 
 #include "../../../include/engine/DynamicEngine.h"
-#include "tbb/pipeline.h"
-#include "tbb/tick_count.h"
-#include <math.h>
-
 #ifdef ENERGYCOUNTERS
 #ifdef Win32
 #include "PCM_Win/windriver.h"
@@ -24,7 +20,6 @@
 
 
 using namespace std;
-using namespace tbb;
 
 
 /*Oracle Class: This scheduler version let us to split the workload in two subranges, one for GPU and one for CPUs*/

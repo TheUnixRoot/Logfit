@@ -1,7 +1,10 @@
 //
 // Created by juanp on 28/10/20.
 //
+#include <tbb/parallel_for.h>
 #include "../../../include/scheduler/PipelineScheduler.h"
+#include "../../Helpers/Pipeline/Filter.cpp"
+
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::

@@ -5,8 +5,9 @@
 #ifndef HETEROGENEOUS_PARALLEL_FOR_SCHEDULER_H
 #define HETEROGENEOUS_PARALLEL_FOR_SCHEDULER_H
 
-#include "../../lib/Interfaces/Scheduler/IScheduler.cpp"
-
+#include "../engine/EngineFactory.h"
+#include "../body/IGraphBody.h"
+#include "../body/IPipelineBody.h"
 #include "GraphScheduler.h"
 #include "PipelineScheduler.h"
 
@@ -19,7 +20,8 @@ namespace HelperFactories {
                 typename TBody,
                 typename ...Args>
         static inline typename std::enable_if<std::is_same<TScheduler,
-                GraphScheduler<TEngine, TBody, Args ...>>::value, TScheduler *>::type
+                GraphScheduler<TEngine, TBody, Args ...>>::value &&
+                is_graph_implementation<TBody>(), TScheduler *>::type
         getInstance(Params p, TBody *body) {
             auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
             return new GraphScheduler<TEngine, TBody, Args ...>(p, *body, *engine);
@@ -30,7 +32,8 @@ namespace HelperFactories {
                 typename TBody,
                 typename ...Args>
         static inline typename std::enable_if<std::is_same<TScheduler,
-                PipelineScheduler<TEngine, TBody, Args ...>>::value, TScheduler *>::type
+                PipelineScheduler<TEngine, TBody, Args ...>>::value &&
+                is_pipeline_body<TBody>(), TScheduler *>::type
         getInstance(Params p, TBody *body) {
             auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
             return new PipelineScheduler<TEngine, TBody, Args ...>(p, *body, *engine);

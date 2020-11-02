@@ -4,17 +4,27 @@
 
 #ifndef BARNESLOGFIT_PROVIDEDDATASTRUCTURES_H
 #define BARNESLOGFIT_PROVIDEDDATASTRUCTURES_H
-
-
-#define MAX_NUMBER_GPU_SUPPORTED 1
-#define MAX_NUMBER_CPU_SUPPORTED thread::hardware_concurrency()
 #define TBB_PREVIEW_FLOW_GRAPH_NODES 1
 #define TBB_PREVIEW_FLOW_GRAPH_FEATURES 1
-
 #include <tbb/flow_graph_opencl_node.h>
 #include <tbb/task_scheduler_init.h>
 #include "../../include/utils/Utils.h"
-#include "tbb/atomic.h"
+
+
+enum ProcessorUnit : int;
+namespace dataStructures {
+
+    struct GpuDeviceSelector;
+
+    template<std::size_t I = 0, typename ...Tg>
+    inline typename std::enable_if<I == sizeof...(Tg), void>::type
+    try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args);
+
+    template<std::size_t I = 0, typename ...Tg>
+    inline typename std::enable_if<I < sizeof...(Tg), void>::type
+    try_put(tbb::flow::opencl_node<tbb::flow::tuple<Tg...>> *node, tbb::flow::tuple<Tg...> &args);
+
+}
 
 namespace PipelineDatastructures {
     tbb::atomic<int> gpuStatus;

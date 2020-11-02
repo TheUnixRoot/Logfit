@@ -5,9 +5,8 @@
 #ifndef BARNESLOGFIT_GRAPHLOGFIT_H
 #define BARNESLOGFIT_GRAPHLOGFIT_H
 
-#include "../../lib/Interfaces/Scheduler/IScheduler.cpp"
-#include "../engine/EngineFactory.h"
-
+#include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
+#include "../../lib/DataStructures/ProvidedDataStructures.h"
 using namespace tbb;
 
 template<typename TSchedulerEngine, typename TExecutionBody,
@@ -36,5 +35,5 @@ public:
 
     ~GraphScheduler() {}
 };
-#include "../../lib/Implementations/Schedulers/GraphScheduler.cpp"
+//#include "../../lib/Implementations/Schedulers/GraphScheduler.cpp"
 #endif //BARNESLOGFIT_GRAPHLOGFIT_H

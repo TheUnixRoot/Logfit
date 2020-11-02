@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.2)
-set(CMAKE_CXX_STANDARD 11)
+
+set(CMAKE_CXX_COMPILER "dpcpp")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_STANDARD 17)
+set(USER ${USER} juanp)
 
 project(BarnesLogfit)
 
@@ -16,9 +21,10 @@ set(TBB_PREVIEW_FLOW_GRAPH_FEATURES 1)
 set(TBB_PREVIEW_FLOW_GRAPH_NODES 1)
 
 set(BOOST_ROOT bin/boost_1_66_0)
-set(TBBROOT $ENV{TBBROOT})
+set(TBBROOT /home/juanp/Desktop/TFG/oneTBB-2020.3)
 set(HPFROOT ../)
-set(CLROOT /opt/opencl-sdk)
+set(OPENCLROOT /opt/intel/opencl/SDK)
+set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl/)
 set(MAIN_FILE source/cpp/mainBarnes.cpp)
 
 set(SOURCE_FILES
@@ -38,8 +44,8 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(Logfit PUBLIC NDEBUG=0)
 endif ()
 
-include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include)
+include_directories(${TBBROOT}/include ${HPFROOT}/lib/include ${OPENCLROOT}/include)
 
 find_library(HPFLIB heterogeneous_parallel_for)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)
-target_link_libraries(Logfit tbb OpenCL tbbmalloc_proxy ${HPFLIB})
+target_link_libraries(Logfit tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})

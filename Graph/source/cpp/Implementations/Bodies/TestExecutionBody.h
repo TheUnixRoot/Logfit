@@ -10,7 +10,7 @@
 
 #endif
 
-#include <Interfaces/Bodies/IBody.h>
+#include <body/IGraphBody.h>
 #include "../../DataStructures/ClientDataStructures.h"
 
 using namespace tbb;
