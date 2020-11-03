@@ -11,7 +11,7 @@
  * Body base class for Pipeline Schedulers implementations
  * **************************************************************************/
 template<typename NDRange, typename Tindex, typename ...Args>
-class IPipelineBody : IBody<NDRange, Tindex, Args...> {
+class IPipelineBody : IBody {
 public:
     virtual int GetVsize() = 0;
 

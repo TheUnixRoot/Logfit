@@ -11,7 +11,7 @@
  * Body base class for Graph Schedulers implementations
  * **************************************************************************/
 template<typename NDRange, typename Tindex, typename ...Args>
-class IGraphBody : IBody<NDRange, Tindex, Args...> {
+class IGraphBody : IBody {
 public:
     virtual int GetVsize() = 0;
 

@@ -7,7 +7,7 @@ project(BarnesLogfit)
 
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
 set(CMAKE_CXX_STANDARD 17)
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -25,16 +25,23 @@ set(HPFROOT ../)
 set(CLROOT /opt/intel/opencl/SDK)
 set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
 
-set(MAIN_FILE source/cpp/mainBarnes.cpp)
+#set(MAIN_FILE source/cpp/mainBarnes.cpp)
+#set(MAIN_FILE source/cpp/mainTest.cpp)
+#include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
+include_directories(${TBBROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
+set(MAIN_FILE source/cpp/mainOneApiTest.cpp)
 
 set(SOURCE_FILES
-        source/cpp/mainBarnes.cpp
-        source/cpp/DataStructures/BarnesDataStructures.h
-        source/cpp/Implementations/Bodies/BarnesBody.h
+#        source/cpp/mainBarnes.cpp
+#        source/cpp/DataStructures/BarnesDataStructures.h
+#        source/cpp/Implementations/Bodies/BarnesBody.h
 
-        #source/cpp/mainTest.cpp
-        #source/cpp/DataStructures/ClientDataStructures.h
-        #source/cpp/Implementations/Bodies/TestExecutionBody.h
+#        source/cpp/mainTest.cpp
+#        source/cpp/DataStructures/ClientDataStructures.h
+#        source/cpp/Implementations/Bodies/TestExecutionBody.h
+
+        source/cpp/Implementations/Bodies/TestOneApiBody.h
+        source/cpp/mainOneApiTest.cpp
         )
 add_executable(Logfit ${SOURCE_FILES})
 
@@ -43,8 +50,6 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
 elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(Logfit PUBLIC NDEBUG=0)
 endif ()
-
-include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
 
 find_library(HPFLIB heterogeneous_parallel_for)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)

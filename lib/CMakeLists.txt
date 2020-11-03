@@ -23,7 +23,6 @@ set(CLROOT /opt/intel/opencl/SDK)
 set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
 
 set(SOURCE_FILES
-        lib/DataStructures/ProvidedDataStructures.h
         include/scheduler/GraphScheduler.h
         lib/Implementations/Engines/LogFitEngine.cpp
         include/scheduler/PipelineScheduler.h
@@ -38,7 +37,9 @@ set(SOURCE_FILES
         include/body/IPipelineBody.h
         include/scheduler/SchedulerFactory.h
         include/body/IOneApiBody.h
-        include/scheduler/OneApiScheduler.h)
+        include/scheduler/OneApiScheduler.h
+        lib/Helpers/Pipeline/PipelineStructures.cpp
+        )
 
 add_library(heterogeneous_parallel_for SHARED ${SOURCE_FILES})
 

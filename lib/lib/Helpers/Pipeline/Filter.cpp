@@ -6,6 +6,7 @@
 #define HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
 
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
+#include "PipelineStructures.cpp"
 #include "tbb/pipeline.h"
 #include "tbb/tick_count.h"
 

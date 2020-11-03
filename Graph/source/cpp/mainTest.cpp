@@ -10,14 +10,15 @@
 #include <cstdlib>
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
-#include <Scheduler.h>
-#include <Utils.h>
+#include <scheduler/SchedulerFactory.h>
+#include <utils/Utils.h>
 
 #include "Implementations/Bodies/TestExecutionBody.h"
 
 using namespace std;
 using namespace tbb;
-
+using MySchedulerType = GraphScheduler < LogFitEngine, TestExecutionBody, t_index,
+        buffer_f, buffer_f, buffer_f >;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/
@@ -33,8 +34,7 @@ int main(int argc, char **argv) {
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
 
     auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance <
-                              GraphScheduler < LogFitEngine, TestExecutionBody, t_index,
-                              buffer_f, buffer_f, buffer_f > ,
+                              MySchedulerType ,
                               LogFitEngine,
                               TestExecutionBody, t_index,
                               buffer_f, buffer_f, buffer_f >
@@ -48,7 +48,8 @@ int main(int argc, char **argv) {
 
     logFitGraphScheduler->saveResultsForBench();
 
-    HelperFactories::SchedulerFactory::deleteInstance(logFitGraphScheduler);
+    HelperFactories::SchedulerFactory::deleteInstance
+            <MySchedulerType, LogFitEngine, TestExecutionBody>(logFitGraphScheduler);
 
     return EXIT_SUCCESS;
 }

@@ -46,11 +46,11 @@ namespace HelperFactories {
                 typename TBody,
                 typename ...Args>
         static inline typename std::enable_if<std::is_same<TScheduler,
-            OneApiScheduler<TEngine, TBody, Args ...>>::value &&
-                is_one_api_body<TBody>(), TScheduler *>::type
+            OneApiScheduler<TEngine, TBody>>::value &&
+                is_base_of<IOneApiBody, TBody>::value, TScheduler *>::type
         getInstance(Params p, TBody *body) {
             auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
-            return new PipelineScheduler<TEngine, TBody, Args ...>(p, *body, *engine);
+            return new OneApiScheduler<TEngine, TBody>(p, *body, *engine);
         }
 
         template<typename TScheduler,
