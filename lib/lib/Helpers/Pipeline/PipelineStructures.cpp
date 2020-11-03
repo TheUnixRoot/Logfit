@@ -2,9 +2,9 @@
 // Created by juanp on 3/11/20.
 //
 #include "../../../include/utils/Utils.h"
-#include <tbb/atomic.h>
+#include <atomic>
 namespace PipelineDatastructures {
-    tbb::atomic<int> gpuStatus;
+    std::atomic<int> gpuStatus;
 
     class Bundle {
     public:

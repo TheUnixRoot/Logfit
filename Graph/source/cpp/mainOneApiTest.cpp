@@ -5,7 +5,7 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <tbb/task_scheduler_init.h>
+#include <tbb/task_scheduler_observer.h>
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 

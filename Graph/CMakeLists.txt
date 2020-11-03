@@ -7,7 +7,7 @@ project(BarnesLogfit)
 
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_STANDARD 17)
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -51,6 +51,6 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(Logfit PUBLIC NDEBUG=0)
 endif ()
 
-find_library(HPFLIB heterogeneous_parallel_for)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)
+find_library(HPFLIB heterogeneous_parallel_for PATHS ../lib)
 target_link_libraries(Logfit tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})

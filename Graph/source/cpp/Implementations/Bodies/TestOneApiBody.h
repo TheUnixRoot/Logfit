@@ -44,9 +44,12 @@ public:
     void OperatorGPU(int begin, int end) {
         using namespace cl::sycl;
         gpu_queue.submit([&](handler& handler){
+	    auto a = A;
+	    auto b = B;
+	    auto c = C;
             handler.parallel_for(range<1>{vsize}, [=](id<1> id){
                 auto idx = id[0];
-                C[idx] = A[idx] + B[idx];
+                c[idx] = a[idx] + b[idx];
             });
         });
         gpu_queue.wait();

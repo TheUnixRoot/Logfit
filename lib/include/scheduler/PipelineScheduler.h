@@ -5,7 +5,7 @@
 #ifndef BARNESLOGFIT_PIPELINESCHEDULER_H
 #define BARNESLOGFIT_PIPELINESCHEDULER_H
 
-#include "tbb/pipeline.h"
+#include "tbb/parallel_pipeline.h"
 #include "tbb/parallel_for.h"
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../../lib/Helpers/Pipeline/Filter.cpp"

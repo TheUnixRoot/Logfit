@@ -7,7 +7,7 @@
 
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
 #include "PipelineStructures.cpp"
-#include "tbb/pipeline.h"
+#include "tbb/parallel_pipeline.h"
 #include "tbb/tick_count.h"
 
 using namespace PipelineDatastructures;
