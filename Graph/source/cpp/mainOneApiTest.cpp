@@ -5,7 +5,6 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <tbb/task_scheduler_observer.h>
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
@@ -26,7 +25,6 @@ int main(int argc, char **argv) {
 
     size_t threadNum{p.numcpus + p.numgpus};
 
-    task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
 
     auto logFitOneApiScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
