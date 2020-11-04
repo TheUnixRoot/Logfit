@@ -9,7 +9,9 @@
 #include "tbb/parallel_for.h"
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../../lib/Helpers/Pipeline/Filter.cpp"
+#include "../utils/Utils.h"
 
+using namespace PipelineDataStructures;
 
 cl_int error;
 cl_uint num_max_platforms;
@@ -40,6 +42,26 @@ public:
     void *getEngine() ;
 
     void *getBody() ;
+
+    tbb::tick_count getStartGPU() ;
+
+    tbb::tick_count getStopGPU() ;
+
+    tbb::tick_count getStartCPU() ;
+
+    tbb::tick_count getStopCPU() ;
+
+    void setStartGPU(tbb::tick_count val) ;
+
+    void setStopGPU(tbb::tick_count val) ;
+
+    void setStartCPU(tbb::tick_count val) ;
+
+    void setStopCPU(tbb::tick_count val) ;
+
+    TSchedulerEngine* getTypedEngine() ;
+
+    TExecutionBody* getTypedBody() ;
 
     ~PipelineScheduler() {}
 

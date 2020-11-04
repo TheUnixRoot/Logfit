@@ -10,8 +10,9 @@
 #include "../body/IPipelineBody.h"
 #include "../body/IOneApiBody.h"
 #include "GraphScheduler.h"
-#include "PipelineScheduler.h"
+//#include "PipelineScheduler.h"
 #include "OneApiScheduler.h"
+#include "OnePipelineScheduler.h"
 
 namespace HelperFactories {
     enum SchedulerType : int;
@@ -28,18 +29,18 @@ namespace HelperFactories {
             auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
             return new GraphScheduler<TEngine, TBody, Args ...>(p, *body, *engine);
         }
-
-        template<typename TScheduler,
-                typename TEngine,
-                typename TBody,
-                typename ...Args>
-        static inline typename std::enable_if<std::is_same<TScheduler,
-            PipelineScheduler<TEngine, TBody, Args ...>>::value &&
-                is_pipeline_body<TBody>(), TScheduler *>::type
-        getInstance(Params p, TBody *body) {
-            auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
-            return new PipelineScheduler<TEngine, TBody, Args ...>(p, *body, *engine);
-        }
+//
+//        template<typename TScheduler,
+//                typename TEngine,
+//                typename TBody,
+//                typename ...Args>
+//        static inline typename std::enable_if<std::is_same<TScheduler,
+//            PipelineScheduler<TEngine, TBody, Args ...>>::value &&
+//                is_pipeline_body<TBody>(), TScheduler *>::type
+//        getInstance(Params p, TBody *body) {
+//            auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
+//            return new PipelineScheduler<TEngine, TBody, Args ...>(p, *body, *engine);
+//        }
 
         template<typename TScheduler,
                 typename TEngine,
@@ -51,6 +52,18 @@ namespace HelperFactories {
         getInstance(Params p, TBody *body) {
             auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
             return new OneApiScheduler<TEngine, TBody>(p, *body, *engine);
+        }
+
+        template<typename TScheduler,
+                typename TEngine,
+                typename TBody,
+                typename ...Args>
+        static inline typename std::enable_if<std::is_same<TScheduler,
+                OnePipelineScheduler<TEngine, TBody>>::value &&
+                    is_base_of<IOneApiBody, TBody>::value, TScheduler *>::type
+        getInstance(Params p, TBody *body) {
+            auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
+            return new OnePipelineScheduler<TEngine, TBody>(p, *body, *engine);
         }
 
         template<typename TScheduler,

@@ -2,6 +2,7 @@
 // Created by juanp on 28/10/20.
 //
 #include "../../../include/scheduler/PipelineScheduler.h"
+
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
@@ -40,6 +41,60 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         pipe.clear();
     }
 }
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStartGPU() {
+    return startGpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStopGPU() {
+    return stopGpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStartCPU() {
+    return startCpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStopCPU() {
+    return stopCpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStartGPU(tbb::tick_count val) {
+    startGpu = val;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStopGPU(tbb::tick_count val) {
+    stopGpu = val;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStartCPU(tbb::tick_count val) {
+    startCpu = val;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStopCPU(tbb::tick_count val) {
+    stopCpu = val;
+}
+
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+TSchedulerEngine* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getTypedEngine() {
+    return (TSchedulerEngine*)&engine;
+}
+
+
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+TExecutionBody* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getTypedBody() {
+    return (TExecutionBody*)&body;
+}
+
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 void* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::

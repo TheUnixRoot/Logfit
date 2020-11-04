@@ -18,7 +18,6 @@ public:
     virtual void OperatorGPU(int begin, int end)  = 0;
 
     virtual int GetVsize() = 0;
-
 };
 
 

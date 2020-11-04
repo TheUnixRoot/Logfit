@@ -1,4 +1,8 @@
 //
+// Created by juanp on 4/11/20.
+//
+
+//
 // Created by juanp on 26/10/20.
 //
 
@@ -7,10 +11,10 @@
 
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
 #include <tbb/pipeline.h>
-#include <tbb/atomic.h>
 #include <tbb/tick_count.h>
+#include <tbb/atomic.h>
 
-namespace PipelineDataStructures {
+namespace OnePipelineDataStructures {
     tbb::atomic<int> gpuStatus;
 
     class Bundle {
@@ -54,10 +58,7 @@ namespace PipelineDataStructures {
             static bool firstmeasurement = true;
             scheduler->setStartGPU(tbb::tick_count::now());
 
-            scheduler->getTypedBody()->sendObjectToGPU(bundle->begin, bundle->end, NULL);
-            scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end, NULL);
-            scheduler->getTypedBody()->getBackObjectFromGPU(bundle->begin, bundle->end, NULL);
-            clFinish(scheduler->command_queue);
+            scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end);
 
             scheduler->setStopGPU(tbb::tick_count::now());
             float time = (scheduler->getStopGPU() - scheduler->getStartGPU()).seconds() * 1000;
@@ -68,7 +69,7 @@ namespace PipelineDataStructures {
 
         void executeOnCPU(Bundle *bundle) {
             scheduler->setStartCPU(tbb::tick_count::now());
-            scheduler->getBody()->OperatorCPU(bundle->begin, bundle->end);
+            scheduler->getTypedBody()->OperatorCPU(bundle->begin, bundle->end);
             scheduler->setStopCPU(tbb::tick_count::now());
             float time = (scheduler->getStopCPU() - scheduler->getStartCPU()).seconds() * 1000;
 
@@ -126,6 +127,6 @@ namespace PipelineDataStructures {
             return NULL;
         }
     };
-} // namespace PipelineDataStructures
+} //namespace OnePipelineDataStructures
 
 #endif //HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP

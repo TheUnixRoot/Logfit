@@ -17,8 +17,10 @@ private:
     cl::sycl::queue gpu_queue;
 public:
 
-    TestOneApiBody(size_t vsize = 10000000) : vsize(vsize), gpu_queue(cl::sycl::gpu_selector()) {
+    TestOneApiBody(size_t vsize = 10000000) : vsize{vsize} {
         using namespace cl::sycl;
+        gpu_queue = sycl::queue(cl::sycl::cpu_selector{});
+        std::cout << gpu_queue.get_device().get_info<info::device::name>() << std::endl;
         auto context = gpu_queue.get_context();
         auto device = gpu_queue.get_device();
         A = (float*) malloc_shared(vsize * sizeof(float), device, context);

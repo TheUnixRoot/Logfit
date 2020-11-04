@@ -38,7 +38,9 @@ set(SOURCE_FILES
         include/scheduler/SchedulerFactory.h
         include/body/IOneApiBody.h
         include/scheduler/OneApiScheduler.h
-        lib/Helpers/Pipeline/PipelineStructures.cpp
+        include/scheduler/OnePipelineScheduler.h
+        lib/Helpers/Pipeline/OneFilter.cpp
+        lib/Helpers/Pipeline/Filter.cpp
         )
 
 add_library(heterogeneous_parallel_for SHARED ${SOURCE_FILES})
