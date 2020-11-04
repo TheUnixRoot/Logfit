@@ -17,7 +17,7 @@ private:
     cl::sycl::queue gpu_queue;
 public:
 
-    TestOneApiBody(size_t vsize = 10000000) : vsize(vsize), gpu_queue(cl::sycl::gpu_selector()) {
+    TestOneApiBody(size_t vsize = 10000000) : vsize(vsize), gpu_queue(cl::sycl::cpu_selector()) {
         using namespace cl::sycl;
         auto context = gpu_queue.get_context();
         auto device = gpu_queue.get_device();
@@ -43,12 +43,14 @@ public:
 
     void OperatorGPU(int begin, int end) {
         using namespace cl::sycl;
+	size_t range_size = end - begin;
         gpu_queue.submit([&](handler& handler){
 	    auto a = A;
 	    auto b = B;
 	    auto c = C;
-            handler.parallel_for(range<1>{vsize}, [=](id<1> id){
-                auto idx = id[0];
+            handler.parallel_for(range<1>{range_size}, [=](id<1> id){
+                auto idx = id[0] + begin;
+		if (idx >= end) return;
                 c[idx] = a[idx] + b[idx];
             });
         });
