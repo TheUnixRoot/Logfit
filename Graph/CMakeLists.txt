@@ -36,21 +36,34 @@ set(SOURCE_FILES
 #        source/cpp/DataStructures/BarnesDataStructures.h
 #        source/cpp/Implementations/Bodies/BarnesBody.h
 
-#        source/cpp/mainTest.cpp
-#        source/cpp/DataStructures/ClientDataStructures.h
-#        source/cpp/Implementations/Bodies/TestExecutionBody.h
 
+
+        )
+add_executable(
+        LogfitGraph
+        source/cpp/mainTest.cpp
+        source/cpp/DataStructures/ClientDataStructures.h
+        source/cpp/Implementations/Bodies/TestExecutionBody.h
+        )
+add_executable(
+        LogfitOneApi
         source/cpp/Implementations/Bodies/TestOneApiBody.h
         source/cpp/mainOneApiTest.cpp
         )
-add_executable(Logfit ${SOURCE_FILES})
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
-    target_compile_definitions(Logfit PUBLIC NDEBUG=1)
+    target_compile_definitions(LogfitGraph PUBLIC NDEBUG=1)
+
+    target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=1)
 elseif (CMAKE_BUILD_TYPE MATCHES Release)
-    target_compile_definitions(Logfit PUBLIC NDEBUG=0)
+    target_compile_definitions(LogfitGraph PUBLIC NDEBUG=0)
+
+    target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=0)
 endif ()
 
 find_library(HPFLIB heterogeneous_parallel_for)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)
-target_link_libraries(Logfit tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+
+target_link_libraries(LogfitGraph tbb OpenCL tbbmalloc_proxy ${HPFLIB})
+
+target_link_libraries(LogfitOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
