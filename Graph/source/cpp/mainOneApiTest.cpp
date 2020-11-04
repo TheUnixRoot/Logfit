@@ -12,7 +12,7 @@
 
 using namespace std;
 using namespace tbb;
-using MySchedulerType = OneApiScheduler < LogFitEngine, TestOneApiBody >;
+using MySchedulerType = OnePipelineScheduler < LogFitEngine, TestOneApiBody >;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/

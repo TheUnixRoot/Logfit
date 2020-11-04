@@ -8,6 +8,7 @@
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../body/IOneApiBody.h"
 #include "OneApiScheduler.h"
+#include "OnePipelineScheduler.h"
 
 namespace HelperFactories {
     enum SchedulerType : int;
@@ -23,6 +24,19 @@ namespace HelperFactories {
         getInstance(Params p, TBody *body) {
             auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
             return new OneApiScheduler<TEngine, TBody>(p, *body, *engine);
+        }
+
+
+        template<typename TScheduler,
+                typename TEngine,
+                typename TBody,
+                typename ...Args>
+        static inline typename std::enable_if<std::is_same<TScheduler,
+                OnePipelineScheduler<TEngine, TBody>>::value &&
+                    is_base_of<IOneApiBody, TBody>::value, TScheduler *>::type
+        getInstance(Params p, TBody *body) {
+            auto engine{HelperFactories::EngineFactory::getInstance<TEngine>(p.numcpus, p.numgpus, 1, 1)};
+            return new OnePipelineScheduler<TEngine, TBody>(p, *body, *engine);
         }
 
         template<typename TScheduler,
