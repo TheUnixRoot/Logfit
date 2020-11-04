@@ -40,6 +40,7 @@ int main(int argc, char **argv) {
 
     logFitOneApiScheduler->saveResultsForBench();
 
+    ((TestOneApiBody *)logFitOneApiScheduler->getBody())->ShowCallback();
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, TestOneApiBody>(logFitOneApiScheduler);
 
