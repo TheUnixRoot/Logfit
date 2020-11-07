@@ -3,7 +3,7 @@ set(CMAKE_CXX_COMPILER "dpcpp")
 
 set(USER ${USER} juanp)
 
-project(BarnesLogfit)
+project(Logfit)
 
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
@@ -92,7 +92,7 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
 endif ()
 
 find_library(HPFLIB heterogeneous_parallel_for)
-link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release ${HPFROOT}/lib)
+link_directories($${HPFROOT}/lib)
 
 target_link_libraries(LogfitGraph tbb OpenCL tbbmalloc_proxy ${HPFLIB})
 

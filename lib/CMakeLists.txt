@@ -57,12 +57,3 @@ include_directories(${TBBROOT}/include ${CLROOT}/include ${SYCL_INCLUDE})
 set_target_properties(heterogeneous_parallel_for PROPERTIES LINKER_LANGUAGE CXX)
 link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103_release)
 target_link_libraries(heterogeneous_parallel_for tbb OpenCL sycl tbbmalloc_proxy)
-
-add_custom_command(
-        TARGET heterogeneous_parallel_for POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_SOURCE_DIR}/cmake-build-debug/libheterogeneous_parallel_for.so
-        ${CMAKE_SOURCE_DIR}/libheterogeneous_parallel_for.so)
-add_custom_command(
-        TARGET heterogeneous_parallel_for PRE_BUILD
-        COMMAND rm -f ${CMAKE_SOURCE_DIR}/cmake-build-debug/libheterogeneous_parallel_for.so || true)
