@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="OnePipelineTest 1.1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-f &quot;$PROJECT_DIR$/data/runA.in&quot; -c 1 -g 1 -r 0.5 -k sample -o &quot;$PROJECT_DIR$/source/cl/kernel.cl&quot;" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BarnesLogfit" TARGET_NAME="LogfitOnePipeline" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BarnesLogfit" RUN_TARGET_NAME="LogfitOnePipeline">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

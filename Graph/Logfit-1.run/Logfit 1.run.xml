@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Logfit 1" type="CMakeRunConfiguration" factoryName="Application" singleton="false" PROGRAM_PARAMS="-f &quot;$PROJECT_DIR$/data/runA.in&quot; -c 1 -g 0 -r 0.5 -k ComputeForce -o &quot;$PROJECT_DIR$/source/cl/kernel.cl&quot;" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BarnesLogfit" TARGET_NAME="Logfit" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BarnesLogfit" RUN_TARGET_NAME="Logfit">
-    <method v="2">
-      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-    </method>
-  </configuration>
-</component>
