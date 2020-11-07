@@ -8,8 +8,8 @@
 //#define DEEP_CPU_REPORT
 #define GPU_LAST  //ultimo trozo entero para GPU, si no, ultimo trozo para CPUs guided
 
+
 #include "../../../include/engine/DynamicEngine.h"
-#include "tbb/parallel_pipeline.h"
 #include "tbb/tick_count.h"
 #include <math.h>
 

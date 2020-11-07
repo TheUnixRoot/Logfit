@@ -19,6 +19,8 @@ set(CL_TARGET_OPENCL_VERSION 220)
 set(TBB_PREVIEW_FLOW_GRAPH_FEATURES 1)
 set(TBB_PREVIEW_FLOW_GRAPH_NODES 1)
 
+#add_compile_definitions(USE_NEW_PIPELINE)
+
 set(TBBROOT $ENV{TBBROOT})
 set(HPFROOT ./)
 set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
@@ -27,10 +29,21 @@ include_directories(${TBBROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
 set(MAIN_FILE source/cpp/mainTriaddOneApiGraph.cpp)
 
 set(SOURCE_FILES
-#        source/cpp/mainBarnes.cpp
-#        source/cpp/DataStructures/BarnesDataStructures.h
-#        source/cpp/Implementations/Bodies/BarnesBody.h
+        lib/Implementations/Engines/LogFitEngine.cpp
+        lib/Implementations/Engines/DynamicEngine.cpp
+        lib/Interfaces/Engines/IEngine.cpp
+        lib/Interfaces/Schedulers/IScheduler.cpp
+        lib/Helpers/ConsoleUtils.h
+        include/engine/EngineFactory.h
+        lib/Interfaces/Bodies/IBody.cpp
+        include/utils/Utils.h
+        include/scheduler/SchedulerFactory.h
+        include/body/IOneApiBody.h
+        include/scheduler/OneApiScheduler.h
+        include/scheduler/OnePipelineScheduler.h
+        lib/Helpers/Pipeline/OneFilter.cpp
         )
+add_library(heterogeneous_parallel_for SHARED ${SOURCE_FILES})
 
 add_executable(
         Devices
@@ -66,12 +79,16 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(Devices PUBLIC NDEBUG=0)
 
 endif ()
-
-find_library(HPFLIB heterogeneous_parallel_for)
+target_include_directories(LogfitOneApi PRIVATE
+        include
+        )
+target_include_directories(LogfitOnePipeline PRIVATE
+        include
+        )
 link_directories($${HPFROOT}/lib)
 
-target_link_libraries(LogfitOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+target_link_libraries(LogfitOneApi tbb OpenCL tbbmalloc_proxy sycl heterogeneous_parallel_for)
 
-target_link_libraries(LogfitOnePipeline tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+target_link_libraries(LogfitOnePipeline tbb OpenCL tbbmalloc_proxy sycl heterogeneous_parallel_for)
 
-target_link_libraries(Devices OpenCL ${HPFLIB})
+target_link_libraries(Devices OpenCL)

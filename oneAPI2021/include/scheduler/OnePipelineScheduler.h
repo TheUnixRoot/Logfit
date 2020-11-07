@@ -5,7 +5,11 @@
 #ifndef HETEROGENEOUS_PARALLEL_FOR_ONEPIPELINESCHEDULER_H
 #define HETEROGENEOUS_PARALLEL_FOR_ONEPIPELINESCHEDULER_H
 
-#include "tbb/parallel_pipeline.h"
+#ifndef USE_NEW_PIPELINE
+#include "tbb/pipeline.h"
+#else
+#include <tbb/parallel_pipeline.h>
+#endif
 #include "tbb/parallel_for.h"
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../../lib/Helpers/Pipeline/OneFilter.cpp"

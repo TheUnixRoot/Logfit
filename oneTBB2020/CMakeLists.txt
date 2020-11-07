@@ -15,7 +15,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 set(CL_TARGET_OPENCL_VERSION 220)
-list(APPEND CMAKE_PREFIX_PATH "/home/juanp/Desktop/TFG/Logfit/lib/cmake-build-debug/")
+list(APPEND CMAKE_PREFIX_PATH "../lib/cmake-build-debug/")
 
 set(TBB_PREVIEW_FLOW_GRAPH_FEATURES 1)
 set(TBB_PREVIEW_FLOW_GRAPH_NODES 1)

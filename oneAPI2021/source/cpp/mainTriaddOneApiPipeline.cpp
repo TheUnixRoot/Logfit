@@ -2,9 +2,15 @@
 // Created by juanp on 7/11/20.
 //
 
+//#ifndef USE_NEW_PIPELINE
+//#define USE_NEW_PIPELINE true
+//#endif
+
+
 #include <cstdlib>
 #include <iostream>
 #include <tbb/task_scheduler_init.h>
+
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
