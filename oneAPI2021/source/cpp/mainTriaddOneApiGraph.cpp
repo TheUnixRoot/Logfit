@@ -2,6 +2,10 @@
 // Created by juanp on 3/11/20.
 //
 
+//#ifndef USE_NEW_PIPELINE
+//#define USE_NEW_PIPELINE true
+//#endif
+
 
 #include <cstdlib>
 #include <iostream>
