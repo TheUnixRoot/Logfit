@@ -42,6 +42,7 @@ public:
     void OperatorGPU(int begin, int end) {
         using namespace cl::sycl;
         size_t range_size = end - begin;
+        auto C = this->C, A = this->A, B = this->B;
         gpu_queue.submit([&](handler& handler){
             handler.parallel_for(range<1>{range_size}, [=](id<1> id){
                 auto idx = id[0] + begin;
