@@ -4,28 +4,31 @@
 
 #ifndef HETEROGENEOUS_PARALLEL_FOR_IPIPELINEBODY_H
 #define HETEROGENEOUS_PARALLEL_FOR_IPIPELINEBODY_H
+#if defined(__APPLE__)
+#include <OpenCL/cl.h>
+#else
+
+#include <CL/cl.h>
+
+#endif
 #include <type_traits>
 #include "../../lib/Interfaces/Bodies/IBody.cpp"
 /*****************************************************************************
  * Interface IPipelineBody
  * Body base class for Pipeline Schedulers implementations
  * **************************************************************************/
-template<typename NDRange, typename Tindex, typename ...Args>
-class IPipelineBody : IBody<NDRange, Tindex, Args...> {
+template<typename ...Args>
+class IPipelineBody : IBody {
 public:
-    virtual int GetVsize() = 0;
+    bool firsttime;
 
     virtual void OperatorCPU(int begin, int end) = 0;
 
-    virtual std::tuple<Tindex, Args ...> GetGPUArgs(Tindex indexes) = 0;
+    virtual void sendObjectToGPU(int begin, int end, cl_event *null_ptr) = 0;
 
-    virtual NDRange GetNDRange() = 0;
+    virtual void OperatorGPU(int begin, int end, cl_event *null_ptr) = 0;
 
-    virtual void sendObjectToGPU(int begin, int end, void *null_ptr) = 0;
-
-    virtual void OperatorGPU(int begin, int end, void *null_ptr) = 0;
-
-    virtual void getBackObjectFromGPU(int begin, int end, void *null_ptr) = 0;
+    virtual void getBackObjectFromGPU(int begin, int end, cl_event *null_ptr) = 0;
 
 };
 

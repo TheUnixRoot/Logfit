@@ -2,12 +2,13 @@
 // Created by juanp on 28/10/20.
 //
 #include "../../../include/scheduler/PipelineScheduler.h"
+
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         PipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) :
         IScheduler(p), body{body}, engine{engine} {
-    initializeOPENCL(p.kernelName);
+    initializeOPENCL(p.openclFile, p.kernelName);
     initializeHOSTPRI();
     runtime = 0.0;
 }
@@ -42,6 +43,60 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
 }
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStartGPU() {
+    return startGpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStopGPU() {
+    return stopGpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStartCPU() {
+    return startCpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+tbb::tick_count PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getStopCPU() {
+    return stopCpu;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStartGPU(tbb::tick_count val) {
+    startGpu = val;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStopGPU(tbb::tick_count val) {
+    stopGpu = val;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStartCPU(tbb::tick_count val) {
+    startCpu = val;
+}
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::setStopCPU(tbb::tick_count val) {
+    stopCpu = val;
+}
+
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+TSchedulerEngine* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getTypedEngine() {
+    return (TSchedulerEngine*)&engine;
+}
+
+
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
+TExecutionBody* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::getTypedBody() {
+    return (TExecutionBody*)&body;
+}
+
+template<typename TSchedulerEngine, typename TExecutionBody,
+        typename ...TArgs>
 void* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         getEngine() {
     return &engine;
@@ -56,9 +111,9 @@ void* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
-        initializeOPENCL(char *kernelName) {
+        initializeOPENCL(char *filename, char *kernelName) {
     createCommandQueue();
-    CreateAndCompileProgram(kernelName);
+    CreateAndCompileProgram(filename, kernelName);
 }
 
 template<typename TSchedulerEngine, typename TExecutionBody,
@@ -112,6 +167,9 @@ template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         createCommandQueue() {
+#ifdef DEBUG
+    printPlatformInfo();
+#endif
     num_max_platforms = 2;
     cl_platform_id platforms_id_array[2];
     error = clGetPlatformIDs(num_max_platforms, platforms_id_array, &num_platforms);
@@ -120,11 +178,10 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         exit(0);
     }
     char pname[256];
-    error = clGetPlatformInfo(platforms_id_array[1], CL_PLATFORM_NAME, 256, &pname, NULL);
+    error = clGetPlatformInfo(platforms_id_array[0], CL_PLATFORM_NAME, 256, &pname, NULL);
 
     num_max_devices = 1;
-    auto did = CL_DEVICE_TYPE_GPU;
-    error = clGetDeviceIDs(platforms_id_array[1], CL_DEVICE_TYPE_GPU, num_max_devices, &device_id, &num_devices);
+    error = clGetDeviceIDs(platforms_id_array[0], CL_DEVICE_TYPE_CPU, num_max_devices, &device_id, &num_devices);
     if (error != CL_SUCCESS) {
         fprintf(stderr, "No devices were found\n");
         exit(0);
@@ -136,14 +193,14 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
     }
 
     char device_name[50];
-    error = clGetDeviceInfo(device_id, CL_DEVICE_NAME, sizeof(char) * 50, &device_name, NULL);
+    error = clGetDeviceInfo(device_id, CL_DEVICE_NAME, sizeof(char)*50, &device_name, NULL);
     if (error != CL_SUCCESS) {
         fprintf(stderr, "No device name found\n");
         exit(0);
     }
 
-    cerr << "GPU's name: " << device_name << " with " << computeUnits << " computes Units" << endl;
-    num_devices = 1;
+    cerr << "GPU's name: " << device_name << " with "<< computeUnits << " computes Units" << endl;
+    num_devices=1;
     context = clCreateContext(NULL, num_devices, &device_id, NULL, NULL,
                               &error);
     if (error != CL_SUCCESS) {
@@ -161,13 +218,13 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
-        CreateAndCompileProgram(char *kname) {
+        CreateAndCompileProgram(char *filename, char *kernelname) {
 
-    char *programSource = ReadSources(kname);
+    char * programSource = ReadSources(filename);
 
     // Create a program using clCreateProgramWithSource()
     program = clCreateProgramWithSource(context, 1,
-                                        (const char **) &programSource, NULL, &error);
+                                        (const char**) &programSource, NULL, &error);
     if (error != CL_SUCCESS) {
         fprintf(stderr, "Failed creating programm with source!\n");
         exit(0);
@@ -179,19 +236,17 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         char message[16384];
         clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG,
                               sizeof(message), message, NULL);
-        fprintf(stderr, "Message Error:\n %s\n", message);
+        fprintf(stderr,"Message Error:\n %s\n",message);
         exit(0);
     }
     // Use clCreateKernel() to create a kernel from the
-    // vector addition function (named "vecadd")
-    kernel = clCreateKernel(program, kname, &error);
+    kernel = clCreateKernel(program, kernelname, &error);
     if (error != CL_SUCCESS) {
-        fprintf(stderr, "Failed Creating programm!\n");
+        fprintf(stderr, "Failed Creating kernel!\n");
         exit(0);
     }
 
-    clGetKernelWorkGroupInfo(kernel, device_id, CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE, sizeof(size_t),
-                             &vectorization, NULL);
+    clGetKernelWorkGroupInfo(kernel, device_id, CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE, sizeof(size_t), &vectorization, NULL);
     cerr << "Preferred vectorization: " << vectorization << endl;
 }
 

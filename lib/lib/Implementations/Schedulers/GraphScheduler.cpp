@@ -2,6 +2,7 @@
 // Created by juanp on 28/10/20.
 //
 #include "../../../include/scheduler/GraphScheduler.h"
+
 template <typename TSchedulerEngine, typename TExecutionBody,
         typename t_index, typename ...TArgs>
 GraphScheduler<TSchedulerEngine, TExecutionBody,

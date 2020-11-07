@@ -4,6 +4,8 @@
 
 #ifndef BARNESORACLE_CONSOLEUTILS_H
 #define BARNESORACLE_CONSOLEUTILS_H
+#define MAX_NUMBER_GPU_SUPPORTED 1
+#define MAX_NUMBER_CPU_SUPPORTED thread::hardware_concurrency()
 
 #include <cstdlib>
 #include <iostream>
@@ -11,8 +13,11 @@
 #include <thread>
 #include <string>
 #include <iomanip>
-#include "../DataStructures/ProvidedDataStructures.h"
+#include "../../include/utils/Utils.h"
 
+enum ProcessorUnit : int {
+    GPU = 0, CPU = 1
+};
 using namespace std;
 namespace ConsoleUtils {
 

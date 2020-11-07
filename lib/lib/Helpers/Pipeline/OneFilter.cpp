@@ -1,39 +1,20 @@
 //
+// Created by juanp on 4/11/20.
+//
+
+//
 // Created by juanp on 26/10/20.
 //
 
 #ifndef HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
 #define HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
-#if defined(__APPLE__)
-#include <OpenCL/cl.h>
-#else
-
-#include <CL/cl.h>
-
-#endif
 
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
 #include <tbb/pipeline.h>
-#include <tbb/atomic.h>
 #include <tbb/tick_count.h>
+#include <tbb/atomic.h>
 
-
-cl_int error;
-cl_uint num_max_platforms;
-cl_uint num_max_devices;
-cl_uint num_platforms;
-cl_uint num_devices;
-cl_platform_id platforms_id;
-cl_device_id device_id;
-cl_context context;
-cl_program program;
-cl_kernel kernel;
-int computeUnits;
-size_t vectorization;
-cl_command_queue command_queue;
-
-
-namespace PipelineDataStructures {
+namespace OnePipelineDataStructures {
     tbb::atomic<int> gpuStatus;
 
     class Bundle {
@@ -77,10 +58,7 @@ namespace PipelineDataStructures {
             static bool firstmeasurement = true;
             scheduler->setStartGPU(tbb::tick_count::now());
 
-            scheduler->getTypedBody()->sendObjectToGPU(bundle->begin, bundle->end, NULL);
-            scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end, NULL);
-            scheduler->getTypedBody()->getBackObjectFromGPU(bundle->begin, bundle->end, NULL);
-            clFinish(command_queue);
+            scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end);
 
             scheduler->setStopGPU(tbb::tick_count::now());
             float time = (scheduler->getStopGPU() - scheduler->getStartGPU()).seconds() * 1000;
@@ -149,6 +127,6 @@ namespace PipelineDataStructures {
             return NULL;
         }
     };
-} // namespace PipelineDataStructures
+} //namespace OnePipelineDataStructures
 
 #endif //HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
