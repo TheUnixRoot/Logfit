@@ -36,6 +36,7 @@ set(SOURCE_FILES
         include/body/IGraphBody.h
         include/body/IPipelineBody.h
         include/scheduler/SchedulerFactory.h
+        include/scheduler/SchedulerFactory_pipeline.h
         include/body/IOneApiBody.h
         include/scheduler/OneApiScheduler.h
         include/scheduler/OnePipelineScheduler.h

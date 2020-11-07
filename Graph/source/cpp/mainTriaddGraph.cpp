@@ -13,11 +13,12 @@
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
-#include "Implementations/Bodies/TestExecutionBody.h"
+#include "Implementations/Bodies/TriaddGraphBody.h"
+#include "Implementations/Tests/TriaddGraphBodyTest.h"
 
 using namespace std;
 using namespace tbb;
-using MySchedulerType = GraphScheduler < LogFitEngine, TestExecutionBody, t_index,
+using MySchedulerType = GraphScheduler < LogFitEngine, TriaddGraphBody, t_index,
         buffer_f, buffer_f, buffer_f >;
 /*****************************************************************************
  * Main Function
@@ -36,9 +37,9 @@ int main(int argc, char **argv) {
     auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance <
                               MySchedulerType ,
                               LogFitEngine,
-                              TestExecutionBody, t_index,
+                              TriaddGraphBody, t_index,
                               buffer_f, buffer_f, buffer_f >
-                                                  (p, new TestExecutionBody())};
+                                                  (p, new TriaddGraphBody())};
 
     logFitGraphScheduler->startTimeAndEnergy();
 
@@ -48,8 +49,12 @@ int main(int argc, char **argv) {
 
     logFitGraphScheduler->saveResultsForBench();
 
+    TriaddGraphBodyTest bodyTest;
+    if (!bodyTest.runTest(*(TriaddGraphBody*)logFitGraphScheduler->getBody()))
+        cout << CONSOLE_RED << "Verification failed" << CONSOLE_WHITE << endl;
+
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, TestExecutionBody>(logFitGraphScheduler);
+            <MySchedulerType, LogFitEngine, TriaddGraphBody>(logFitGraphScheduler);
 
     return EXIT_SUCCESS;
 }

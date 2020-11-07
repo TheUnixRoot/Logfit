@@ -4,7 +4,13 @@
 
 #ifndef BARNESLOGFIT_PIPELINESCHEDULER_H
 #define BARNESLOGFIT_PIPELINESCHEDULER_H
+#if defined(__APPLE__)
+#include <OpenCL/cl.h>
+#else
 
+#include <CL/cl.h>
+
+#endif
 #include "tbb/pipeline.h"
 #include "tbb/parallel_for.h"
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
@@ -13,26 +19,12 @@
 
 using namespace PipelineDataStructures;
 
-cl_int error;
-cl_uint num_max_platforms;
-cl_uint num_max_devices;
-cl_uint num_platforms;
-cl_uint num_devices;
-cl_platform_id platforms_id;
-cl_device_id device_id;
-cl_context context;
-cl_program program;
-cl_kernel kernel;
-int computeUnits;
-size_t vectorization;
-
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 class PipelineScheduler : public IScheduler {
 private:
     TSchedulerEngine &engine;
     TExecutionBody &body;
-    cl_command_queue command_queue;
 
 public:
     PipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
@@ -67,13 +59,13 @@ public:
 
 private:
 
-    void initializeOPENCL(char *kernelName) ;
+    void initializeOPENCL(char *filename, char *kernelName) ;
 
     char *ReadSources(char *fileName) ;
 
     void createCommandQueue() ;
 
-    void CreateAndCompileProgram(char *kname) ;
+    void CreateAndCompileProgram(char *filename, char *kernelName) ;
 
     void initializeHOSTPRI() ;
 };

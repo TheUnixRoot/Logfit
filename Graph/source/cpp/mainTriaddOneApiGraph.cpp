@@ -9,11 +9,12 @@
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
-#include "Implementations/Bodies/TestOneApiBody.h"
+#include "Implementations/Bodies/TriaddOneApiBody.h"
+#include "Implementations/Tests/TriaddOneApiBodyTest.h"
 
 using namespace std;
 using namespace tbb;
-using MySchedulerType = OnePipelineScheduler < LogFitEngine, TestOneApiBody >;
+using MySchedulerType = OneApiScheduler < LogFitEngine, TriaddOneApiBody >;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/
@@ -31,8 +32,8 @@ int main(int argc, char **argv) {
     auto logFitOneApiScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
-            TestOneApiBody,
-            vector<double>> (p, new TestOneApiBody())};
+            TriaddOneApiBody,
+            vector<double>> (p, new TriaddOneApiBody())};
 
     logFitOneApiScheduler->startTimeAndEnergy();
 
@@ -42,8 +43,12 @@ int main(int argc, char **argv) {
 
     logFitOneApiScheduler->saveResultsForBench();
 
+    TriaddOneApiBodyTest bodyTest;
+    if (!bodyTest.runTest(*(TriaddOneApiBody*)logFitOneApiScheduler->getBody()))
+        cout << CONSOLE_RED << "Verification failed" ;
+
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, TestOneApiBody>(logFitOneApiScheduler);
+            <MySchedulerType, LogFitEngine, TriaddOneApiBody>(logFitOneApiScheduler);
 
     return EXIT_SUCCESS;
 }

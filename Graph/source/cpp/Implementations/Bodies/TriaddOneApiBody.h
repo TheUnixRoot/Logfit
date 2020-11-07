@@ -2,33 +2,35 @@
 // Created by juanp on 2/11/20.
 //
 
-#ifndef BARNESLOGFIT_TESTONEAPIBODY_H
-#define BARNESLOGFIT_TESTONEAPIBODY_H
+#ifndef BARNESLOGFIT_TRIADDONEAPIBODY_H
+#define BARNESLOGFIT_TRIADDONEAPIBODY_H
 #include <vector>
 #include <algorithm>
-#include "body/IOneApiBody.h"
 #include <CL/sycl.hpp>
+#include <body/IOneApiBody.h>
 
+const int NUM_RAND = 256;
 
-class TestOneApiBody : public IOneApiBody {
+inline int RandomNumber() { return (std::rand() % NUM_RAND); }
+class TriaddOneApiBody : public IOneApiBody {
 private:
     size_t vsize;
     float *A, *B, *C;
     cl::sycl::queue gpu_queue;
 public:
 
-    TestOneApiBody(size_t vsize = 10000000) : vsize{vsize} {
+    TriaddOneApiBody(size_t vsize = 10000000) : vsize{vsize} {
         using namespace cl::sycl;
-        gpu_queue = sycl::queue(cl::sycl::cpu_selector{});
+        gpu_queue = sycl::queue(cl::sycl::host_selector{});
         std::cout << gpu_queue.get_device().get_info<info::device::name>() << std::endl;
         auto context = gpu_queue.get_context();
         auto device = gpu_queue.get_device();
-        A = (float*) malloc_host(vsize * sizeof(float), context);
-        B = (float*) malloc_host(vsize * sizeof(float), context);
-        C = (float*) malloc_host(vsize * sizeof(float), context);
-        std::generate(A, A + vsize, [] { return 1.0; });
-        std::generate(B, B + vsize, [] { return 1.0; });
-        std::generate(C, C + vsize, [] { return 0.0; });
+        A = (float*) malloc_host(vsize * sizeof(float), gpu_queue);
+        B = (float*) malloc_host(vsize * sizeof(float), gpu_queue);
+        C = (float*) malloc_host(vsize * sizeof(float), gpu_queue);
+        std::generate(A, A + vsize, RandomNumber);
+        std::generate(B, B + vsize, RandomNumber);
+        std::generate(C, C + vsize, RandomNumber);
     }
 
     void OperatorCPU(int begin, int end) {
@@ -60,12 +62,12 @@ public:
         return vsize;
     }
 
-    ~TestOneApiBody() {
-        auto context = gpu_queue.get_context();
-        free(A, context);
-        free(B, context);
-        free(C, context);
+    ~TriaddOneApiBody() {
+        sycl::free(A, gpu_queue);
+        sycl::free(B, gpu_queue);
+        sycl::free(C, gpu_queue);
     }
 
+    friend class TriaddOneApiBodyTest;
 };
-#endif //BARNESLOGFIT_TESTONEAPIBODY_H
+#endif //BARNESLOGFIT_TRIADDONEAPIBODY_H

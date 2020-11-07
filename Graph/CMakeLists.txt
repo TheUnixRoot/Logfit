@@ -29,36 +29,66 @@ set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
 #set(MAIN_FILE source/cpp/mainTest.cpp)
 #include_directories(${TBBROOT}/include ${CLROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
 include_directories(${TBBROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
-set(MAIN_FILE source/cpp/mainOneApiTest.cpp)
+set(MAIN_FILE source/cpp/mainTriaddOneApiGraph.cpp)
 
 set(SOURCE_FILES
 #        source/cpp/mainBarnes.cpp
 #        source/cpp/DataStructures/BarnesDataStructures.h
 #        source/cpp/Implementations/Bodies/BarnesBody.h
-
-
-
         )
+
 add_executable(
         LogfitGraph
-        source/cpp/mainTest.cpp
-        source/cpp/DataStructures/ClientDataStructures.h
-        source/cpp/Implementations/Bodies/TestExecutionBody.h
-        )
+        source/cpp/mainTriaddGraph.cpp
+        source/cpp/DataStructures/TriaddGraphDataStructures.h
+        source/cpp/Implementations/Bodies/TriaddGraphBody.h
+        source/cpp/Implementations/Tests/TriaddGraphBodyTest.h
+)
+
+add_executable(
+        Devices
+        source/cpp/mainGetDevices.cpp
+)
+add_executable(
+        LogfitPipeline
+        source/cpp/mainTriaddPipeline.cpp
+        source/cpp/DataStructures/TriaddGraphDataStructures.h
+        source/cpp/Implementations/Bodies/TriaddPipelineBody.h
+        source/cpp/Implementations/Tests/TriaddPipelineBodyTest.h
+        source/cpp/DataStructures/TriaddPipelineDataStructures.h)
 add_executable(
         LogfitOneApi
-        source/cpp/Implementations/Bodies/TestOneApiBody.h
-        source/cpp/mainOneApiTest.cpp
-        )
+        source/cpp/mainTriaddOneApiGraph.cpp
+        source/cpp/Implementations/Bodies/TriaddOneApiBody.h
+        source/cpp/Implementations/Tests/TriaddOneApiBodyTest.h
+)
+add_executable(
+        LogfitOnePipeline
+        source/cpp/mainTriaddOneApiPipeline.cpp
+        source/cpp/Implementations/Bodies/TriaddOneApiBody.h
+        source/cpp/Implementations/Tests/TriaddOneApiBodyTest.h
+)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     target_compile_definitions(LogfitGraph PUBLIC NDEBUG=1)
 
     target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=1)
+
+    target_compile_definitions(LogfitOnePipeline PUBLIC NDEBUG=1)
+
+    target_compile_definitions(LogfitPipeline PUBLIC NDEBUG=1)
+
+    target_compile_definitions(Devices PUBLIC NDEBUG=1)
 elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(LogfitGraph PUBLIC NDEBUG=0)
 
     target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=0)
+
+    target_compile_definitions(LogfitOnePipeline PUBLIC NDEBUG=0)
+
+    target_compile_definitions(LogfitPipeline PUBLIC NDEBUG=0)
+
+    target_compile_definitions(Devices PUBLIC NDEBUG=0)
 endif ()
 
 find_library(HPFLIB heterogeneous_parallel_for)
@@ -66,4 +96,10 @@ link_directories(${TBBROOT}/build/linux_intel64_gcc_cc4.8_libc2.22_kernel4.4.103
 
 target_link_libraries(LogfitGraph tbb OpenCL tbbmalloc_proxy ${HPFLIB})
 
+target_link_libraries(LogfitPipeline tbb OpenCL tbbmalloc_proxy ${HPFLIB})
+
 target_link_libraries(LogfitOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+
+target_link_libraries(LogfitOnePipeline tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+
+target_link_libraries(Devices OpenCL ${HPFLIB})

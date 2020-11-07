@@ -11,7 +11,7 @@
 #endif
 
 #include <body/IGraphBody.h>
-#include "../../DataStructures/ClientDataStructures.h"
+#include "../../DataStructures/TriaddGraphDataStructures.h"
 
 using namespace tbb;
 
@@ -22,7 +22,7 @@ inline int RandomNumber() { return (std::rand() % NUM_RAND); }
 /*****************************************************************************
  * class Body
  * **************************************************************************/
-class TestExecutionBody : public IGraphBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
+class TriaddGraphBody : public IGraphBody<dim_range, t_index, buffer_f, buffer_f, buffer_f> {
 public:
     size_t vsize;
     dim_range ndRange;
@@ -34,14 +34,14 @@ public:
     float *Chost;
 public:
 
-    TestExecutionBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize},
-                                                      Cdevice{vsize},
-                                                      Ahost{Adevice.data()}, Bhost{Bdevice.data()},
-                                                      Chost{Cdevice.data()} {
+    TriaddGraphBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize},
+                                                    Cdevice{vsize},
+                                                    Ahost{Adevice.data()}, Bhost{Bdevice.data()},
+                                                    Chost{Cdevice.data()} {
 
-        std::generate(Ahost, Ahost + vsize, [] { return 1.0; });
-        std::generate(Bhost, Bhost + vsize, [] { return 1.0; });
-        std::generate(Chost, Chost + vsize, [] { return -1; });
+        std::generate(Ahost, Ahost + vsize, RandomNumber);
+        std::generate(Bhost, Bhost + vsize, RandomNumber);
+        std::generate(Chost, Chost + vsize, RandomNumber);
     }
 
     void OperatorCPU(int begin, int end) {
@@ -67,7 +67,7 @@ public:
     dim_range GetNDRange() {
         return ndRange;
     }
-
+    friend class TriaddGraphBodyTest;
 };
 //end class
 
