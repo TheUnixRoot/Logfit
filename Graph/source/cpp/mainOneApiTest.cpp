@@ -12,7 +12,7 @@
 
 using namespace std;
 using namespace tbb;
-using MySchedulerType = OnePipelineScheduler < LogFitEngine, TestOneApiBody >;
+using MySchedulerType = OneApiScheduler < LogFitEngine, TestOneApiBody >;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/
@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
 
     logFitOneApiScheduler->saveResultsForBench();
 
-    ((TestOneApiBody *)logFitOneApiScheduler->getBody())->ShowCallback();
+//    ((TestOneApiBody *)logFitOneApiScheduler->getBody())->ShowCallback();
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, TestOneApiBody>(logFitOneApiScheduler);
 
