@@ -8,11 +8,7 @@
 
 #ifndef HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
 #define HETEROGENEOUS_PARALLEL_FOR_FILTER_CPP
-#ifndef USE_NEW_PIPELINE
-#include "tbb/pipeline.h"
-#else
 #include <tbb/parallel_pipeline.h>
-#endif
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
 
 #include <tbb/tick_count.h>
@@ -32,11 +28,7 @@ namespace OnePipelineDataStructures {
     };
 
     template<typename TScheduler>
-#ifndef USE_NEW_PIPELINE
-    class ParallelFilter : public tbb::filter_t<Bundle*, void> {
-#else
     class ParallelFilter : public tbb::detail::d1::filter<Bundle*, void> {
-#endif
     private:
         int begin, end;
         TScheduler *scheduler;
@@ -84,11 +76,7 @@ namespace OnePipelineDataStructures {
     };
 
     template<typename TScheduler>
-#ifndef USE_NEW_PIPELINE
-    class SerialFilter : public tbb::filter_t<void, Bundle*> {
-#else
     class SerialFilter : public tbb::detail::d1::filter<void, Bundle*> {
-#endif
     private:
         int begin, end;
         TScheduler *scheduler;

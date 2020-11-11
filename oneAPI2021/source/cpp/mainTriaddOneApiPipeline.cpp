@@ -2,14 +2,13 @@
 // Created by juanp on 7/11/20.
 //
 
-//#ifndef USE_NEW_PIPELINE
-//#define USE_NEW_PIPELINE true
-//#endif
+#ifndef USE_NEW_PIPELINE
+#define USE_NEW_PIPELINE true
+#endif
 
 
 #include <cstdlib>
 #include <iostream>
-#include <tbb/task_scheduler_init.h>
 
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
@@ -32,7 +31,6 @@ int main(int argc, char **argv) {
 
     size_t threadNum{p.numcpus + p.numgpus};
 
-    task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
     auto body{new TriaddOneApiBody()};
     auto logFitOneApiScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,

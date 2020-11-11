@@ -21,8 +21,8 @@ public:
 
     TriaddOneApiBody(size_t vsize = 10000000) : vsize{vsize} {
         using namespace cl::sycl;
-        gpu_queue = sycl::queue(cl::sycl::host_selector{});
-        std::cout << gpu_queue.get_device().get_info<info::device::name>() << std::endl;
+        gpu_queue = sycl::queue(cl::sycl::gpu_selector{});
+        std::cout << gpu_queue.get_device().get_info<cl::sycl::info::device::name>() << std::endl;
         auto context = gpu_queue.get_context();
         auto device = gpu_queue.get_device();
         A = (float*) malloc_host(vsize * sizeof(float), gpu_queue);
