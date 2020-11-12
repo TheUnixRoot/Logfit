@@ -22,7 +22,7 @@ set(TBB_PREVIEW_FLOW_GRAPH_NODES 1)
 
 set(TBBROOT $ENV{TBBROOT})
 set(HPFROOT ../)
-set(CLROOT /opt/intel/opencl/SDK)
+set(CLROOT /opt/intel19/system_studio_2019/opencl/SDK)
 set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
 
 #set(MAIN_FILE source/cpp/mainBarnes.cpp)

@@ -178,10 +178,10 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         exit(0);
     }
     char pname[256];
-    error = clGetPlatformInfo(platforms_id_array[0], CL_PLATFORM_NAME, 256, &pname, NULL);
+    error = clGetPlatformInfo(platforms_id_array[1], CL_PLATFORM_NAME, 256, &pname, NULL);
 
     num_max_devices = 1;
-    error = clGetDeviceIDs(platforms_id_array[0], CL_DEVICE_TYPE_CPU, num_max_devices, &device_id, &num_devices);
+    error = clGetDeviceIDs(platforms_id_array[1], CL_DEVICE_TYPE_GPU, num_max_devices, &device_id, &num_devices);
     if (error != CL_SUCCESS) {
         fprintf(stderr, "No devices were found\n");
         exit(0);
