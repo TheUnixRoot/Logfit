@@ -41,6 +41,7 @@ set(SOURCE_FILES
         include/scheduler/OnePipelineScheduler.h
         lib/Helpers/Pipeline/OneFilter.cpp
         lib/Helpers/Pipeline/Filter.cpp
+        lib/Helpers/Graph/DataStructures.cpp
         )
 
 add_library(heterogeneous_parallel_for SHARED ${SOURCE_FILES})

@@ -44,7 +44,6 @@ add_executable(
         source/cpp/Implementations/Bodies/TriaddGraphBody.h
         source/cpp/Implementations/Tests/TriaddGraphBodyTest.h
 )
-
 add_executable(
         Devices
         source/cpp/mainGetDevices.cpp

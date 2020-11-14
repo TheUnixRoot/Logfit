@@ -199,7 +199,7 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         exit(0);
     }
 
-    cerr << "GPU's name: " << device_name << " with "<< computeUnits << " computes Units" << endl;
+//    cerr << "GPU's name: " << device_name << " with "<< computeUnits << " computes Units" << endl;
     num_devices=1;
     context = clCreateContext(NULL, num_devices, &device_id, NULL, NULL,
                               &error);
@@ -247,7 +247,7 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
     }
 
     clGetKernelWorkGroupInfo(kernel, device_id, CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE, sizeof(size_t), &vectorization, NULL);
-    cerr << "Preferred vectorization: " << vectorization << endl;
+//    cerr << "Preferred vectorization: " << vectorization << endl;
 }
 
 template<typename TSchedulerEngine, typename TExecutionBody,

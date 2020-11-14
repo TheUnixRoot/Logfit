@@ -31,7 +31,7 @@ namespace ConsoleUtils {
 
     static Params parseArgs(int argc, char *argv[]) {
         Params params;
-
+        std::fill_n(params.kernelName, 50, '\0');
 //cout << argv[0] << endl;
         bool fflag{false}, cflag{false}, gflag{false}, rflag{false}, bflag{false}, kflag{false}, oflag{false};
         for (int i = 1; i < argc; ++i) {
