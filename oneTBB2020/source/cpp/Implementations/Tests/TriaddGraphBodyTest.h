@@ -14,14 +14,15 @@ public:
         auto A = body.Ahost;
         auto B = body.Bhost;
         auto C = body.Chost;
+        bool result{true};
         for (int i = 0; i < body.vsize; ++i) {
             if (C[i] != A[i] + B[i]) {
-                cout << CONSOLE_RED << i << " :C=" << C[i]
-                    << " A+B=" << A[i] + B[i] << CONSOLE_WHITE << endl;
-                return false;
+                cout << CONSOLE_RED << i << " : C = " << C[i]
+                     << " /=/ A (" << A[i] << ") + B (" << B[i] << ") =" << A[i] + B[i] << CONSOLE_WHITE << endl;
+                result = false;
             }
         }
-        return true;
+        return result;
     }
 
 };

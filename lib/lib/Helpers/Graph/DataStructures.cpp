@@ -18,6 +18,7 @@ namespace dataStructures {
                 this->firstTime = false;
                 auto deviceIterator = std::find_if(f.devices().cbegin(), f.devices().cend(),
                                                    [](const tbb::flow::opencl_device &d) {
+//                                                       std::cout << "Running in: " << d.name() << std::endl;
                                                        return d.type() == CL_DEVICE_TYPE_GPU;
                                                    }
                 );

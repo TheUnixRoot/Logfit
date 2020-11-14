@@ -33,6 +33,12 @@ int main(int argc, char **argv) {
     size_t threadNum{p.numcpus + p.numgpus};
 
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
+    std::for_each(tbb::flow::interface11::opencl_info::available_devices().cbegin(), tbb::flow::interface11::opencl_info::available_devices().cend(),
+                 [](const tbb::flow::opencl_device &d) {
+                     std::cout << "Running in: " << d.name() << std::endl;
+                     return d.type() == CL_DEVICE_TYPE_GPU;
+                 }
+    );
 
     auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance <
                               MySchedulerType ,
