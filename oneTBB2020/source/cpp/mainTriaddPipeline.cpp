@@ -30,27 +30,27 @@ int main(int argc, char **argv) {
 
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
 
-    auto logFitGraphScheduler{HelperFactories::SchedulerFactory::getInstance <
+    auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
             TriaddPipelineBody, t_index,
             buffer_f, buffer_f, buffer_f >
                                       (p, new TriaddPipelineBody())};
 
-    logFitGraphScheduler->startTimeAndEnergy();
+    logFitScheduler->startTimeAndEnergy();
 
-    logFitGraphScheduler->StartParallelExecution();
+    logFitScheduler->StartParallelExecution();
 
-    logFitGraphScheduler->endTimeAndEnergy();
+    logFitScheduler->endTimeAndEnergy();
 
-    logFitGraphScheduler->saveResultsForBench();
+    logFitScheduler->saveResultsForBench();
 
     TriaddPipelineBodyTest bodyTest;
-    if (!bodyTest.runTest(*(TriaddPipelineBody*)logFitGraphScheduler->getBody()))
+    if (!bodyTest.runTest(*(TriaddPipelineBody*)logFitScheduler->getBody()))
         cout << CONSOLE_RED << "Verification failed" << CONSOLE_WHITE << endl;
 
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, TriaddPipelineBody>(logFitGraphScheduler);
+            <MySchedulerType, LogFitEngine, TriaddPipelineBody>(logFitScheduler);
 
     return EXIT_SUCCESS;
 }

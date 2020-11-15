@@ -148,7 +148,7 @@ char* PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         return NULL;
     }
 
-    cout << "Reading file \'" << fileName << "\' (size " << size << " bytes)" << endl;
+//    cout << "Reading file \'" << fileName << "\' (size " << size << " bytes)" << endl;
     size_t res = fread(src, 1, sizeof(char) * size, file);
     if (res != sizeof(char) * size) {
         cout << "ERROR: Failed to read file \'" << fileName << "\'" << endl;

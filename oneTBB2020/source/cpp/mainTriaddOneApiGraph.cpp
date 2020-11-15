@@ -29,26 +29,26 @@ int main(int argc, char **argv) {
 
     task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
 
-    auto logFitOneApiScheduler{HelperFactories::SchedulerFactory::getInstance <
+    auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
             TriaddOneApiBody,
             vector<double>> (p, new TriaddOneApiBody())};
 
-    logFitOneApiScheduler->startTimeAndEnergy();
+    logFitScheduler->startTimeAndEnergy();
 
-    logFitOneApiScheduler->StartParallelExecution();
+    logFitScheduler->StartParallelExecution();
 
-    logFitOneApiScheduler->endTimeAndEnergy();
+    logFitScheduler->endTimeAndEnergy();
 
-    logFitOneApiScheduler->saveResultsForBench();
+    logFitScheduler->saveResultsForBench();
 
     TriaddOneApiBodyTest bodyTest;
-    if (!bodyTest.runTest(*(TriaddOneApiBody*)logFitOneApiScheduler->getBody()))
+    if (!bodyTest.runTest(*(TriaddOneApiBody*)logFitScheduler->getBody()))
         cout << CONSOLE_RED << "Verification failed" ;
 
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, TriaddOneApiBody>(logFitOneApiScheduler);
+            <MySchedulerType, LogFitEngine, TriaddOneApiBody>(logFitScheduler);
 
     return EXIT_SUCCESS;
 }
