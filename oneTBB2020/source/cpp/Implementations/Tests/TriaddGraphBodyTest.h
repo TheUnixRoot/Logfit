@@ -11,8 +11,8 @@ public:
     TriaddGraphBodyTest() {}
 
     bool runTest(TriaddGraphBody &body) {
-        auto A = body.Ahost;
-        auto B = body.Bhost;
+        auto A = body.Adevice;
+        auto B = body.Bdevice;
         auto C = body.Chost;
         bool result{true};
         for (int i = 0; i < body.vsize; ++i) {

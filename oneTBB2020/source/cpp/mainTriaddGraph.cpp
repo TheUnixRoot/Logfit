@@ -9,7 +9,7 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <tbb/task_scheduler_init.h>
+#include <tbb/global_control.h>
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
@@ -32,7 +32,9 @@ int main(int argc, char **argv) {
 
     size_t threadNum{p.numcpus + p.numgpus};
 
-    task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
+    auto mp = global_control::max_allowed_parallelism;
+    global_control gc{mp, threadNum};
+
 
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
                               MySchedulerType ,
@@ -48,6 +50,8 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
 
     logFitScheduler->saveResultsForBench();
+
+    ((TriaddGraphBody*)logFitScheduler->getBody())->ShowCallback();
 
     TriaddGraphBodyTest bodyTest;
     if (!bodyTest.runTest(*(TriaddGraphBody*)logFitScheduler->getBody()))

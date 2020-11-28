@@ -4,9 +4,10 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <tbb/task_scheduler_init.h>
+#include <tbb/global_control.h>
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
+#include <tbb/global_control.h>
 
 #include "Implementations/Bodies/TriaddOneApiBody.h"
 #include "Implementations/Tests/TriaddOneApiBodyTest.h"
@@ -26,7 +27,9 @@ int main(int argc, char **argv) {
 
     size_t threadNum{p.numcpus + p.numgpus};
 
-    task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
+    auto mp = global_control::max_allowed_parallelism;
+    global_control gc{mp, threadNum};
+
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
@@ -41,8 +44,11 @@ int main(int argc, char **argv) {
 
     logFitScheduler->saveResultsForBench();
 
-    if (!(std::make_unique <TriaddOneApiBodyTest> ())->runTest(*(TriaddOneApiBody*)logFitScheduler->getBody()))
-        cout << CONSOLE_RED << "Verification failed" ;
+    logFitScheduler->getTypedBody()->ShowCallback();
+
+//
+//    if (!(std::make_unique <TriaddOneApiBodyTest> ())->runTest(*(TriaddOneApiBody*)logFitScheduler->getBody()))
+//        cout << CONSOLE_RED << "Verification failed" ;
 
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, TriaddOneApiBody>(logFitScheduler);

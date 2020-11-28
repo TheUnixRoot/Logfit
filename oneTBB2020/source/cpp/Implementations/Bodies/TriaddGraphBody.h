@@ -11,6 +11,7 @@
 #endif
 
 #include <body/IGraphBody.h>
+#include <numeric>
 #include "../../DataStructures/TriaddGraphDataStructures.h"
 
 using namespace tbb;
@@ -29,30 +30,34 @@ public:
     buffer_f Adevice;
     buffer_f Bdevice;
     buffer_f Cdevice;
-    float *Ahost;
-    float *Bhost;
-    float *Chost;
+    std::vector<float> Chost;
 public:
 
     TriaddGraphBody(std::size_t vsize = 10000000) : vsize{vsize}, ndRange{vsize}, Adevice{vsize}, Bdevice{vsize},
-                                                    Cdevice{vsize},
-                                                    Ahost{Adevice.data()}, Bhost{Bdevice.data()},
-                                                    Chost{Cdevice.data()} {
-
-        std::generate(Ahost, Ahost + vsize, RandomNumber);
-        std::generate(Bhost, Bhost + vsize, RandomNumber);
-        std::generate(Chost, Chost + vsize, RandomNumber);
+                                                    Cdevice{vsize} {
+        Chost = std::vector<float>(vsize);
+        std::iota(Adevice.begin(), Adevice.begin() + vsize, 1);
+        std::iota(Bdevice.begin(), Bdevice.begin() + vsize, 1);
+        std::generate(Cdevice.begin(), Cdevice.begin() + vsize, [](){ return 0;});
+        std::generate(Chost.begin(), Chost.end(), [](){return 0;});
     }
 
     void OperatorCPU(int begin, int end) {
-        for (int i = begin; i < end; i++) {
-            Chost[i] = Ahost[i] + Bhost[i];
+        auto size{end - begin};
+        auto asub{Adevice.subbuffer(begin, size)};
+        auto bsub{Bdevice.subbuffer(begin, size)};
+        for (int i = 0; i < size; i++) {
+            Chost[begin + i] = asub[i] + bsub[i];
         }
     }
 
     void ShowCallback() {
         for (int i = 0; i < vsize; i++) {
-            std::cout << i << ": " << Ahost[i] << " + " << Bhost[i] << " = " << Chost[i] << std::endl;
+            if (Chost[i] > 0 && Cdevice[i] == 0) ;
+            else if (Cdevice[i] > 0 && Chost[i] == 0) ;
+            else std::cout << "cdev" <<Cdevice[i] << " chos" << Chost[i] << std::endl;
+
+            Chost[i] += Cdevice[i];
         }
     }
 

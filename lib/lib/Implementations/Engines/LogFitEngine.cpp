@@ -25,9 +25,11 @@
 
 #include <cstdlib>
 #include <list>
-#include <math.h>
+#include <cmath>
 #include "tbb/tick_count.h"
 #include "../../../include/engine/LogFitEngine.h"
+
+#include <iostream>
 
 using namespace std;
 using namespace tbb;
@@ -230,6 +232,9 @@ unsigned int LogFitEngine::getCPUChunk(unsigned int begin, unsigned int end) {
             nextCPUChk = max((float) initCChunk, min((float) nextGPUChk / relSpeed, rem / (relSpeed + nCPUs)));
         }
     }
+//    std::cout << "cpu orinal: " << nextCPUChk;
+//    nextCPUChk = nextCPUChk + 64 - (nextCPUChk & 63) ;
+//    std::cout << "cpu truncated: " << nextCPUChk;
     return min(nextCPUChk, rem);
 }
 
@@ -291,6 +296,9 @@ unsigned int LogFitEngine::getGPUChunk(unsigned int begin, unsigned int end) {
             }
         }
     }
+//    std::cout << "Gpu orinal: " << nextGPUChk;
+//    nextGPUChk = nextGPUChk + 64 - (nextGPUChk & 63) ;
+//    std::cout << "Gpu truncated: " << nextGPUChk;
     return min(nextGPUChk, rem);
 }
 

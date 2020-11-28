@@ -32,7 +32,7 @@ GraphScheduler<TSchedulerEngine, TExecutionBody,
 gpuNode{graph,
         flow::opencl_program<>(flow::opencl_program_type::SOURCE,
                                parameters.openclFile).get_kernel(parameters.kernelName), gpuSelector},
-gpuCallbackReceiver{graph, flow::unlimited,
+gpuCallbackReceiver{graph, flow::serial,
                     [&](t_index indexes) -> ProcessorUnit {
                         stopGpu = tick_count::now();
                         engine.recordGPUTh(indexes.end - indexes.begin, (stopGpu - startGpu).seconds());

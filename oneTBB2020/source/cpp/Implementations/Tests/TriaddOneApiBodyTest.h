@@ -14,7 +14,7 @@ public:
     bool runTest(TriaddOneApiBody &body) {
         auto A = body.A;
         auto B = body.B;
-        auto C = body.C;
+        auto C = body.Chost;
         bool result{true};
         for (int i = 0; i < body.vsize; ++i) {
             if (C[i] != A[i] + B[i]) {
