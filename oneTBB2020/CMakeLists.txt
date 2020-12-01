@@ -31,11 +31,20 @@ set(SYCL_INCLUDE /opt/intel/oneapi/compiler/latest/linux/include/sycl)
 include_directories(${TBBROOT}/include ${HPFROOT}/lib/include ${SYCL_INCLUDE})
 set(MAIN_FILE source/cpp/mainTriaddOneApiGraph.cpp)
 
-set(SOURCE_FILES
-#        source/cpp/mainBarnes.cpp
-#        source/cpp/DataStructures/BarnesDataStructures.h
-#        source/cpp/Implementations/Bodies/BarnesBody.h
-        )
+add_executable(
+        BarnesGraph
+        source/cpp/mainBarnes.cpp
+        source/cpp/DataStructures/BarnesDataStructures.h
+        source/cpp/Implementations/Bodies/BarnesBody.h
+#        source/cpp/Implementations/Tests/TBarnesBodyTest.h
+)
+add_executable(
+        BarnesOneApi
+        source/cpp/mainBarnesOneApiGraph.cpp
+        source/cpp/DataStructures/BarnesOneApiDataStructures.h
+        source/cpp/Implementations/Bodies/BarnesOneApiBody.h
+        #        source/cpp/Implementations/Tests/TBarnesBodyTest.h
+)
 
 add_executable(
         LogfitGraph
@@ -71,6 +80,10 @@ add_executable(
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     target_compile_definitions(LogfitGraph PUBLIC NDEBUG=1)
 
+    target_compile_definitions(BarnesGraph PUBLIC NDEBUG=1)
+
+    target_compile_definitions(BarnesOneApi PUBLIC NDEBUG=1)
+
     target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=1)
 
     target_compile_definitions(LogfitOnePipeline PUBLIC NDEBUG=1)
@@ -80,6 +93,10 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
     target_compile_definitions(Devices PUBLIC NDEBUG=1)
 elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(LogfitGraph PUBLIC NDEBUG=0)
+
+    target_compile_definitions(BarnesGraph PUBLIC NDEBUG=0)
+
+    target_compile_definitions(BarnesOneApi PUBLIC NDEBUG=0)
 
     target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=0)
 
@@ -95,9 +112,13 @@ link_directories($${HPFROOT}/lib)
 
 target_link_libraries(LogfitGraph tbb OpenCL tbbmalloc_proxy ${HPFLIB})
 
+target_link_libraries(BarnesGraph tbb OpenCL tbbmalloc_proxy ${HPFLIB})
+
 target_link_libraries(LogfitPipeline tbb OpenCL tbbmalloc_proxy ${HPFLIB})
 
 target_link_libraries(LogfitOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+
+target_link_libraries(BarnesOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
 
 target_link_libraries(LogfitOnePipeline tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
 

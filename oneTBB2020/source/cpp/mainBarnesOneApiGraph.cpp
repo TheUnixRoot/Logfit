@@ -13,13 +13,10 @@
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
-#include "Implementations/Bodies/BarnesBody.h"
-#include "DataStructures/BarnesDataStructures.h"
+#include "Implementations/Bodies/BarnesOneApiBody.h"
 
 using namespace std;
-using namespace tbb;
-using MySchedulerType = GraphScheduler<LogFitEngine, BarnesBody, t_index,
-        buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>;
+using MySchedulerType = OneApiScheduler<LogFitEngine, BarnesOneApiBody>;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/
@@ -35,53 +32,50 @@ int main(int argc, char **argv) {
     auto mp = global_control::max_allowed_parallelism;
     global_control gc{mp, threadNum};
 
-    ReadInput(p.inputData);
-    initialize_tree();
-
+    auto body{new BarnesOneApiBody(p)};
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
-            BarnesBody, t_index,
-            buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>
-                                      (p, new BarnesBody(BarnesHutDataStructures::nbodies))};
+            BarnesOneApiBody>
+            (p, body)};
 
     logFitScheduler->startTimeAndEnergy();
-    for (step = 0; step < timesteps; step++) {
+    for (body->step = 0; body->step < body->timesteps; body->step++) {
 
 //        cout << "Step " << step << endl;
 
         float diameter, centerx, centery, centerz;
-        ComputeCenterAndDiameter(nbodies, diameter, centerx, centery, centerz);
+        body->ComputeCenterAndDiameter(diameter, centerx, centery, centerz);
 
         // create the tree's root
-        int root = NewNode(centerx, centery, centerz);
-        OctTreeInternalNode &p_r = tree[root];
+        int root = body->NewNode(centerx, centery, centerz);
+        OctTreeInternalNode &p_r = body->tree[root];
 
         float radius = diameter * 0.5;
-        for (int i = 0; i < nbodies; i++) {
-            Insert(p_r, i, radius); // grow the tree by inserting each body
+        for (int i = 0; i < body->nbodies; i++) {
+            body->Insert(p_r, i, radius); // grow the tree by inserting each body
         }
-        gdiameter = diameter;
-        groot = root;
+        body->gdiameter = diameter;
+        body->groot = root;
         int curr = 0;
-        curr = ComputeCenterOfMass(p_r, curr);
-        copy_to_bodies();
+        curr = body->ComputeCenterOfMass(p_r, curr);
+        body->copy_to_bodies();
 
-        ComputeOpeningCriteriaForEachCell(tree[0], gdiameter * gdiameter * itolsq);
+        body->ComputeOpeningCriteriaForEachCell(body->tree[0], body->gdiameter * body->gdiameter * body->itolsq);
 
         OctTreeNode node;
         node.index = -1;
         node.type = CELL;
         node.used = USED;
-        ComputeNextMorePointers(tree[root], node);
+        body->ComputeNextMorePointers(body->tree[root], node);
 
         logFitScheduler->StartParallelExecution();
 
-        RecycleTree(); // recycle the tree
+        body->RecycleTree(body->num_cells); // recycle the tree
 
         for (int i = 0;
-             i < nbodies; i++) { // the iterations are independent: they can be executed in any order and in parallel
-            Advance(bodies[i]); // advance the position and velocity of each body
+             i < body->nbodies; i++) { // the iterations are independent: they can be executed in any order and in parallel
+            body->Advance(body->bodies[i]); // advance the position and velocity of each body
         }
 
     } // end of time step
@@ -89,10 +83,10 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
     logFitScheduler->saveResultsForBench();
 
-    ((BarnesBody*)logFitScheduler->getBody())->ShowCallback();
+    ((BarnesOneApiBody*)logFitScheduler->getBody())->ShowCallback();
 
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, BarnesBody>(logFitScheduler);
+            <MySchedulerType, LogFitEngine, BarnesOneApiBody>(logFitScheduler);
 
     return EXIT_SUCCESS;
 }

@@ -48,6 +48,18 @@ public:
         globalWorkSize[0] = (indexes.end - indexes.begin);
         return std::make_tuple(indexes, bodies, d_tree, step, epssq, dthf);
     }
+
+    void ShowCallback() {
+        for (int i = 0; i < nbodies; i++) { // print result
+            Printfloat(bodies[i].posx);
+            printf(" ");
+            Printfloat(bodies[i].posy);
+            printf(" ");
+            Printfloat(bodies[i].posz);
+            printf("\n");
+        }
+        fflush(stdout);
+    }
 };
 //end class
 

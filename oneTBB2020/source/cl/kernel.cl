@@ -60,11 +60,8 @@ __kernel void sample(t_index indexes, __global float *Adevice, __global float *B
     Cdevice[idx] = Adevice[idx] + Bdevice[idx];
 }
 
-__kernel void ComputeForce(t_index indexes, __global OctTreeLeafNode
-
-*bodies,
-__global OctTreeInternalNode
-*tree,
+__kernel void ComputeForce(t_index indexes, __global OctTreeLeafNode *bodies,
+__global OctTreeInternalNode *tree,
 int step,
 float epssq,
 float dthf
