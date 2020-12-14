@@ -6,16 +6,29 @@
 #define HETEROGENEOUS_PARALLEL_FOR_ONEPIPELINESCHEDULER_H
 
 #include "tbb/pipeline.h"
-#include "tbb/parallel_for.h"
+#include <atomic>
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
-#include "../../lib/Helpers/Pipeline/OneFilter.cpp"
-using namespace OnePipelineDataStructures;
 
 template<typename TSchedulerEngine, typename TExecutionBody>
 class OnePipelineScheduler : public IScheduler {
 private:
     TSchedulerEngine &engine;
     TExecutionBody &body;
+    std::atomic<int> gpuStatus;
+    class Bundle {
+    public:
+        int begin;
+        int end;
+        ProcessorUnit type; //GPU = 0, CPU=1
+        Bundle() { };
+    };
+    void executeOnGPU(Bundle *bundle) ;
+
+    void executeOnCPU(Bundle *bundle) ;
+
+    void ParallelFilter(int begin, int end, Bundle *bundle) ;
+
+    Bundle *SerialFilter(int begin, int end) ;
 public:
     OnePipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
 

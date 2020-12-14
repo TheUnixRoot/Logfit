@@ -45,6 +45,7 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
 
     logFitScheduler->saveResultsForBench();
+
     ((TriaddOneApiBody*)logFitScheduler->getBody())->ShowCallback();
 
 

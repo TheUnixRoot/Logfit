@@ -5,7 +5,7 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <tbb/task_scheduler_init.h>
+#include <tbb/global_control.h>
 #include <scheduler/SchedulerFactory_pipeline.h>
 #include <utils/Utils.h>
 
@@ -25,10 +25,10 @@ int main(int argc, char **argv) {
     Params p = ConsoleUtils::parseArgs(argc, argv);
     cout << CONSOLE_YELLOW << "Test Simulation: " << p.inputData << ", Number of CPU's cores: " << p.numcpus <<
          ", Number of GPUs: " << p.numgpus << CONSOLE_WHITE << endl;
-
     size_t threadNum{p.numcpus + p.numgpus};
 
-    task_scheduler_init taskSchedulerInit{static_cast<int>(threadNum)};
+    auto mp = global_control::max_allowed_parallelism;
+    global_control gc{mp, threadNum};
 
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
@@ -45,8 +45,7 @@ int main(int argc, char **argv) {
 
     logFitScheduler->saveResultsForBench();
 
-    TriaddPipelineBodyTest bodyTest;
-    if (!bodyTest.runTest(*(TriaddPipelineBody*)logFitScheduler->getBody()))
+    if (!(std::make_unique <TriaddPipelineBodyTest> ())->runTest(*(TriaddPipelineBody*)logFitScheduler->getBody()))
         cout << CONSOLE_RED << "Verification failed" << CONSOLE_WHITE << endl;
 
     HelperFactories::SchedulerFactory::deleteInstance

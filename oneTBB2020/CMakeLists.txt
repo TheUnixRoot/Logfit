@@ -33,16 +33,17 @@ set(MAIN_FILE source/cpp/mainTriaddOneApiGraph.cpp)
 
 add_executable(
         BarnesGraph
-        source/cpp/mainBarnes.cpp
-        source/cpp/DataStructures/BarnesDataStructures.h
-        source/cpp/Implementations/Bodies/BarnesBody.h
+        source/cpp/mainBarnesGraph.cpp
+        source/cpp/DataStructures/BarnesGraphDataStructures.h
+        source/cpp/Implementations/Bodies/BarnesGraphBody.h
+        source/cpp/Interfaces/Bodies/BarnesBody.h
 #        source/cpp/Implementations/Tests/TBarnesBodyTest.h
 )
 add_executable(
         BarnesOneApi
         source/cpp/mainBarnesOneApiGraph.cpp
-        source/cpp/DataStructures/BarnesOneApiDataStructures.h
         source/cpp/Implementations/Bodies/BarnesOneApiBody.h
+        source/cpp/Interfaces/Bodies/BarnesBody.h
         #        source/cpp/Implementations/Tests/TBarnesBodyTest.h
 )
 

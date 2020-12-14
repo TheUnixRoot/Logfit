@@ -13,13 +13,13 @@
 #include <scheduler/SchedulerFactory.h>
 #include <utils/Utils.h>
 
-#include "Implementations/Bodies/BarnesBody.h"
-#include "DataStructures/BarnesDataStructures.h"
+#include "Implementations/Bodies/BarnesGraphBody.h"
+#include "DataStructures/BarnesGraphDataStructures.h"
 
 using namespace std;
 using namespace tbb;
-using MySchedulerType = GraphScheduler<LogFitEngine, BarnesBody, t_index,
-        buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>;
+using MySchedulerType = GraphScheduler<LogFitEngine, BarnesGraphBody, t_index,
+        body_buffer, tree_buffer, int, float, float>;
 /*****************************************************************************
  * Main Function
  * **************************************************************************/
@@ -35,53 +35,50 @@ int main(int argc, char **argv) {
     auto mp = global_control::max_allowed_parallelism;
     global_control gc{mp, threadNum};
 
-    ReadInput(p.inputData);
-    initialize_tree();
-
+    auto body{new BarnesGraphBody(p, ReadNBodies(p.inputData))};
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
-            BarnesBody, t_index,
-            buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>
-                                      (p, new BarnesBody(BarnesHutDataStructures::nbodies))};
+            BarnesGraphBody, t_index,
+            body_buffer, tree_buffer, int, float, float>
+                                      (p, body)};
 
     logFitScheduler->startTimeAndEnergy();
-    for (step = 0; step < timesteps; step++) {
+    for (body->step = 0; body->step < body->timesteps; body->step++) {
 
-//        cout << "Step " << step << endl;
+        cout << "Step " << body->step << endl;
 
         float diameter, centerx, centery, centerz;
-        ComputeCenterAndDiameter(nbodies, diameter, centerx, centery, centerz);
+        body->ComputeCenterAndDiameter(diameter, centerx, centery, centerz);
+        float radius = diameter * 0.5;
+        body->gdiameter = diameter;
 
         // create the tree's root
-        int root = NewNode(centerx, centery, centerz);
-        OctTreeInternalNode &p_r = tree[root];
+        int root = body->NewCell(centerx, centery, centerz);
+        body->groot = root;
 
-        float radius = diameter * 0.5;
-        for (int i = 0; i < nbodies; i++) {
-            Insert(p_r, i, radius); // grow the tree by inserting each body
+        for (int i = 0; i < body->nbodies; i++) {
+            body->Insert(body->tree[root], i, radius); // grow the tree by inserting each body
         }
-        gdiameter = diameter;
-        groot = root;
         int curr = 0;
-        curr = ComputeCenterOfMass(p_r, curr);
-        copy_to_bodies();
+        curr = body->ComputeCenterOfMass(body->tree[root], curr);
+        body->copy_from_to_bodies();
 
-        ComputeOpeningCriteriaForEachCell(tree[0], gdiameter * gdiameter * itolsq);
+        body->ComputeOpeningCriteriaForEachCell(body->tree[0], body->gdiameter * body->gdiameter * body->itolsq);
 
-        OctTreeNode node;
+        oct_tree_node node;
         node.index = -1;
         node.type = CELL;
         node.used = USED;
-        ComputeNextMorePointers(tree[root], node);
+        body->ComputeNextMorePointers(body->tree[root], node);
 
         logFitScheduler->StartParallelExecution();
 
-        RecycleTree(); // recycle the tree
+        body->RecycleTree(body->num_cells); // recycle the tree
 
         for (int i = 0;
-             i < nbodies; i++) { // the iterations are independent: they can be executed in any order and in parallel
-            Advance(bodies[i]); // advance the position and velocity of each body
+             i < body->nbodies; i++) { // the iterations are independent: they can be executed in any order and in parallel
+            body->Advance(body->bodies[i]); // advance the position and velocity of each body
         }
 
     } // end of time step
@@ -89,10 +86,10 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
     logFitScheduler->saveResultsForBench();
 
-    ((BarnesBody*)logFitScheduler->getBody())->ShowCallback();
+//    ((BarnesOneApiBody*)logFitScheduler->getBody())->ShowCallback();
 
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, BarnesBody>(logFitScheduler);
+            <MySchedulerType, LogFitEngine, BarnesGraphBody>(logFitScheduler);
 
     return EXIT_SUCCESS;
 }

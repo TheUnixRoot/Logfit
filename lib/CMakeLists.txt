@@ -39,8 +39,6 @@ set(SOURCE_FILES
         include/body/IOneApiBody.h
         include/scheduler/OneApiScheduler.h
         include/scheduler/OnePipelineScheduler.h
-        lib/Helpers/Pipeline/OneFilter.cpp
-        lib/Helpers/Pipeline/Filter.cpp
         lib/Helpers/Graph/DataStructures.cpp
         )
 

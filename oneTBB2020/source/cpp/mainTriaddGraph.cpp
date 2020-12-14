@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
     ((TriaddGraphBody*)logFitScheduler->getBody())->ShowCallback();
 
     TriaddGraphBodyTest bodyTest;
-    if (!bodyTest.runTest(*(TriaddGraphBody*)logFitScheduler->getBody()))
+    if (!std::make_unique<TriaddGraphBodyTest> ()->runTest(*(TriaddGraphBody*)logFitScheduler->getBody()))
         cout << CONSOLE_RED << "Verification failed" << CONSOLE_WHITE << endl;
 
     HelperFactories::SchedulerFactory::deleteInstance

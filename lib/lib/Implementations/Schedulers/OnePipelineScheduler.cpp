@@ -3,7 +3,7 @@
 //
 
 #include "../../../include/scheduler/OnePipelineScheduler.h"
-
+#include <tbb/parallel_for.h>
 template<typename TSchedulerEngine, typename TExecutionBody>
 OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::OnePipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) :
         IScheduler(p), body{body}, engine{engine} { }
@@ -23,14 +23,63 @@ void OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::StartParallelExecut
                           },
                           tbb::auto_partitioner());
     } else {  // ejecucion con GPU
-        tbb::pipeline pipe;
-        SerialFilter<OnePipelineScheduler> serial_filter(begin, end, this);
-        ParallelFilter<OnePipelineScheduler> parallel_filter(begin, end, this);
-        pipe.add_filter(serial_filter);
-        pipe.add_filter(parallel_filter);
+        tbb::parallel_pipeline(parameters.numcpus + parameters.numgpus,
+           tbb::make_filter<void, Bundle*>(tbb::filter::mode::serial,
+               [&](tbb::flow_control& fc)->Bundle* {
+                   Bundle *bundle = new Bundle();
+                   if (begin < end) {
+                       //Checking whether the GPU is idle or not.
+                       if (--gpuStatus >= 0) {
+                           // pedimos un trozo para la GPU entre begin y end
+                           int ckgpu = this->getTypedEngine()->getGPUChunk(begin, end);
+                           if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
+                               int auxEnd = begin + ckgpu;
+                               auxEnd = (auxEnd > end) ? end : auxEnd;
+                               bundle->begin = begin;
+                               bundle->end = auxEnd;
+                               begin = auxEnd;
+                               bundle->type = GPU;
+                               return bundle;
+                           } else { // paramos la GPU si el trozo es <= 0, generamos token CPU
+                               // no incrementamos gpuStatus para dejar pillada la GPU
+                               int auxEnd = begin + this->getTypedEngine()->getCPUChunk(begin, end);
+                               auxEnd = (auxEnd > end) ? end : auxEnd;
+                               bundle->begin = begin;
+                               bundle->end = auxEnd;
+                               begin = auxEnd;
+                               bundle->type = CPU;
+                               return bundle;
+                           }
+                       } else {
+                           //CPU WORK
+                           gpuStatus++;
+                           int auxEnd = begin + this->getTypedEngine()->getCPUChunk(begin, end);
+                           auxEnd = (auxEnd > end) ? end : auxEnd;
+                           bundle->begin = begin;
+                           bundle->end = auxEnd;
+                           begin = auxEnd;
+                           bundle->type = CPU;
 
-        pipe.run(parameters.numcpus + parameters.numgpus);
-        pipe.clear();
+                           return bundle;
+                       }
+                   }
+                   fc.stop();
+                   return NULL;
+               })
+           &
+           tbb::make_filter<Bundle*, void>(tbb::filter::mode::serial,
+               [&](Bundle* bundle)-> void {
+                   if (bundle->type == GPU) {
+                       // GPU WORK
+                       executeOnGPU(bundle);
+                       gpuStatus++;
+                   } else {
+                       // CPU WORK
+                       executeOnCPU(bundle);
+                   }
+                   delete bundle;
+               })
+        );
     }
 }
 template<typename TSchedulerEngine, typename TExecutionBody>
@@ -84,4 +133,28 @@ void* OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::getEngine() {
 template<typename TSchedulerEngine, typename TExecutionBody>
 void* OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::getBody() {
     return &body;
+}
+template<typename TSchedulerEngine, typename TExecutionBody>
+void OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::
+        executeOnGPU(Bundle *bundle) {
+    static bool firstmeasurement = true;
+    this->setStartGPU(tbb::tick_count::now());
+
+    this->getTypedBody()->OperatorGPU(bundle->begin, bundle->end);
+
+    this->setStopGPU(tbb::tick_count::now());
+    float time = (this->getStopGPU() - this->getStartGPU()).seconds() * 1000;
+
+    this->getTypedEngine()->recordGPUTh((bundle->end - bundle->begin), time);
+
+}
+template<typename TSchedulerEngine, typename TExecutionBody>
+void OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::
+        executeOnCPU(Bundle *bundle) {
+    this->setStartCPU(tbb::tick_count::now());
+    this->getTypedBody()->OperatorCPU(bundle->begin, bundle->end);
+    this->setStopCPU(tbb::tick_count::now());
+    float time = (this->getStopCPU() - this->getStartCPU()).seconds() * 1000;
+
+    this->getTypedEngine()->recordCPUTh((bundle->end - bundle->begin), time);
 }

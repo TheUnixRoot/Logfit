@@ -46,9 +46,9 @@ int main(int argc, char **argv) {
 
     logFitScheduler->getTypedBody()->ShowCallback();
 
-//
-//    if (!(std::make_unique <TriaddOneApiBodyTest> ())->runTest(*(TriaddOneApiBody*)logFitScheduler->getBody()))
-//        cout << CONSOLE_RED << "Verification failed" ;
+
+    if (!(std::make_unique <TriaddOneApiBodyTest> ())->runTest(*(TriaddOneApiBody*)logFitScheduler->getBody()))
+        cout << CONSOLE_RED << "Verification failed" ;
 
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, TriaddOneApiBody>(logFitScheduler);

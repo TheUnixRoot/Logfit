@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
     auto mp = global_control::max_allowed_parallelism;
     global_control gc{mp, threadNum};
 
-    auto body{new BarnesOneApiBody(p)};
+    auto body{new BarnesOneApiBody(p, ReadNBodies(p.inputData))};
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
@@ -42,14 +42,14 @@ int main(int argc, char **argv) {
     logFitScheduler->startTimeAndEnergy();
     for (body->step = 0; body->step < body->timesteps; body->step++) {
 
-//        cout << "Step " << step << endl;
+        cout << "Step " << body->step << endl;
 
         float diameter, centerx, centery, centerz;
         body->ComputeCenterAndDiameter(diameter, centerx, centery, centerz);
 
         // create the tree's root
-        int root = body->NewNode(centerx, centery, centerz);
-        OctTreeInternalNode &p_r = body->tree[root];
+        int root = body->NewCell(centerx, centery, centerz);
+        oct_tree_cell &p_r = body->tree[root];
 
         float radius = diameter * 0.5;
         for (int i = 0; i < body->nbodies; i++) {
@@ -59,11 +59,11 @@ int main(int argc, char **argv) {
         body->groot = root;
         int curr = 0;
         curr = body->ComputeCenterOfMass(p_r, curr);
-        body->copy_to_bodies();
+        body->copy_from_to_bodies();
 
         body->ComputeOpeningCriteriaForEachCell(body->tree[0], body->gdiameter * body->gdiameter * body->itolsq);
 
-        OctTreeNode node;
+        oct_tree_node node;
         node.index = -1;
         node.type = CELL;
         node.used = USED;
@@ -83,7 +83,7 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
     logFitScheduler->saveResultsForBench();
 
-    ((BarnesOneApiBody*)logFitScheduler->getBody())->ShowCallback();
+//    ((BarnesOneApiBody*)logFitScheduler->getBody())->ShowCallback();
 
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, BarnesOneApiBody>(logFitScheduler);

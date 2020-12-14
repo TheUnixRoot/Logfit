@@ -12,12 +12,22 @@
 
 #endif
 #include "tbb/pipeline.h"
-#include "tbb/parallel_for.h"
+#include <atomic>
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
-#include "../../lib/Helpers/Pipeline/Filter.cpp"
 #include "../utils/Utils.h"
-
-using namespace PipelineDataStructures;
+cl_int error;
+cl_uint num_max_platforms;
+cl_uint num_max_devices;
+cl_uint num_platforms;
+cl_uint num_devices;
+cl_platform_id platforms_id;
+cl_device_id device_id;
+cl_context context;
+cl_program program;
+cl_kernel kernel;
+int computeUnits;
+size_t vectorization;
+cl_command_queue command_queue;
 
 template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
@@ -25,7 +35,21 @@ class PipelineScheduler : public IScheduler {
 private:
     TSchedulerEngine &engine;
     TExecutionBody &body;
+    std::atomic<int> gpuStatus;
+    class Bundle {
+    public:
+        int begin;
+        int end;
+        ProcessorUnit type; //GPU = 0, CPU=1
+        Bundle() { };
+    };
+    void executeOnGPU(Bundle *bundle) ;
 
+    void executeOnCPU(Bundle *bundle) ;
+
+    void ParallelFilter(int begin, int end, Bundle *bundle) ;
+
+    Bundle *SerialFilter(int begin, int end) ;
 public:
     PipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
 
