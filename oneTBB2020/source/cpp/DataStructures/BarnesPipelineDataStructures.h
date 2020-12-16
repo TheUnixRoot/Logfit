@@ -13,6 +13,7 @@
 
 #endif
 
+#include <vector>
 #include <math.h>
 #include <utils/Utils.h>
 
@@ -59,21 +60,20 @@ using dim_range = std::vector<size_t>;
 using t_index = struct _t_index {
     int begin, end;
 };
-using buffer_OctTreeLeafNode = tbb::flow::opencl_buffer<OctTreeLeafNode>;
-using buffer_OctTreeInternalNode = tbb::flow::opencl_buffer<OctTreeInternalNode>;
-using type_gpu_node = tbb::flow::tuple<t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>;
+using buffer_OctTreeLeafNode = std::vector<OctTreeLeafNode>;
+using buffer_OctTreeInternalNode = std::vector<OctTreeInternalNode>;
 
 namespace BarnesHutDataStructures {
 /*****************************************************************************
  * Global Variables
  * **************************************************************************/
     OctTreeLeafNode *access_bodies;
-    OctTreeInternalNode *tree; //array of internal nodes
 
-/*Global OpenCL variables*/
-    buffer_OctTreeInternalNode d_tree;
-    buffer_OctTreeLeafNode d_bodies, d_bodies2;
-    OctTreeLeafNode *bodies, *bodies2;
+/*Global OpenCL variables*//*Global OpenCL variables*/
+    cl_mem d_tree;
+    cl_mem d_bodies;
+    buffer_OctTreeInternalNode tree;
+    buffer_OctTreeLeafNode bodies, bodies2;
 
     int nbodies; // number of bodies
     int timesteps; // number of steps
@@ -108,8 +108,7 @@ namespace BarnesHutDataStructures {
         //Tree allocation in memory
         num_cells = nbodies;
         num_cmax = nbodies;
-        d_tree = buffer_OctTreeInternalNode(num_cmax);
-        tree = d_tree.data();
+        tree = buffer_OctTreeInternalNode(num_cmax);
         RecycleTree();
     }
 
@@ -160,6 +159,7 @@ namespace BarnesHutDataStructures {
     inline void ReadInput(char *filename) {
         FILE *f;
         int i;
+
         if ((f = fopen(filename, "r+t")) == NULL) {
             fprintf(stderr, "file not found: %s\n", filename);
             exit(-1);
@@ -176,12 +176,12 @@ namespace BarnesHutDataStructures {
         itolsq = 1.0 / (tol * tol);
 
         if (access_bodies == NULL) {
-            fprintf(stdout, "configuration: %d bodies, %d time steps, %d threads\n",
+            fprintf(stderr, "configuration: %d bodies, %d time steps, %d threads\n",
                     nbodies, timesteps, nthreads);
-            d_bodies = buffer_OctTreeLeafNode(nbodies);
-            bodies = d_bodies.data();
-            d_bodies2 = buffer_OctTreeLeafNode(nbodies);
-            bodies2 = d_bodies2.data();
+            bodies = buffer_OctTreeLeafNode(nbodies);
+            access_bodies = bodies.data();
+            bodies2 = buffer_OctTreeLeafNode(nbodies);
+//        bodies2 = d_bodies2.data();
 
         }
 
@@ -205,7 +205,7 @@ namespace BarnesHutDataStructures {
         int i;
         char str[16];
 
-        sprintf(str, "%.4lE", (double) d);
+        sprintf(str, "%.4lE", (double)d);
 
         i = 0;
         while ((i < 16) && (str[i] != 0)) {
@@ -220,7 +220,7 @@ namespace BarnesHutDataStructures {
         }
     }
 
-    void ComputeCenterAndDiameter(const int n, float &diameter, float &centerx, float &centery, float &centerz) {
+    void ComputeCenterAndDiameter(const int n, float & diameter, float & centerx, float & centery, float & centerz) {
         float minx, miny, minz;
         float maxx, maxy, maxz;
         float posx, posy, posz;
@@ -466,7 +466,6 @@ namespace BarnesHutDataStructures {
     }
 
 }
-
 // calculamos la velocidad y posicion de un cuerpo para un paso de tiempo
 void ComputeForce(OctTreeLeafNode *body, OctTreeLeafNode *bodies, OctTreeInternalNode *tree,
                   const float step, const float epssq, const float dthf) {
@@ -523,7 +522,7 @@ void ComputeForce(OctTreeLeafNode *body, OctTreeLeafNode *bodies, OctTreeInterna
                 current = &n2->next;
             }
         } else { //the current node is a leaf
-            OctTreeLeafNode *l2 = &bodies[current->index];
+            OctTreeLeafNode * l2 = &bodies[current->index];
             if (l2 != body) {
                 drsq += epssq;
                 idr = 1 / sqrt(drsq);

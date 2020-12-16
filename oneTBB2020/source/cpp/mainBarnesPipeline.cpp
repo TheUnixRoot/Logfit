@@ -10,15 +10,14 @@
 #include <cstdlib>
 #include <iostream>
 #include <tbb/global_control.h>
-#include <scheduler/SchedulerFactory.h>
+#include <scheduler/SchedulerFactory_pipeline.h>
 #include <utils/Utils.h>
 
-#include "Implementations/Bodies/BarnesBody.h"
-#include "DataStructures/BarnesDataStructures.h"
+#include "Implementations/Bodies/BarnesPipelineBody.h"
 
 using namespace std;
 using namespace tbb;
-using MySchedulerType = GraphScheduler<LogFitEngine, BarnesBody, t_index,
+using MySchedulerType = PipelineScheduler<LogFitEngine, BarnesPipelineBody, t_index,
         buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>;
 /*****************************************************************************
  * Main Function
@@ -41,9 +40,9 @@ int main(int argc, char **argv) {
     auto logFitScheduler{HelperFactories::SchedulerFactory::getInstance <
             MySchedulerType ,
             LogFitEngine,
-            BarnesBody, t_index,
+            BarnesPipelineBody, t_index,
             buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float>
-                                      (p, new BarnesBody(BarnesHutDataStructures::nbodies))};
+                                      (p, new BarnesPipelineBody())};
 
     logFitScheduler->startTimeAndEnergy();
     for (step = 0; step < timesteps; step++) {
@@ -88,10 +87,10 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
     logFitScheduler->saveResultsForBench();
 
-    ((BarnesBody*)logFitScheduler->getBody())->ShowCallback();
+    ((BarnesPipelineBody*)logFitScheduler->getBody())->ShowCallback();
 
     HelperFactories::SchedulerFactory::deleteInstance
-            <MySchedulerType, LogFitEngine, BarnesBody>(logFitScheduler);
+            <MySchedulerType, LogFitEngine, BarnesPipelineBody>(logFitScheduler);
 
     return EXIT_SUCCESS;
 }

@@ -31,8 +31,9 @@ public:
     BarnesBody(size_t nbodies) : globalWorkSize{nbodies}, firsttime{true} {}
 
     void OperatorCPU(int begin, int end) {
+        auto size{end-begin};
         for (int i = begin; i < end; i++) {
-            ComputeForce(&bodies[i], bodies.data(), tree, step, epssq, dthf);
+            ComputeForce(&bodies[i], bodies, tree, step, epssq, dthf);
         }
     }
 
@@ -46,7 +47,7 @@ public:
 
     type_gpu_node GetGPUArgs(t_index indexes) {
         globalWorkSize[0] = (indexes.end - indexes.begin);
-        return std::make_tuple(indexes, bodies, d_tree, step, epssq, dthf);
+        return std::make_tuple(indexes,/*bodies_gpuidx,*/ d_bodies, d_tree, step, epssq, dthf);
     }
 
     void ShowCallback() {
