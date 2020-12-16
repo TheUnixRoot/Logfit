@@ -83,7 +83,7 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
     logFitScheduler->saveResultsForBench();
 
-    ((BarnesOneApiBody*)logFitScheduler->getBody())->ShowCallback();
+//    ((BarnesOneApiBody*)logFitScheduler->getBody())->ShowCallback();
 
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, BarnesOneApiBody>(logFitScheduler);
