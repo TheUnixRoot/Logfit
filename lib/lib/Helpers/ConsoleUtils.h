@@ -68,6 +68,7 @@ namespace ConsoleUtils {
                     kflag = true;
                     break;
                 case ConsoleUtils::str2int("-o"):
+                case ConsoleUtils::str2int("--opencl-filename"):
                     sprintf(params.openclFile, "%s", argv[++i]);
                     oflag = true;
                     break;
@@ -113,7 +114,7 @@ namespace ConsoleUtils {
             exit(-1);
         }
         cout << CONSOLE_YELLOW << message << CONSOLE_WHITE << endl
-             << "Console parameters read for BarnesHut Simulation: "
+             << "Console parameters read for " << params.benchName << " Simulation: "
              << params.inputData << ", Number of CPU's cores: " << params.numcpus << ", Number of GPUs: "
              << params.numgpus << ", Percent in GPU: " << params.ratioG << endl;
 
