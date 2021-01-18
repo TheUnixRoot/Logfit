@@ -1,0 +1,1785 @@
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m0                             1                       27675.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m0                             1                       27030.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m0                             1                       27040.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m0                             1                       27028.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m0                             1                       27057.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             0                        183427[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             0                        182700[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             0                        185652[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             0                        182706[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             0                        186190[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             1                       24276.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             1                       23987.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             1                       24061.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             1                       24114.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m1                             1                       24250.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             0                        109715[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             0                        108790[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             0                        108945[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             0                        110464[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             0                        109047[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             1                       23730.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             1                       23938.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             1                       96297.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             1                       23246.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m2                             1                       95827.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             0                       80844.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             0                       79780.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             0                       80462.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             0                       80561.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             0                       79774.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             1                       66090.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             1                       66042.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             1                       66479.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             1                         22762[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m3                             1                       66227.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             0                       65378.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             0                       65450.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             0                       65617.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             0                       65376.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             0                       65391.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             1                       22652.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             1                       52970.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             1                       55688.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             1                       52271.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m4                             1                       22039.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             0                       63207.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             0                       62631.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             0                       62817.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             0                       62731.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             0                       62441.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             1                       47559.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             1                       21857.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             1                       22158.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             1                       22451.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m5                             1                       22193.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             0                       62533.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             0                         61654[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             0                         61714[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             0                       61663.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             0                       61631.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             1                       21356.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             1                       21609.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             1                       45128.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             1                       46099.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m6                             1                       45994.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             0                       60796.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             0                       60636.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             0                       60974.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             0                       60812.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             0                       60631.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             1                         20689[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             1                       21052.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             1                       35104.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             1                         20747[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m7                             1                       21166.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             0                       61343.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             0                       60607.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             0                       60250.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             0                       60104.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             0                       60293.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             1                       60454.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             1                         60494[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             1                         60236[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             1                       39089.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesGraph Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+configuration: 100000 bodies, 75 time steps, 0 threads
+[0;33m*************************[0m
+[0;33m8                             1                       60661.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                       26766.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                       26937.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                       26884.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                       26869.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                       26923.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        185627[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        189176[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        189055[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        185579[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        189007[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                       23660.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                       22052.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        125530[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                       22562.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                       22875.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        112228[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        112568[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        110352[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        110609[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        111067[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       96523.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       26114.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                         93797[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       96142.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       21274.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       81081.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       82087.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                         81659[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       80981.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       81109.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65827.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65578.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       21543.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       21738.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                         66295[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       66256.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       66400.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       66152.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       66140.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                         66095[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       53212.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       53198.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                         53237[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       51921.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       20963.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       63771.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       63730.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       63558.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       63159.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       63621.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                         20331[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       49501.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       44652.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                         48141[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       20805.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       63103.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       63022.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       62745.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       62644.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                         62862[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       21896.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       44526.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       39004.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       44617.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       44821.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       61945.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       61366.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       61931.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                         61146[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                         61960[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                         20581[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       40329.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                         20552[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       20156.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       20962.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       61901.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       61078.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       60999.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       60597.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                         60569[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       35889.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       36329.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       38846.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       37549.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOneApi Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       20498.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        183150[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        186157[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        182843[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        182788[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        186068[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        186381[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        182790[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        185649[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        182604[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        186195[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        108751[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        106493[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        108667[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        108109[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        108210[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                       99592.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                       99483.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                       99213.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                         99445[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                       99640.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       79329.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       79736.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       78545.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       78686.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       78789.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       69202.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       68523.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       69436.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       68789.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       68437.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                         64795[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       64748.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                         64786[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65078.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       64749.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       53340.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       53273.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       53389.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       53602.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       53451.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       61717.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       61285.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       61382.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                         61864[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       63333.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       47796.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       48412.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       48421.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       48246.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       48301.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       61034.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       60967.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       59811.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       60487.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                         59840[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44251.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44743.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44305.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44072.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44098.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       59898.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       60013.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       59090.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       60148.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                         58729[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       40699.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41521.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41196.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41084.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41395.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       58512.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       58399.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       58101.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       58209.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       58480.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       37769.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       38142.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       38215.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       38547.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       38458.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                         60404[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       58198.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       58085.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       59898.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesPipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       59165.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        189087[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        185641[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        185498[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        185557[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 0, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m0                             1                        189189[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        189114[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        188967[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        189066[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        185655[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m1                             0                        185636[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        110353[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        108228[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        109648[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        110279[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 1, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m1                             1                        109005[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        101227[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        100975[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        101085[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                        100788[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m2                             0                       99830.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       80659.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       81267.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                       80563.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                         80813[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 2, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m2                             1                         80628[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       69393.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       69303.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       70446.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       69579.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m3                             0                       69695.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65478.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65545.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65770.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65761.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 3, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m3                             1                       65524.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       53971.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       54417.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                         54767[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       54920.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m4                             0                       55008.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       63155.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       62781.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       64586.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       63161.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 4, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m4                             1                       62357.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       49607.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       49167.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       50527.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       49887.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m5                             0                       48706.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       61360.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       61938.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                         60999[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       61228.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 5, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m5                             1                       61315.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44754.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       45892.6[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       44911.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       45219.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m6                             0                       46097.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       60784.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       59723.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       60345.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       61031.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 6, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m6                             1                       60246.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41377.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41587.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       42213.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       42282.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m7                             0                       41615.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       60033.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       59304.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       62699.8[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       59102.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 7, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m7                             1                       59057.3[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                         38075[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       39227.5[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       39281.1[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       39385.9[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 0[0m
+[0;33m*************************[0m
+[0;33m8                             0                       39680.7[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       59472.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       59619.2[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       59301.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                       60321.4[0m
+[0;33mParameters validation succeed![0m
+Console parameters read for BarnesOnePipeline Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1, Percent in GPU: 0.5
+[0;33mTest Simulation: /home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC.in, Number of CPU's cores: 8, Number of GPUs: 1[0m
+[0;33m*************************[0m
+[0;33m8                             1                         58885[0m

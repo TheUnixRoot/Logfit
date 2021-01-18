@@ -27,6 +27,7 @@ private:
     TExecutionBody &body;
 
 public:
+    tbb::atomic<int> gpuStatus;
     PipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
 
     void StartParallelExecution() ;

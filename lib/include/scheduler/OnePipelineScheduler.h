@@ -17,6 +17,7 @@ private:
     TSchedulerEngine &engine;
     TExecutionBody &body;
 public:
+    tbb::atomic<int> gpuStatus;
     OnePipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
 
     void StartParallelExecution() ;
