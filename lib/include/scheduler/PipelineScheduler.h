@@ -13,6 +13,7 @@
 #endif
 #include "tbb/pipeline.h"
 #include "tbb/parallel_for.h"
+#include <atomic>
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../../lib/Helpers/Pipeline/Filter.cpp"
 #include "../utils/Utils.h"
@@ -27,7 +28,7 @@ private:
     TExecutionBody &body;
 
 public:
-    tbb::atomic<int> gpuStatus;
+    std::atomic<int> gpuStatus;
     PipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
 
     void StartParallelExecution() ;
