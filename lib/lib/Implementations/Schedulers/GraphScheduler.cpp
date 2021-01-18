@@ -35,6 +35,8 @@ gpuNode{graph,
 gpuCallbackReceiver{graph, flow::serial,
                     [&](t_index indexes) -> ProcessorUnit {
                         stopGpu = tick_count::now();
+                        cout << "GPU: " <<  (stopGpu - startGpu).seconds() << endl;
+
                         engine.recordGPUTh(indexes.end - indexes.begin, (stopGpu - startGpu).seconds());
 
 #ifndef NDEBUG

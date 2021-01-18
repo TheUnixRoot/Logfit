@@ -57,7 +57,7 @@ namespace OnePipelineDataStructures {
             scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end);
 
             scheduler->setStopGPU(tbb::tick_count::now());
-            float time = (scheduler->getStopGPU() - scheduler->getStartGPU()).seconds() * 1000;
+            float time = (scheduler->getStopGPU() - scheduler->getStartGPU()).seconds();
 
             scheduler->getTypedEngine()->recordGPUTh((bundle->end - bundle->begin), time);
 
@@ -67,7 +67,7 @@ namespace OnePipelineDataStructures {
             scheduler->setStartCPU(tbb::tick_count::now());
             scheduler->getTypedBody()->OperatorCPU(bundle->begin, bundle->end);
             scheduler->setStopCPU(tbb::tick_count::now());
-            float time = (scheduler->getStopCPU() - scheduler->getStartCPU()).seconds() * 1000;
+            float time = (scheduler->getStopCPU() - scheduler->getStartCPU()).seconds();
 
             scheduler->getTypedEngine()->recordCPUTh((bundle->end - bundle->begin), time);
         }
