@@ -7,6 +7,7 @@
 
 #include "tbb/pipeline.h"
 #include "tbb/parallel_for.h"
+#include <atomic>
 #include "../../lib/Interfaces/Schedulers/IScheduler.cpp"
 #include "../../lib/Helpers/Pipeline/OneFilter.cpp"
 using namespace OnePipelineDataStructures;
@@ -17,6 +18,7 @@ private:
     TSchedulerEngine &engine;
     TExecutionBody &body;
 public:
+    std::atomic<int> gpuStatus;
     OnePipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) ;
 
     void StartParallelExecution() ;

@@ -36,7 +36,7 @@ add_executable(
         source/cpp/mainBarnes.cpp
         source/cpp/DataStructures/BarnesDataStructures.h
         source/cpp/Implementations/Bodies/BarnesBody.h
-#        source/cpp/Implementations/Tests/TBarnesBodyTest.h
+        #        source/cpp/Implementations/Tests/TBarnesBodyTest.h
 )
 add_executable(
         BarnesOneApi
@@ -45,7 +45,13 @@ add_executable(
         source/cpp/Implementations/Bodies/BarnesOneApiBody.h
         #        source/cpp/Implementations/Tests/TBarnesBodyTest.h
 )
-
+add_executable(
+        BarnesOnePipeline
+        source/cpp/mainBarnesOneApiPipeline.cpp
+        source/cpp/DataStructures/BarnesOneApiDataStructures.h
+        source/cpp/Implementations/Bodies/BarnesOneApiBody.h
+        #        source/cpp/Implementations/Tests/TBarnesBodyTest.h
+)
 add_executable(
         BarnesPipeline
         source/cpp/mainBarnesPipeline.cpp
@@ -93,6 +99,8 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
 
     target_compile_definitions(BarnesPipeline PUBLIC NDEBUG=1)
 
+    target_compile_definitions(BarnesOnePipeline PUBLIC NDEBUG=1)
+
     target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=1)
 
     target_compile_definitions(LogfitOnePipeline PUBLIC NDEBUG=1)
@@ -108,6 +116,8 @@ elseif (CMAKE_BUILD_TYPE MATCHES Release)
     target_compile_definitions(BarnesOneApi PUBLIC NDEBUG=0)
 
     target_compile_definitions(BarnesPipeline PUBLIC NDEBUG=0)
+
+    target_compile_definitions(BarnesOnePipeline PUBLIC NDEBUG=0)
 
     target_compile_definitions(LogfitOneApi PUBLIC NDEBUG=0)
 
@@ -134,5 +144,7 @@ target_link_libraries(LogfitOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
 target_link_libraries(BarnesOneApi tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
 
 target_link_libraries(LogfitOnePipeline tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
+
+target_link_libraries(BarnesOnePipeline tbb OpenCL tbbmalloc_proxy sycl ${HPFLIB})
 
 target_link_libraries(Devices OpenCL ${HPFLIB})

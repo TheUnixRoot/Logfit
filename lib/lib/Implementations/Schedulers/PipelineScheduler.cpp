@@ -7,7 +7,7 @@ template<typename TSchedulerEngine, typename TExecutionBody,
         typename ...TArgs>
 PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
         PipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) :
-        IScheduler(p), body{body}, engine{engine} {
+        IScheduler(p), body{body}, engine{engine}, gpuStatus{static_cast<int>(p.numgpus)} {
     initializeOPENCL(p.openclFile, p.kernelName);
     initializeHOSTPRI();
     runtime = 0.0;
@@ -21,7 +21,7 @@ void PipelineScheduler<TSchedulerEngine, TExecutionBody, TArgs...>::
     int end = body.GetVsize();
     engine.reStart();
     body.firsttime = true;
-
+    body.AllocateMemoryObjects();
     if (parameters.numgpus < 1) {  // solo CPUs
         tbb::parallel_for(tbb::blocked_range<int>(begin, end),
                           [&](const tbb::blocked_range<int> &range) {

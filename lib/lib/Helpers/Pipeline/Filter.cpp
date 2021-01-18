@@ -14,8 +14,6 @@
 
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
 #include <tbb/pipeline.h>
-#include <tbb/atomic.h>
-#include <tbb/tick_count.h>
 
 
 cl_int error;
@@ -34,7 +32,6 @@ cl_command_queue command_queue;
 
 
 namespace PipelineDataStructures {
-    tbb::atomic<int> gpuStatus;
 
     class Bundle {
     public:
@@ -64,7 +61,7 @@ namespace PipelineDataStructures {
             if (bundle->type == GPU) {
                 // GPU WORK
                 executeOnGPU(bundle);
-                gpuStatus++;
+                scheduler->gpuStatus++;
             } else {
                 // CPU WORK
                 executeOnCPU(bundle);
@@ -74,7 +71,6 @@ namespace PipelineDataStructures {
         }
 
         void executeOnGPU(Bundle *bundle) {
-            static bool firstmeasurement = true;
             scheduler->setStartGPU(tbb::tick_count::now());
 
             scheduler->getTypedBody()->sendObjectToGPU(bundle->begin, bundle->end, NULL);
@@ -112,7 +108,7 @@ namespace PipelineDataStructures {
             Bundle *bundle = new Bundle();
             if (begin < end) {
                 //Checking whether the GPU is idle or not.
-                if (--gpuStatus >= 0) {
+                if (--scheduler->gpuStatus >= 0) {
                     // pedimos un trozo para la GPU entre begin y end
                     int ckgpu = scheduler->getTypedEngine()->getGPUChunk(begin, end);
                     if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
@@ -135,7 +131,7 @@ namespace PipelineDataStructures {
                     }
                 } else {
                     //CPU WORK
-                    gpuStatus++;
+                    scheduler->gpuStatus++;
                     int auxEnd = begin + scheduler->getTypedEngine()->getCPUChunk(begin, end);
                     auxEnd = (auxEnd > end) ? end : auxEnd;
                     bundle->begin = begin;

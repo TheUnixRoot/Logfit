@@ -30,6 +30,7 @@ public:
 
     virtual void getBackObjectFromGPU(int begin, int end, cl_event *null_ptr) = 0;
 
+    virtual void AllocateMemoryObjects() = 0;
 };
 
 std::false_type is_pipeline_implementation(...);

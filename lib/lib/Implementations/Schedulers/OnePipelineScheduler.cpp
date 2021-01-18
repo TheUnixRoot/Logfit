@@ -6,7 +6,7 @@
 
 template<typename TSchedulerEngine, typename TExecutionBody>
 OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::OnePipelineScheduler(Params p, TExecutionBody &body, TSchedulerEngine &engine) :
-        IScheduler(p), body{body}, engine{engine} { }
+        IScheduler(p), body{body}, engine{engine}, gpuStatus{static_cast<int>(p.numgpus)} { }
 
 template<typename TSchedulerEngine, typename TExecutionBody>
 void OnePipelineScheduler<TSchedulerEngine, TExecutionBody>::StartParallelExecution() {

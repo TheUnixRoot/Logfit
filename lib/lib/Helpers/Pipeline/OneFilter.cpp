@@ -11,11 +11,8 @@
 
 #include "../../Interfaces/Schedulers/IScheduler.cpp"
 #include <tbb/pipeline.h>
-#include <tbb/tick_count.h>
-#include <tbb/atomic.h>
 
 namespace OnePipelineDataStructures {
-    tbb::atomic<int> gpuStatus;
 
     class Bundle {
     public:
@@ -45,7 +42,7 @@ namespace OnePipelineDataStructures {
             if (bundle->type == GPU) {
                 // GPU WORK
                 executeOnGPU(bundle);
-                gpuStatus++;
+                scheduler->gpuStatus++;
             } else {
                 // CPU WORK
                 executeOnCPU(bundle);
@@ -55,7 +52,6 @@ namespace OnePipelineDataStructures {
         }
 
         void executeOnGPU(Bundle *bundle) {
-            static bool firstmeasurement = true;
             scheduler->setStartGPU(tbb::tick_count::now());
 
             scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end);
@@ -90,7 +86,7 @@ namespace OnePipelineDataStructures {
             Bundle *bundle = new Bundle();
             if (begin < end) {
                 //Checking whether the GPU is idle or not.
-                if (--gpuStatus >= 0) {
+                if (--scheduler->gpuStatus >= 0) {
                     // pedimos un trozo para la GPU entre begin y end
                     int ckgpu = scheduler->getTypedEngine()->getGPUChunk(begin, end);
                     if (ckgpu > 0) {    // si el trozo es > 0 se genera un token de GPU
@@ -113,7 +109,7 @@ namespace OnePipelineDataStructures {
                     }
                 } else {
                     //CPU WORK
-                    gpuStatus++;
+                    scheduler->gpuStatus++;
                     int auxEnd = begin + scheduler->getTypedEngine()->getCPUChunk(begin, end);
                     auxEnd = (auxEnd > end) ? end : auxEnd;
                     bundle->begin = begin;

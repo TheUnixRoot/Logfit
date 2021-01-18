@@ -81,8 +81,8 @@ namespace BarnesHutDataStructures {
     float dtime; // differential time
     float eps; // potential softening parameter
     float tol; // should be less than 0.57 for 3D case to bound error
-    float dthf, epssq, itolsq;
-    int step;
+    cl_float dthf, epssq, itolsq;
+    cl_uint step;
     float gdiameter;
     int groot;
     int num_cells; //current num_cell used

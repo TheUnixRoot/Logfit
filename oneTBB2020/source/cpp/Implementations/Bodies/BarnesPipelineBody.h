@@ -20,7 +20,6 @@ using namespace BarnesHutDataStructures;
 class BarnesPipelineBody : public IPipelineBody<t_index, buffer_OctTreeLeafNode, buffer_OctTreeInternalNode, int, float, float> {
 public:
     bool firsttime;
-public:
 
     void sendObjectToGPU( int begin, int end, cl_event *event) {
 
@@ -51,13 +50,13 @@ public:
 
         // Associate the input and output buffers with the // kernel
         // using clSetKernelArg()
-        error  = clSetKernelArg(kernel, 0, sizeof(cl_mem), &d_bodies);
-        error |= clSetKernelArg(kernel, 1, sizeof(cl_mem), &d_tree);
-        error |= clSetKernelArg(kernel, 2, sizeof(cl_uint), &step);
-        error |= clSetKernelArg(kernel, 3, sizeof(cl_float), &epssq);
-        error |= clSetKernelArg(kernel, 4, sizeof(cl_float), &dthf);
-        error |= clSetKernelArg(kernel, 5, sizeof(cl_uint), &begin);
-        error |= clSetKernelArg(kernel, 6, sizeof(cl_uint), &end);
+        t_index indexes{begin, end};
+        error |= clSetKernelArg(kernel, 0, sizeof(t_index), &indexes);
+        error  = clSetKernelArg(kernel, 1, sizeof(cl_mem), &d_bodies);
+        error |= clSetKernelArg(kernel, 2, sizeof(cl_mem), &d_tree);
+        error |= clSetKernelArg(kernel, 3, sizeof(cl_uint), &BarnesHutDataStructures::step);
+        error |= clSetKernelArg(kernel, 4, sizeof(cl_float), &BarnesHutDataStructures::epssq);
+        error |= clSetKernelArg(kernel, 5, sizeof(cl_float), &BarnesHutDataStructures::dthf);
 
         if (error != CL_SUCCESS) {
             fprintf(stderr, "Failed setting kernel Args!\n");
