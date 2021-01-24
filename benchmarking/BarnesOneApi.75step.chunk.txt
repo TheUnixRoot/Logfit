@@ -1,0 +1,1466 @@
+*******************************************************************
+0                             1                       26908.9
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 100032
+GPU Chunk: 103360
+GPU Chunk: 103360
+GPU Chunk: 103360
+GPU Chunk: 103424
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103360
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103488
+GPU Chunk: 103424
+GPU Chunk: 103424
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103360
+GPU Chunk: 103424
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103744
+GPU Chunk: 103552
+GPU Chunk: 103744
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103744
+GPU Chunk: 103680
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 104000
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 103808
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 103872
+GPU Chunk: 103872
+GPU Chunk: 103744
+
+*******************************************************************
+1                             0                        185131
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+1                             1                       22249.1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 32768
+GPU Chunk: 32832
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+
+*******************************************************************
+2                             0                        112411
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+2                             1                       94545.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 16448
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 56064
+
+*******************************************************************
+3                             0                       81438.8
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+3                             1                       21566.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 8192
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+4                             0                       67035.1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+4                             1                       52451.9
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 8192
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+GPU Chunk: 60416
+
+*******************************************************************
+5                             0                       64864.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+5                             1                       48964.1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+6                             0                       63197.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+6                             1                       21844.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 8192
+GPU Chunk: 16448
+GPU Chunk: 32960
+GPU Chunk: 33024
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 16512
+GPU Chunk: 16576
+GPU Chunk: 33088
+GPU Chunk: 65984
+GPU Chunk: 66048
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+7                             0                       63058.8
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+7                             1                       20685.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 8192
+GPU Chunk: 16448
+GPU Chunk: 16512
+GPU Chunk: 32960
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+8                             0                       62174.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+8                             1                       38127.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+
+*******************************************************************
+0                             1                       26792.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 100032
+GPU Chunk: 103488
+GPU Chunk: 103424
+GPU Chunk: 103424
+GPU Chunk: 103552
+GPU Chunk: 103488
+GPU Chunk: 103360
+GPU Chunk: 103360
+GPU Chunk: 103424
+GPU Chunk: 103424
+GPU Chunk: 103552
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103488
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103488
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103680
+GPU Chunk: 103808
+GPU Chunk: 103808
+GPU Chunk: 103808
+GPU Chunk: 103872
+GPU Chunk: 103872
+GPU Chunk: 103872
+GPU Chunk: 103936
+GPU Chunk: 103936
+GPU Chunk: 103936
+GPU Chunk: 103808
+GPU Chunk: 103936
+GPU Chunk: 103744
+GPU Chunk: 103872
+GPU Chunk: 103808
+GPU Chunk: 103808
+
+*******************************************************************
+1                             0                        188588
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+1                             1                       22151.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 32768
+GPU Chunk: 32832
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+
+*******************************************************************
+2                             0                        112397
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+2                             1                       95389.9
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 16448
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 17856
+GPU Chunk: 17536
+GPU Chunk: 18240
+GPU Chunk: 17920
+GPU Chunk: 17792
+GPU Chunk: 17984
+GPU Chunk: 15168
+
+*******************************************************************
+3                             0                       81072.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+3                             1                       21534.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 8192
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+4                             0                       66273.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+4                             1                       53629.1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+GPU Chunk: 54784
+
+*******************************************************************
+5                             0                       64788.8
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+5                             1                       48966.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 16448
+
+*******************************************************************
+6                             0                       63116.6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+6                             1                       20946.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+7                             0                         62767
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+7                             1                       20529.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+8                             0                       62293.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+8                             1                       39481.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+
+*******************************************************************
+0                             1                       26886.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 100032
+GPU Chunk: 103488
+GPU Chunk: 103360
+GPU Chunk: 103552
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103488
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103808
+GPU Chunk: 103872
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103872
+GPU Chunk: 103808
+GPU Chunk: 103808
+GPU Chunk: 103872
+GPU Chunk: 103936
+GPU Chunk: 103808
+GPU Chunk: 103936
+GPU Chunk: 103936
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 104064
+GPU Chunk: 104064
+GPU Chunk: 104000
+GPU Chunk: 104064
+GPU Chunk: 103936
+GPU Chunk: 104000
+GPU Chunk: 103936
+GPU Chunk: 103936
+
+*******************************************************************
+1                             0                        188599
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+1                             1                        153383
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 32768
+GPU Chunk: 32832
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 16448
+GPU Chunk: 19712
+GPU Chunk: 4544
+GPU Chunk: 19456
+GPU Chunk: 19840
+GPU Chunk: 19520
+GPU Chunk: 19328
+GPU Chunk: 6656
+GPU Chunk: 19584
+GPU Chunk: 20160
+GPU Chunk: 19648
+GPU Chunk: 20224
+GPU Chunk: 2432
+GPU Chunk: 20288
+GPU Chunk: 20544
+GPU Chunk: 19840
+GPU Chunk: 19840
+GPU Chunk: 4928
+GPU Chunk: 20224
+GPU Chunk: 20544
+GPU Chunk: 20288
+GPU Chunk: 20160
+GPU Chunk: 2560
+GPU Chunk: 20288
+GPU Chunk: 20672
+GPU Chunk: 20352
+GPU Chunk: 19776
+GPU Chunk: 4544
+GPU Chunk: 20032
+GPU Chunk: 20544
+GPU Chunk: 20096
+GPU Chunk: 20224
+GPU Chunk: 2944
+GPU Chunk: 20224
+GPU Chunk: 20672
+GPU Chunk: 19904
+GPU Chunk: 19904
+GPU Chunk: 4160
+GPU Chunk: 19776
+GPU Chunk: 20544
+GPU Chunk: 19840
+GPU Chunk: 20032
+GPU Chunk: 2816
+GPU Chunk: 20032
+GPU Chunk: 20416
+GPU Chunk: 19712
+GPU Chunk: 20032
+GPU Chunk: 4864
+GPU Chunk: 20416
+GPU Chunk: 20736
+GPU Chunk: 20480
+GPU Chunk: 19520
+GPU Chunk: 1664
+GPU Chunk: 19776
+GPU Chunk: 19968
+GPU Chunk: 19840
+GPU Chunk: 21440
+GPU Chunk: 8896
+GPU Chunk: 23040
+GPU Chunk: 23040
+
+*******************************************************************
+2                             0                        109346
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+2                             1                       97955.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 63808
+
+*******************************************************************
+3                             0                       80874.6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+3                             1                       67749.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+4                             0                       66140.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+4                             1                       20709.1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+5                             0                       64932.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+5                             1                       49464.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+GPU Chunk: 16448
+
+*******************************************************************
+6                             0                         63441
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+6                             1                       21472.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+GPU Chunk: 131648
+GPU Chunk: 131712
+
+*******************************************************************
+7                             0                       62574.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+7                             1                       20786.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+8                             0                       62192.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+8                             1                       38643.8
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+
+*******************************************************************
+0                             1                       26903.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 100032
+GPU Chunk: 103360
+GPU Chunk: 103552
+GPU Chunk: 103488
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103360
+GPU Chunk: 103488
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103744
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103808
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103808
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103808
+GPU Chunk: 103808
+GPU Chunk: 103808
+GPU Chunk: 103872
+GPU Chunk: 103872
+GPU Chunk: 103744
+GPU Chunk: 103872
+GPU Chunk: 104000
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 104000
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 104064
+GPU Chunk: 103936
+GPU Chunk: 104000
+GPU Chunk: 104000
+GPU Chunk: 103936
+
+*******************************************************************
+1                             0                        185304
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+1                             1                       21982.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 32768
+GPU Chunk: 32832
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+
+*******************************************************************
+2                             0                        110624
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+2                             1                       95076.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 16448
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 53440
+
+*******************************************************************
+3                             0                       81262.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+3                             1                         21380
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 16384
+GPU Chunk: 16448
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+4                             0                       66457.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+4                             1                       54304.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+GPU Chunk: 42048
+
+*******************************************************************
+5                             0                         64198
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+5                             1                       49319.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+GPU Chunk: 16448
+
+*******************************************************************
+6                             0                       62970.6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+6                             1                         21339
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+7                             0                       62161.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+7                             1                       21011.9
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+8                             0                       62065.4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+8                             1                       40055.6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+
+*******************************************************************
+0                             1                       26778.8
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 100032
+GPU Chunk: 103488
+GPU Chunk: 103488
+GPU Chunk: 103360
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103360
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103552
+GPU Chunk: 103424
+GPU Chunk: 103360
+GPU Chunk: 103424
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103488
+GPU Chunk: 103424
+GPU Chunk: 103488
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103552
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103552
+GPU Chunk: 103680
+GPU Chunk: 103680
+GPU Chunk: 103616
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103488
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103744
+GPU Chunk: 103616
+GPU Chunk: 103680
+GPU Chunk: 103744
+GPU Chunk: 103808
+GPU Chunk: 103744
+GPU Chunk: 103744
+GPU Chunk: 103808
+GPU Chunk: 103808
+GPU Chunk: 103680
+GPU Chunk: 103872
+GPU Chunk: 103936
+GPU Chunk: 103872
+GPU Chunk: 103872
+GPU Chunk: 104064
+GPU Chunk: 104000
+GPU Chunk: 104000
+GPU Chunk: 104000
+GPU Chunk: 103872
+GPU Chunk: 104000
+GPU Chunk: 103872
+GPU Chunk: 103872
+
+*******************************************************************
+1                             0                        188557
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+1                             1                       22354.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 32768
+GPU Chunk: 32832
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+
+*******************************************************************
+2                             0                        109599
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+2                             1                       95219.2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 65472
+GPU Chunk: 65536
+GPU Chunk: 16384
+GPU Chunk: 16448
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131136
+GPU Chunk: 131200
+GPU Chunk: 52416
+
+*******************************************************************
+3                             0                       80914.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+3                             1                       65557.8
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+GPU Chunk: 65344
+
+*******************************************************************
+4                             0                       66063.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+4                             1                       54458.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+GPU Chunk: 37632
+
+*******************************************************************
+5                             0                       64400.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+5                             1                       49561.6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 32704
+GPU Chunk: 32768
+GPU Chunk: 65600
+GPU Chunk: 65664
+GPU Chunk: 131392
+GPU Chunk: 131456
+
+*******************************************************************
+6                             0                       62879.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+6                             1                       21374.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
+
+*******************************************************************
+7                             0                       61977.7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+7                             1                       42116.6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 32896
+GPU Chunk: 65856
+GPU Chunk: 65920
+GPU Chunk: 131904
+GPU Chunk: 131968
+
+*******************************************************************
+8                             0                       62401.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*******************************************************************
+8                             1                       39354.5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GPU Chunk: 64
+GPU Chunk: 192
+GPU Chunk: 448
+GPU Chunk: 960
+GPU Chunk: 1984
+GPU Chunk: 4032
+GPU Chunk: 8128
+GPU Chunk: 16320
+GPU Chunk: 16384
+GPU Chunk: 32832
+GPU Chunk: 65728
+GPU Chunk: 65792
