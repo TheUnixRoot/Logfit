@@ -30,6 +30,8 @@ public:
 
     void *getEngine() ;
 
+    TSchedulerEngine *getTypedEngine();
+
     void *getBody() ;
 
     ~OneApiScheduler() {}

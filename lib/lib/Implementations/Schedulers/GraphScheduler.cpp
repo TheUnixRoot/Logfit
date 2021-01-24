@@ -35,7 +35,7 @@ gpuNode{graph,
 gpuCallbackReceiver{graph, flow::serial,
                     [&](t_index indexes) -> ProcessorUnit {
                         stopGpu = tick_count::now();
-                        cout << "GPU: " <<  (stopGpu - startGpu).seconds() << endl;
+//                        cout << "GPU: " <<  (stopGpu - startGpu).seconds() << endl;
 
                         engine.recordGPUTh(indexes.end - indexes.begin, (stopGpu - startGpu).seconds());
 
@@ -106,6 +106,13 @@ template <typename TSchedulerEngine, typename TExecutionBody,
         typename t_index, typename ...TArgs>
 void* GraphScheduler<TSchedulerEngine, TExecutionBody,
         t_index, TArgs...>::getEngine() {
+    return &engine;
+}
+
+template <typename TSchedulerEngine, typename TExecutionBody,
+        typename t_index, typename ...TArgs>
+TSchedulerEngine* GraphScheduler<TSchedulerEngine, TExecutionBody,
+        t_index, TArgs...>::getTypedEngine() {
     return &engine;
 }
 

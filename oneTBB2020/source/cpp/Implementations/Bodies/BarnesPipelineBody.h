@@ -93,7 +93,7 @@ public:
         //tick_count t0 = tick_count::now();
 
         //fprintf(stderr, "GetBack: %d-%d\n",begin,end);
-        error = clEnqueueReadBuffer(command_queue, d_bodies, CL_BLOCKING, begin * sizeof(OctTreeLeafNode),
+        error = clEnqueueReadBuffer(command_queue, d_bodies, CL_NON_BLOCKING, begin * sizeof(OctTreeLeafNode),
                                     sizeof(OctTreeLeafNode) * (end-begin), &bodies[begin], 0, NULL, NULL);
 
         if (error != CL_SUCCESS) {

@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
     logFitScheduler->endTimeAndEnergy();
     logFitScheduler->saveResultsForBench();
 
-//    ((BarnesPipelineBody*)logFitScheduler->getBody())->ShowCallback();
+    logFitScheduler->getTypedEngine()->printGPUChunks();
 
     HelperFactories::SchedulerFactory::deleteInstance
             <MySchedulerType, LogFitEngine, BarnesPipelineBody>(logFitScheduler);

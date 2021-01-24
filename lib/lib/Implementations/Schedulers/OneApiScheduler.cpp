@@ -98,6 +98,12 @@ void* OneApiScheduler<TSchedulerEngine, TExecutionBody>
 }
 
 template <typename TSchedulerEngine, typename TExecutionBody>
+TSchedulerEngine* OneApiScheduler<TSchedulerEngine, TExecutionBody>
+        ::getTypedEngine() {
+    return &engine;
+}
+
+template <typename TSchedulerEngine, typename TExecutionBody>
 void* OneApiScheduler<TSchedulerEngine, TExecutionBody>
         ::getBody() {
     return &body;

@@ -76,10 +76,11 @@ namespace PipelineDataStructures {
             scheduler->getTypedBody()->sendObjectToGPU(bundle->begin, bundle->end, NULL);
             scheduler->getTypedBody()->OperatorGPU(bundle->begin, bundle->end, NULL);
             scheduler->getTypedBody()->getBackObjectFromGPU(bundle->begin, bundle->end, NULL);
-            clFlush(command_queue);
+            clFinish(command_queue);
 
             scheduler->setStopGPU(tbb::tick_count::now());
             float time = (scheduler->getStopGPU() - scheduler->getStartGPU()).seconds();
+//            cout << "GPU: " << time << endl;
             scheduler->getTypedEngine()->recordGPUTh((bundle->end - bundle->begin), time);
 
         }

@@ -113,7 +113,7 @@ namespace ConsoleUtils {
             exit(-1);
         }
         cout << CONSOLE_YELLOW << message << CONSOLE_WHITE << endl
-             << "Console parameters read for BarnesHut Simulation: "
+             << "Console parameters read for " << params.benchName << " Simulation: "
              << params.inputData << ", Number of CPU's cores: " << params.numcpus << ", Number of GPUs: "
              << params.numgpus << ", Percent in GPU: " << params.ratioG << endl;
 
@@ -122,7 +122,7 @@ namespace ConsoleUtils {
 
     static void saveResultsForBench(Params p, double runtime) {
         int sep{30};
-        std::cout << CONSOLE_YELLOW << "*************************" << CONSOLE_WHITE << std::endl;
+        std::cout << CONSOLE_YELLOW << "*******************************************************************" << CONSOLE_WHITE << std::endl;
         std::cout << CONSOLE_YELLOW << p.numcpus << setw(sep) << p.numgpus << setw(sep) << runtime << CONSOLE_WHITE
                   << std::endl;
     }

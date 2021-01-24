@@ -299,6 +299,7 @@ unsigned int LogFitEngine::getGPUChunk(unsigned int begin, unsigned int end) {
 //    std::cout << "Gpu orinal: " << nextGPUChk;
     nextGPUChk = nextGPUChk + 64 - (nextGPUChk & 63) ;
 //    std::cout << "Gpu truncated: " << nextGPUChk;
+    gpuChunkSizes.push_back(nextGPUChk);
     return min(nextGPUChk, rem);
 }
 
