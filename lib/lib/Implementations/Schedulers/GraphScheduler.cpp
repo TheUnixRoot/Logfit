@@ -93,11 +93,11 @@ void GraphScheduler<TSchedulerEngine, TExecutionBody,
     end = body.GetVsize();
     cpuCounter = 0;
     engine.reStart();
-    for (int i = 0; i < parameters.numcpus; ++i) {
-    processorSelectorNode.try_put(CPU);
-    }
     for (int j = 0; j < parameters.numgpus; ++j) {
-    processorSelectorNode.try_put(GPU);
+        processorSelectorNode.try_put(GPU);
+    }
+    for (int i = 0; i < parameters.numcpus; ++i) {
+        processorSelectorNode.try_put(CPU);
     }
 
     graph.wait_for_all();

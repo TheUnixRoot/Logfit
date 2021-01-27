@@ -30,3 +30,4 @@ for iter in niter:
             for numGpu in numGpus:
                 args = f'-b {barnes} -f "/home/juanp/Desktop/TFG/Logfit/oneTBB2020/data/runC75.in" -c {numCpu} -g {numGpu} -r {ratio} -k ComputeForce -o "/home/juanp/Desktop/TFG/Logfit/oneTBB2020/source/cl/kernel.cl"'
                 os.system(f'"/home/juanp/Desktop/TFG/Logfit/benchmarking/{barnes}" {args}')
+# \*+\n([0-8]{1}) +([0-1]{1}) +[0-9\.]+\n[+]+\n([0-9\n]+)\n\* - $1-$2;\n$3 ---- getting chunks

@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
     size_t threadNum{p.numcpus + p.numgpus};
 
     auto mp = global_control::max_allowed_parallelism;
-    global_control gc{mp, threadNum};
+    global_control gc{mp, 1 + threadNum};
 
     ReadInput(p.inputData);
     initialize_tree();

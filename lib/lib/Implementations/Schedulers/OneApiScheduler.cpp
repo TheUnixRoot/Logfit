@@ -82,12 +82,12 @@ void OneApiScheduler<TSchedulerEngine, TExecutionBody>
         ::StartParallelExecution(){
     begin = 0;
     end = body.GetVsize();
+    for (int j = 0; j < parameters.numgpus; ++j) {
+        processorSelectorNode.try_put(GPU);
+    }
     engine.reStart();
     for (int i = 0; i < parameters.numcpus; ++i) {
         processorSelectorNode.try_put(CPU);
-    }
-    for (int j = 0; j < parameters.numgpus; ++j) {
-        processorSelectorNode.try_put(GPU);
     }
     graph.wait_for_all();
 }
